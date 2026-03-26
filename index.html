@@ -85,19 +85,26 @@ h2.c{text-align:center;max-width:780px;margin-left:auto;margin-right:auto}
    ═══════════════════════════════════════════ */
 .worldview{background:linear-gradient(to bottom,var(--warm) 0%,var(--ivory) 100%);text-align:center;position:relative;overflow:hidden;padding-bottom:clamp(5rem,10vw,8rem)}
 .worldview h2{margin-bottom:2rem}
-.wv-bridge{display:flex;flex-direction:column;align-items:center;max-width:640px;margin:4.5rem auto 5rem;position:relative}
-.wv-bridge-illo{width:clamp(260px,40vw,380px);margin-bottom:2.5rem;animation:float 6s ease-in-out infinite}
-.wv-bridge-illo img{width:100%;filter:drop-shadow(0 16px 40px rgba(45,161,125,.1))}
-.wv-bridge-text p{font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.7rem);font-style:italic;font-weight:400;color:var(--mid);line-height:1.55;text-align:center}
+/* Bridge — visual break with interaction */
+.wv-bridge{display:flex;flex-direction:column;align-items:center;max-width:700px;margin:4.5rem auto 5rem;position:relative;padding:3rem 2rem;border-radius:28px;background:linear-gradient(135deg,var(--green-pale) 0%,var(--gold-pale) 100%);border:1px solid rgba(45,161,125,.1)}
+.wv-bridge-illo{width:clamp(300px,45vw,440px);margin-bottom:2rem;animation:float 6s ease-in-out infinite;cursor:pointer;transition:transform .5s var(--eo)}
+.wv-bridge-illo:hover{transform:scale(1.06) translateY(-8px)}
+.wv-bridge-illo img{width:100%;filter:drop-shadow(0 20px 50px rgba(45,161,125,.15))}
+.wv-bridge-text p{font-family:var(--serif);font-size:clamp(1.4rem,2.5vw,1.9rem);font-style:italic;font-weight:500;color:var(--green-dk);line-height:1.5;text-align:center}
 .wv-belief-heading{margin:0 auto 3.5rem;max-width:700px}
 .wv-belief-heading .label{margin-bottom:1rem}
 .wv-belief-heading h2{font-size:clamp(1.8rem,3.5vw,2.6rem)}
+/* Flip cards */
 .belief-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1100px;margin:0 auto}
-.bcard{padding:2.75rem 2.25rem;background:var(--warm);border:1px solid rgba(26,26,46,.05);border-radius:20px;transition:transform .5s var(--eo),box-shadow .5s var(--eo);text-align:center}
-.bcard:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(45,161,125,.08)}
-.bcard .icon{width:52px;height:52px;margin:0 auto 1.75rem}
-.bcard h3{font-family:var(--serif);font-size:1.55rem;font-weight:500;color:var(--ink);margin-bottom:1rem;line-height:1.25}
-.bcard p{font-size:.95rem;font-weight:300;color:var(--mid);line-height:1.75}
+.bcard-wrap{perspective:800px;height:320px}
+.bcard-inner{position:relative;width:100%;height:100%;transition:transform .7s var(--eo);transform-style:preserve-3d}
+.bcard-wrap:hover .bcard-inner{transform:rotateY(180deg)}
+.bcard-front,.bcard-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 2rem;text-align:center}
+.bcard-front{background:var(--warm);border:1px solid rgba(26,26,46,.05)}
+.bcard-front .icon{width:60px;height:60px;margin-bottom:1.5rem}
+.bcard-front h3{font-family:var(--serif);font-size:1.55rem;font-weight:500;color:var(--ink);line-height:1.25}
+.bcard-back{background:var(--green);border:1px solid var(--green-dk);transform:rotateY(180deg);color:#fff}
+.bcard-back p{font-size:.95rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.9)}
 
 /* ═══════════════════════════════════════════
    4. NUMBERS — no images
@@ -116,8 +123,8 @@ h2.c{text-align:center;max-width:780px;margin-left:auto;margin-right:auto}
 .meet{background:var(--parchment);position:relative;overflow:hidden}
 .meet h2{text-align:center;margin:0 auto 1.25rem}
 .meet .bt{margin-bottom:4rem}
-.meet-hero-img{max-width:680px;margin:0 auto 4rem;border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.06)}
-.meet-hero-img img{width:100%}
+.meet-hero-img{max-width:300px;margin:0 auto 4rem;opacity:.9}
+.meet-hero-img img{width:100%;filter:drop-shadow(0 12px 30px rgba(45,161,125,.1))}
 .meet-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:1100px;margin:0 auto 3rem}
 .mcard{border-radius:20px;overflow:hidden;background:var(--warm);border:1px solid rgba(26,26,46,.04);transition:transform .5s var(--eo),box-shadow .5s var(--eo)}
 .mcard:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.06)}
@@ -150,12 +157,14 @@ h2.c{text-align:center;max-width:780px;margin-left:auto;margin-right:auto}
    7. RECOGNITION — light product association
    ═══════════════════════════════════════════ */
 .recognition{background:var(--ivory);text-align:center;padding-top:clamp(3rem,6vw,5rem);padding-bottom:clamp(3rem,6vw,5rem)}
-.award-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2rem;max-width:800px;margin:2rem auto 0}
+.award-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2rem;max-width:800px;margin:2rem auto 2.5rem}
 .award-row img{height:52px;width:auto;opacity:.65;filter:grayscale(.3);transition:opacity .3s,filter .3s}
 .award-row img:hover{opacity:1;filter:grayscale(0)}
-.press-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2.5rem 3.5rem;max-width:800px;margin:2.5rem auto 0}
-.press-item{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--mid);opacity:.45;transition:opacity .3s;white-space:nowrap}
-.press-item:hover{opacity:1}
+.press-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:1rem;max-width:1000px;margin:0 auto}
+.press-logo{display:flex;align-items:center;justify-content:center;padding:12px 20px;border:1px solid rgba(26,26,46,.06);border-radius:12px;background:var(--warm);transition:all .3s;text-decoration:none}
+.press-logo:hover{border-color:rgba(45,161,125,.2);box-shadow:0 4px 16px rgba(0,0,0,.04)}
+.press-logo img{height:28px;width:auto;filter:grayscale(1);opacity:.5;transition:filter .3s,opacity .3s}
+.press-logo:hover img{filter:grayscale(0);opacity:1}
 
 /* ═══════════════════════════════════════════
    8. ADVENTURES — real product photos
@@ -252,8 +261,8 @@ h2.c{text-align:center;max-width:780px;margin-left:auto;margin-right:auto}
 /* ═══════════════════════════════════════════
    GARDEN GROW (above footer)
    ═══════════════════════════════════════════ */
-.garden-grow{position:relative;height:280px;overflow:hidden;background:linear-gradient(to bottom,var(--ivory) 0%,var(--warm) 100%);pointer-events:none}
-.garden-grow img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:max(100%,1200px);height:auto;transform-origin:bottom center;will-change:transform,opacity}
+.garden-grow{position:relative;height:380px;overflow:hidden;background:linear-gradient(to bottom,var(--ivory) 0%,var(--warm) 100%);pointer-events:none}
+.garden-grow img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:max(120%,1400px);height:auto;transform-origin:bottom center;will-change:transform,opacity}
 
 /* ═══════════════════════════════════════════
    FOOTER
@@ -276,6 +285,7 @@ footer{background:var(--warm);border-top:none;padding:clamp(3rem,6vw,5rem) clamp
   .nav-links{display:none}.mob-tog{display:block}
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--ivory);padding:2rem;gap:1.5rem;border-bottom:1px solid rgba(26,26,46,.06);box-shadow:0 12px 32px rgba(0,0,0,.06)}
   .belief-grid,.adv-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
+  .bcard-wrap{height:280px}
   .num-grid{grid-template-columns:repeat(2,1fr);gap:2rem}
   .meet-grid{grid-template-columns:1fr 1fr;max-width:620px;margin-left:auto;margin-right:auto}
   .kit-layout{grid-template-columns:1fr;gap:3rem}
@@ -355,20 +365,38 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
     <h2 class="c">Technology is too important to be limited to the 0.01%&nbsp;creating&nbsp;it.</h2>
   </div>
   <div class="belief-grid">
-    <div class="bcard r d1">
-      <img src="Sample Images/compass.svg" alt="" class="icon">
-      <h3>More creators, not&nbsp;consumers</h3>
-      <p>We believe the next generation should be makers, not just users. That coding is a language&nbsp;— one that should be as natural to learn as ABCs and&nbsp;123s.</p>
+    <div class="bcard-wrap r d1">
+      <div class="bcard-inner">
+        <div class="bcard-front">
+          <img src="Sample Images/compass.svg" alt="" class="icon">
+          <h3>More creators, not&nbsp;consumers</h3>
+        </div>
+        <div class="bcard-back">
+          <p>We believe the next generation should be makers, not just users. That coding is a language&nbsp;— one that should be as natural to learn as ABCs and&nbsp;123s.</p>
+        </div>
+      </div>
     </div>
-    <div class="bcard r d2">
-      <img src="Sample Images/seedling.svg" alt="" class="icon">
-      <h3>Hands-on, or nothing at&nbsp;all</h3>
-      <p>Every VC told us to build an app. But delivering a screen-free solution through a screen was fighting the enemy with the enemy's own weapons. It had to be tactile, physical,&nbsp;real.</p>
+    <div class="bcard-wrap r d2">
+      <div class="bcard-inner">
+        <div class="bcard-front">
+          <img src="Sample Images/seedling.svg" alt="" class="icon">
+          <h3>Hands-on, or nothing at&nbsp;all</h3>
+        </div>
+        <div class="bcard-back">
+          <p>Every VC told us to build an app. But delivering a screen-free solution through a screen was fighting the enemy with the enemy's own weapons. It had to be tactile, physical,&nbsp;real.</p>
+        </div>
+      </div>
     </div>
-    <div class="bcard r d3">
-      <img src="Sample Images/brightidea.svg" alt="" class="icon">
-      <h3>The Montessori method, applied to&nbsp;code</h3>
-      <p>Maria Montessori proved over 100 years ago that children learn through touch, sequence, and self-directed discovery. We built on that&nbsp;foundation.</p>
+    <div class="bcard-wrap r d3">
+      <div class="bcard-inner">
+        <div class="bcard-front">
+          <img src="Sample Images/brightidea.svg" alt="" class="icon">
+          <h3>The Montessori method, applied to&nbsp;code</h3>
+        </div>
+        <div class="bcard-back">
+          <p>Maria Montessori proved over 100 years ago that children learn through touch, sequence, and self-directed discovery. We built on that&nbsp;foundation.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -392,9 +420,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
   <div class="r d1">
     <p class="bt c" style="margin-top:1rem;margin-bottom:3rem">A curious bear who loves to explore. A rover that goes where your code tells it. Wooden blocks you can hold in your hands. Stories that take you from the coral reef to outer space. No screens. No apps. No downloads. Just a child, a bear, and an&nbsp;adventure.</p>
   </div>
-  <!-- Character-forward illustration, not product photo -->
+  <!-- Aspirational illustration — discovery & science -->
   <div class="meet-hero-img r d2">
-    <img src="https://substack-post-media.s3.amazonaws.com/public/images/c6e40aea-19a7-40bf-8d24-6e8d3fbff0d4_1600x900.jpeg" alt="Mochi — a curious brown bear who goes on coding adventures">
+    <img src="Sample Images/labs_crop.png" alt="Discovery, curiosity, and hands-on learning">
   </div>
   <!-- Transition: mix of illustration-style and light product -->
   <div class="meet-grid">
@@ -449,7 +477,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
       </div>
     </div>
     <div class="tl-item r">
-      <div class="tl-img"><img src="https://substack-post-media.s3.amazonaws.com/public/images/d6a9bc15-a8e8-4500-aa92-91f4985b9634_456x342.heic" alt="Little Daria with her bears" loading="lazy"></div>
+      <div class="tl-img"><img src="Sample Images/little-daria.png" alt="Little Daria with her bears" loading="lazy"></div>
       <div class="tl-text">
         <span class="tl-year">Canada, 1990s</span>
         <h3>A new country, a new language, a borrowed&nbsp;home.</h3>
@@ -493,13 +521,22 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
       <img src="https://robotics.learnwithmochi.com/cdn/shop/t/47/assets/parents-picks2x.png" alt="Parents' Picks Award">
       <img src="https://robotics.learnwithmochi.com/cdn/shop/t/47/assets/stem-autism-2x.png" alt="STEM.org Authenticated">
     </div>
-    <div class="press-row">
-      <span class="press-item">Smithsonian</span>
-      <span class="press-item">USA Today</span>
-      <span class="press-item">Mashable</span>
-      <span class="press-item">Yahoo Finance</span>
-      <span class="press-item">Purdue INSPIRE</span>
-      <span class="press-item">Gadget Flow</span>
+    <div class="label c" style="margin-top:1rem">As seen in</div>
+    <div class="press-logos">
+      <a href="https://www.forbes.com/profile/mark-pavlyukovskyy/" target="_blank" rel="noopener" class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/Forbes_logo.png?v=1592602935" alt="Forbes"></a>
+      <a href="https://www.usatoday.com" target="_blank" rel="noopener" class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/USA_today.png?v=1613682201" alt="USA Today"></a>
+      <a href="https://finance.yahoo.com" target="_blank" rel="noopener" class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/yahoo-finance-logo.png?v=1586519445" alt="Yahoo Finance"></a>
+      <a href="https://mashable.com" target="_blank" rel="noopener" class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/mashable-logon.png?v=1586523012" alt="Mashable"></a>
+      <a href="https://reviewed.com" target="_blank" rel="noopener" class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/reviewed-logo_38813323-1269-4d1a-9327-2c62572c3cab.png?v=1586519700" alt="Reviewed"></a>
+      <a href="https://thegadgetflow.com" target="_blank" rel="noopener" class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/gadget-flow-logo.png?v=1586519417" alt="GadgetFlow"></a>
+      <a href="https://interestingengineering.com" target="_blank" rel="noopener" class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/interesting-engineering-logo.png?v=1586519468" alt="Interesting Engineering"></a>
+      <a href="https://producthunt.com/products/mochi-robot" target="_blank" rel="noopener" class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/product-hunt-logo.png?v=1586519654" alt="Product Hunt"></a>
+      <a href="https://homeschoolmasteryacademy.com" target="_blank" rel="noopener" class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/HM-b_w.png?v=1588608881" alt="Homeschool Mastery Academy"></a>
+      <a href="https://techwalls.com" target="_blank" rel="noopener" class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/Techwalls-logo-grayscale-min.png?v=1600114361" alt="TechWalls"></a>
+      <a href="https://avc.com" target="_blank" rel="noopener" class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/AVC-logo-grayscale-min.png?v=1600114378" alt="AVC"></a>
+      <a href="https://sheinformed.com" target="_blank" rel="noopener" class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/si-logo-gray-min.png?v=1602342189" alt="SheInformed"></a>
+      <a href="https://futurism.com" target="_blank" rel="noopener" class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/image_1_1.png?v=1612772203" alt="Futurism"></a>
+      <a href="https://hp.com" target="_blank" rel="noopener" class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/image_62.png?v=1614171707" alt="HP Labs"></a>
     </div>
   </div>
 </section>
@@ -699,7 +736,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 /* FAQ accordion */
 !function(){document.querySelectorAll('.faq-item').forEach(item=>{item.querySelector('.faq-q').addEventListener('click',()=>{const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open')})})}();
 /* Garden grow on scroll */
-!function(){const garden=document.getElementById('gardenGrow');const img=document.getElementById('gardenImg');if(!garden||!img)return;function update(){const rect=garden.getBoundingClientRect();const vh=window.innerHeight;if(rect.top<vh&&rect.bottom>0){const progress=Math.min(Math.max((vh-rect.top)/(vh+rect.height),0),1);const scale=0.6+progress*0.4;const opacity=0.3+progress*0.7;const translateY=(1-progress)*60;img.style.transform=`translateX(-50%) scale(${scale}) translateY(${translateY}px)`;img.style.opacity=opacity}requestAnimationFrame(update)}requestAnimationFrame(update)}();
+!function(){const garden=document.getElementById('gardenGrow');const img=document.getElementById('gardenImg');if(!garden||!img)return;function update(){const rect=garden.getBoundingClientRect();const vh=window.innerHeight;if(rect.top<vh&&rect.bottom>0){const progress=Math.min(Math.max((vh-rect.top)/(vh+rect.height),0),1);const scale=0.85+progress*0.15;const opacity=0.5+progress*0.5;const translateY=(1-progress)*40;img.style.transform=`translateX(-50%) scale(${scale}) translateY(${translateY}px)`;img.style.opacity=opacity}requestAnimationFrame(update)}requestAnimationFrame(update)}();
 </script>
 </body>
 </html>
