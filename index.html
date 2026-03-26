@@ -230,9 +230,36 @@ h2.c{text-align:center;max-width:780px;margin-left:auto;margin-right:auto}
 .sub .btn{position:relative;z-index:1}
 
 /* ═══════════════════════════════════════════
+   FAQ
+   ═══════════════════════════════════════════ */
+.faq{background:var(--ivory);position:relative;padding-bottom:0}
+.faq-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:start}
+.faq-intro .label{margin-bottom:1rem}
+.faq-intro h2{margin-bottom:1rem;font-size:clamp(2rem,3.5vw,2.8rem)}
+.faq-intro p{font-size:.95rem;font-weight:300;color:var(--mid);line-height:1.7}
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid rgba(26,26,46,.08)}
+.faq-item:first-child{border-top:1px solid rgba(26,26,46,.08)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.5rem 0;cursor:pointer;background:none;border:none;width:100%;text-align:left;font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--ink);line-height:1.35;transition:color .3s}
+.faq-q:hover{color:var(--green)}
+.faq-q .faq-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .4s var(--eo),border-color .3s}
+.faq-q .faq-icon::before{content:'+';font-family:var(--sans);font-size:1rem;font-weight:300;color:var(--gold);line-height:1;transition:transform .4s var(--eo)}
+.faq-item.open .faq-q .faq-icon{border-color:var(--green)}
+.faq-item.open .faq-q .faq-icon::before{content:'+';transform:rotate(45deg);color:var(--green)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--eo),padding .5s var(--eo)}
+.faq-item.open .faq-a{max-height:500px}
+.faq-a-inner{padding:0 0 1.5rem;font-size:.95rem;font-weight:300;color:var(--mid);line-height:1.85}
+
+/* ═══════════════════════════════════════════
+   GARDEN GROW (above footer)
+   ═══════════════════════════════════════════ */
+.garden-grow{position:relative;height:280px;overflow:hidden;background:linear-gradient(to bottom,var(--ivory) 0%,var(--warm) 100%);pointer-events:none}
+.garden-grow img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:max(100%,1200px);height:auto;transform-origin:bottom center;will-change:transform,opacity}
+
+/* ═══════════════════════════════════════════
    FOOTER
    ═══════════════════════════════════════════ */
-footer{background:var(--warm);border-top:1px solid rgba(26,26,46,.06);padding:clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,5rem)}
+footer{background:var(--warm);border-top:none;padding:clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,5rem)}
 .footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem}
 .footer-brand p{font-size:.85rem;font-weight:300;color:var(--light);line-height:1.7;max-width:280px;margin-top:1rem}
 .footer-col h4{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:1rem}
@@ -260,6 +287,8 @@ footer{background:var(--warm);border-top:1px solid rgba(26,26,46,.06);padding:cl
   .bundle-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}
   .footer-grid{grid-template-columns:1fr 1fr}
   .love-grid{grid-template-columns:repeat(2,1fr)}
+  .faq-layout{grid-template-columns:1fr;gap:2rem}
+  .garden-grow{height:200px}
 }
 @media(max-width:600px){
   .hero h1{font-size:2.6rem}
@@ -586,6 +615,60 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
   <div class="r d4"><a href="#" class="btn btn-f">Subscribe to adventure</a></div>
 </section>
 
+<!-- ═══ FAQ — SEO + GEO optimized ═══ -->
+<section class="faq" id="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-layout">
+    <div class="faq-intro r">
+      <div class="label">Common Questions</div>
+      <h2>Your questions, answered</h2>
+      <p>From parents, grandparents, and educators exploring Learn&nbsp;with&nbsp;Mochi.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item r" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" itemprop="name">What is Learn with Mochi, and what ages is it designed&nbsp;for?<span class="faq-icon"></span></button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div class="faq-a-inner" itemprop="text">Learn with Mochi is a screen-free coding robotics kit designed for children ages 3 to 9. It combines a cuddly Mochi Bear plush, a LEGO-compatible rover, natural wood coding blocks, and story-driven adventure packs to teach computational thinking through hands-on play. Children learn real programming concepts like sequences, loops, functions, and debugging — all without a screen, app, or download. It's Montessori-approved and ready to play straight out of the box.</div>
+        </div>
+      </div>
+      <div class="faq-item r d1" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" itemprop="name">How does Mochi teach coding without a&nbsp;screen?<span class="faq-icon"></span></button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div class="faq-a-inner" itemprop="text">Mochi uses physical wooden coding blocks that children place on a screenless programming board. Each block represents a command — move forward, turn left, loop, or call a function. The board reads the sequence and sends instructions to the rover, which executes the code in real time. Audio feedback from original songs and storytelling narration guides the experience. It's tangible, multi-sensory, and grounded in the Montessori principle that children learn best through touch and self-directed discovery.</div>
+        </div>
+      </div>
+      <div class="faq-item r d2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" itemprop="name">What makes Mochi different from other coding toys like Botley or&nbsp;Cubetto?<span class="faq-icon"></span></button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div class="faq-a-inner" itemprop="text">Learn with Mochi is the only screen-free coding kit that combines a loveable character, story-driven learning, LEGO compatibility, and Montessori-approved natural wood materials in a single system. Unlike Botley (which is button-programmed) or Cubetto (which has no narrative layer), Mochi wraps coding concepts in rich adventures — 16 themed story packs covering everything from planets and biology to neuroscience and dinosaurs. Each adventure builds on prior knowledge, creating a growing curriculum rather than a standalone toy. The rover is also LEGO-compatible, meaning children can customize and extend their builds infinitely.</div>
+        </div>
+      </div>
+      <div class="faq-item r d3" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" itemprop="name">Is Mochi appropriate for classrooms and&nbsp;educators?<span class="faq-icon"></span></button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div class="faq-a-inner" itemprop="text">Absolutely. Learn with Mochi is used in classrooms and homeschool settings across 62 countries. The kit includes STEM certifications and supports educator professional development. Because it's screen-free and self-contained, there's no setup, IT support, or device management required — children can begin coding within minutes. The 16 adventure themes map to real curriculum areas including math, science, literacy, and computational thinking, making it easy for teachers to integrate into existing lesson plans.</div>
+        </div>
+      </div>
+      <div class="faq-item r d4" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" itemprop="name">What comes in the Explorer's Kit, and how much does it&nbsp;cost?<span class="faq-icon"></span></button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div class="faq-a-inner" itemprop="text">The Mochi Explorer's Kit is $149 with free shipping in the United States. It includes the Mochi Bear plush, a LEGO-compatible rover, the screenless programming board, 12 natural wood coding blocks in a wooden storage case, a 30+ page full-color storybook, a machine-washable 1-meter adventure map, craft pieces, LEGO connectors, and an SD card with original songs and audiobook narration. Bundles with additional adventure packs start at $250, and the Complete Bundle with all 16 themes is $500. A monthly subscription delivering a new adventure each month starts at $29.75.</div>
+        </div>
+      </div>
+      <div class="faq-item r d5" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" itemprop="name">Who founded Learn with Mochi, and&nbsp;why?<span class="faq-icon"></span></button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div class="faq-a-inner" itemprop="text">Learn with Mochi was co-founded in 2018 by Mark Pavlyukovskyy and Daria Zhao. Mark, a Ukrainian immigrant and Forbes 30 Under 30 honoree, previously built the Piper Computer Kit (100,000+ units shipped to 70 countries). Daria, a Chinese-Canadian immigrant and former Wall Street analyst, left finance to teach STEM classes in San Francisco. They saw a generation of children growing up with polished devices that masked how technology actually works — and set out to build a hands-on, screen-free way for the youngest learners to become creators of technology, not just consumers. Learn with Mochi is a public-benefit corporation dedicated to the long-term educational wellbeing of children worldwide.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GARDEN GROW ═══ -->
+<div class="garden-grow" id="gardenGrow">
+  <img src="Sample Images/garden.svg" alt="" id="gardenImg">
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-grid">
@@ -611,6 +694,10 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 !function(){const b=document.getElementById('mobTog'),l=document.getElementById('navLinks');b.addEventListener('click',()=>l.classList.toggle('open'));l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')))}();
 /* Counters */
 !function(){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting&&!x.target.dataset.done){x.target.dataset.done='1';const t=+x.target.dataset.t,dur=1800,start=performance.now();!function step(now){const p=Math.min((now-start)/dur,1),ease=1-Math.pow(1-p,3);x.target.textContent=Math.floor(ease*t).toLocaleString();if(p<1)requestAnimationFrame(step)}(start)}})},{threshold:.5});document.querySelectorAll('.ctr').forEach(c=>o.observe(c))}();
+/* FAQ accordion */
+!function(){document.querySelectorAll('.faq-item').forEach(item=>{item.querySelector('.faq-q').addEventListener('click',()=>{const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open')})})}();
+/* Garden grow on scroll */
+!function(){const garden=document.getElementById('gardenGrow');const img=document.getElementById('gardenImg');if(!garden||!img)return;function update(){const rect=garden.getBoundingClientRect();const vh=window.innerHeight;if(rect.top<vh&&rect.bottom>0){const progress=Math.min(Math.max((vh-rect.top)/(vh+rect.height),0),1);const scale=0.6+progress*0.4;const opacity=0.3+progress*0.7;const translateY=(1-progress)*60;img.style.transform=`translateX(-50%) scale(${scale}) translateY(${translateY}px)`;img.style.opacity=opacity}requestAnimationFrame(update)}requestAnimationFrame(update)}();
 </script>
 </body>
 </html>
