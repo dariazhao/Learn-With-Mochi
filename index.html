@@ -195,9 +195,9 @@ h2.c{text-align:center;max-width:780px;margin-left:auto;margin-right:auto}
    8. ADVENTURES — real product photos
    ═══════════════════════════════════════════ */
 /* Adventures reveal (collapsed inside kit) */
-.adv-reveal{max-width:1100px;margin:3rem auto 0;position:relative;z-index:1}
-.adv-reveal-toggle{display:flex;align-items:center;justify-content:center;gap:.75rem;width:100%;padding:1.25rem;background:var(--warm);border:1px solid rgba(26,26,46,.06);border-radius:16px;cursor:pointer;font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--green);transition:all .3s}
-.adv-reveal-toggle:hover{background:var(--green-pale);border-color:var(--green)}
+.adv-reveal{max-width:1100px;margin:3rem auto 0;position:relative;z-index:1;text-align:center}
+.adv-reveal-toggle{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:14px 36px;background:transparent;border:1.5px solid rgba(45,161,125,.35);border-radius:100px;cursor:pointer;font-family:var(--sans);font-size:.9rem;font-weight:500;color:var(--green);transition:all .35s;letter-spacing:.01em}
+.adv-reveal-toggle:hover{border-color:var(--green);background:var(--green-pale);transform:translateY(-1px)}
 .adv-reveal-toggle .arrow{display:inline-block;transition:transform .4s var(--eo);font-size:1.1rem}
 .adv-reveal.open .adv-reveal-toggle .arrow{transform:rotate(180deg)}
 .adv-reveal-content{max-height:0;overflow:hidden;transition:max-height .6s var(--eo)}
@@ -274,11 +274,13 @@ h2.c{text-align:center;max-width:780px;margin-left:auto;margin-right:auto}
 /* ═══════════════════════════════════════════
    FAQ
    ═══════════════════════════════════════════ */
-.faq{background:var(--ivory);position:relative;padding-bottom:0}
+.faq{background:var(--ivory);position:relative;padding-bottom:1rem}
 .faq-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:start}
 .faq-intro .label{margin-bottom:1rem}
 .faq-intro h2{margin-bottom:1rem;font-size:clamp(2rem,3.5vw,2.8rem)}
 .faq-intro p{font-size:.95rem;font-weight:300;color:var(--mid);line-height:1.7}
+.faq-intro-illo{margin-top:2rem;max-width:200px;opacity:.85}
+.faq-intro-illo img{width:100%;filter:drop-shadow(0 8px 20px rgba(45,161,125,.1))}
 .faq-list{display:flex;flex-direction:column}
 .faq-item{border-bottom:1px solid rgba(26,26,46,.08)}
 .faq-item:first-child{border-top:1px solid rgba(26,26,46,.08)}
@@ -295,7 +297,7 @@ h2.c{text-align:center;max-width:780px;margin-left:auto;margin-right:auto}
 /* ═══════════════════════════════════════════
    GARDEN GROW (above footer)
    ═══════════════════════════════════════════ */
-.garden-grow{position:relative;height:380px;overflow:hidden;background:linear-gradient(to bottom,var(--ivory) 0%,var(--warm) 100%);pointer-events:none}
+.garden-grow{position:relative;height:320px;overflow:hidden;background:linear-gradient(to bottom,var(--ivory) 0%,var(--warm) 100%);pointer-events:none;margin-top:-3rem}
 .garden-grow img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:max(120%,1400px);height:auto;transform-origin:bottom center;will-change:transform,opacity}
 
 /* ═══════════════════════════════════════════
@@ -627,7 +629,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
   <!-- Adventures collapsible -->
   <div class="adv-reveal r" id="advReveal">
     <button class="adv-reveal-toggle" onclick="document.getElementById('advReveal').classList.toggle('open')">
-      Explore more adventure packs <span class="arrow">&#9662;</span>
+      Choose your custom adventure packs <span class="arrow">&#8595;</span>
     </button>
     <div class="adv-reveal-content">
       <div class="adv-reveal-inner">
@@ -686,6 +688,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
       <div class="label">Common Questions</div>
       <h2>Your questions, answered</h2>
       <p>From parents, grandparents, and educators exploring Learn&nbsp;with&nbsp;Mochi.</p>
+      <div class="faq-intro-illo">
+        <img src="Sample Images/labs_crop.png" alt="Discovery and curiosity">
+      </div>
     </div>
     <div class="faq-list">
       <div class="faq-item r" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
