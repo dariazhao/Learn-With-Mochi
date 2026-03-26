@@ -120,7 +120,7 @@ h2.c{text-align:center;max-width:780px;margin-left:auto;margin-right:auto}
    5. MEET MOCHI — transition zone
    Character-forward, not commerce
    ═══════════════════════════════════════════ */
-.meet{background:var(--parchment);position:relative;overflow:hidden}
+.meet{background:var(--parchment);position:relative;overflow:hidden;padding-bottom:clamp(3rem,6vw,5rem)}
 .meet h2{text-align:center;margin:0 auto 1.25rem}
 .meet .bt{margin-bottom:3rem;max-width:780px}
 /* Bumble bee whimsical line */
@@ -128,7 +128,18 @@ h2.c{text-align:center;max-width:780px;margin-left:auto;margin-right:auto}
 .meet-whimsy .bt{position:relative;z-index:1}
 .bee-line{position:absolute;top:50%;left:-40px;right:-40px;height:100%;pointer-events:none;overflow:visible}
 .bee-line svg{position:absolute;top:-30px;left:0;width:100%;height:calc(100% + 60px)}
-.meet-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:1100px;margin:0 auto 3rem}
+.bee-line svg path{stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 2s ease-out}
+.bee-line svg.drawn path{stroke-dashoffset:0}
+.bee-line svg circle{opacity:0;transition:opacity .5s 1.8s}
+.bee-line svg.drawn circle{opacity:.5}
+/* Bee divider reusable */
+.bee-divider{text-align:center;padding:1.5rem 0;overflow:hidden}
+.bee-divider svg{width:min(500px,80%);height:24px}
+.bee-divider svg path{stroke-dasharray:600;stroke-dashoffset:600;transition:stroke-dashoffset 1.5s ease-out}
+.bee-divider.v svg path{stroke-dashoffset:0}
+.bee-divider svg circle{opacity:0;transition:opacity .4s 1.3s}
+.bee-divider.v svg circle{opacity:.6}
+.meet-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:1100px;margin:0 auto 2rem}
 .mcard{border-radius:20px;overflow:hidden;background:var(--warm);border:1px solid rgba(26,26,46,.04);transition:transform .5s var(--eo),box-shadow .5s var(--eo)}
 .mcard:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.06)}
 .mcard-img{width:100%;height:200px;object-fit:cover;background:var(--green-pale)}
@@ -230,16 +241,16 @@ h2.c{text-align:center;max-width:780px;margin-left:auto;margin-right:auto}
 /* ═══════════════════════════════════════════
    10. CUSTOMER LOVE — full product social proof
    ═══════════════════════════════════════════ */
-.love{background:var(--parchment);padding-top:clamp(4rem,8vw,6rem);padding-bottom:clamp(4rem,8vw,6rem)}
-.love h2{text-align:center;margin:0 auto 2.5rem}
-.love-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;max-width:900px;margin:0 auto}
-.love-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;transition:transform .4s var(--eo)}
+.love{background:var(--parchment);padding-top:clamp(3rem,6vw,4.5rem);padding-bottom:clamp(3rem,6vw,4.5rem)}
+.love h2{text-align:center;margin:0 auto 2rem}
+.love-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;max-width:700px;margin:0 auto}
+.love-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;transition:transform .4s var(--eo)}
 .love-grid img:hover{transform:scale(1.03)}
 
 /* ═══════════════════════════════════════════
    11. SUBSCRIPTION — back to aspirational
    ═══════════════════════════════════════════ */
-.sub{background:#1a3d32;color:#fff;text-align:center;position:relative;overflow:hidden;padding-bottom:clamp(10rem,20vw,16rem)}
+.sub{background:#1a3d32;color:#fff;text-align:center;position:relative;overflow:hidden}
 .sub::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(45,161,125,.3) 0%,transparent 55%),radial-gradient(ellipse at 20% 0%,rgba(231,162,0,.08) 0%,transparent 40%);pointer-events:none}
 .sub h2{color:#fff;margin:0 auto 1.5rem}
 .sub .bt{color:rgba(255,255,255,.55);margin-bottom:2rem}
@@ -247,8 +258,6 @@ h2.c{text-align:center;max-width:780px;margin-left:auto;margin-right:auto}
 .sub-illo img{width:100%;filter:drop-shadow(0 20px 50px rgba(0,0,0,.15));animation:float 5s ease-in-out infinite}
 .sub-price{font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--green-lt);margin-bottom:2.5rem;position:relative;z-index:1}
 .sub .btn{position:relative;z-index:1}
-.sub-garden{position:absolute;bottom:0;left:0;right:0;height:200px;pointer-events:none;overflow:hidden}
-.sub-garden img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:max(110%,1300px);opacity:.2}
 
 /* ═══════════════════════════════════════════
    FAQ
@@ -404,7 +413,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
       <div class="bcard-inner">
         <div class="bcard-front">
           <img src="Sample Images/brightidea.svg" alt="" class="icon">
-          <h3>The Montessori method, applied to&nbsp;code</h3>
+          <h3>The Montessori method, applied to AI&nbsp;literacy</h3>
         </div>
         <div class="bcard-back">
           <p>Maria Montessori proved over 100 years ago that children learn through touch, sequence, and self-directed discovery. We built on that&nbsp;foundation.</p>
@@ -471,7 +480,10 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
     </div>
   </div>
   <div class="cta-row r d5">
-    <a href="#adventures" class="btn btn-o">Explore Mochi's World &rarr;</a>
+    <a href="#kit" class="btn btn-o">Explore Mochi's World &rarr;</a>
+  </div>
+  <div class="bee-divider r">
+    <svg viewBox="0 0 500 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,12 C60,2 100,22 160,12 C220,2 260,22 320,12 C380,2 420,22 480,12" stroke="#E7A200" stroke-width="1.5" stroke-dasharray="8 6" fill="none"/><circle cx="488" cy="12" r="5" fill="#E7A200"/></svg>
   </div>
 </section>
 
@@ -603,7 +615,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
   <!-- Adventures collapsible -->
   <div class="adv-reveal r" id="advReveal">
     <button class="adv-reveal-toggle" onclick="document.getElementById('advReveal').classList.toggle('open')">
-      Explore 16 adventure packs <span class="arrow">&#9662;</span>
+      Explore more adventure packs <span class="arrow">&#9662;</span>
     </button>
     <div class="adv-reveal-content">
       <div class="adv-reveal-inner">
@@ -618,9 +630,44 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
       </div>
     </div>
   </div>
+  <div class="bee-divider r" style="margin-top:2rem">
+    <svg viewBox="0 0 500 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,12 C60,2 100,22 160,12 C220,2 260,22 320,12 C380,2 420,22 480,12" stroke="#E7A200" stroke-width="1.5" stroke-dasharray="8 6" fill="none"/><circle cx="488" cy="12" r="5" fill="#E7A200"/></svg>
+  </div>
 </section>
 
-<!-- ═══ FAQ ═══ -->
+<!-- ═══ LOVE ═══ -->
+<section class="love">
+  <h2 class="c r">Loved by families everywhere.</h2>
+  <div class="love-grid r">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img2.png" alt="Family using Mochi" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img4.png" alt="Child with Mochi" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img6.png" alt="Mochi in a classroom" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img8.png" alt="Kids learning" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img10.png?v=1605293549" alt="Mochi playtime" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img11.png?v=1607078922" alt="Happy family" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img12.png?v=1607078922" alt="Mochi rover" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img13.png?v=1607078922" alt="Kids coding" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img14.png?v=1607078922" alt="Mochi adventures" loading="lazy">
+  </div>
+</section>
+
+<!-- ═══ SUBSCRIPTION ═══ -->
+<section class="sub">
+  <div class="r">
+    <div class="label c" style="color:rgba(255,255,255,.35)">Monthly Adventures</div>
+    <h2 class="c">A new adventure, every&nbsp;month.</h2>
+  </div>
+  <div class="r d1">
+    <p class="bt c">Each month, a new story arrives at your door. A new world to explore. A new coding concept to master. Mochi never stops being curious. Neither will your&nbsp;child.</p>
+  </div>
+  <div class="sub-illo r d2">
+    <img src="Sample Images/gotmail.png" alt="A new adventure in your mailbox">
+  </div>
+  <div class="r d3"><p class="sub-price">From $29.75 / month</p></div>
+  <div class="r d4"><a href="#" class="btn btn-f">Subscribe to adventure</a></div>
+</section>
+
+<!-- ═══ FAQ — last section before footer ═══ -->
 <section class="faq" id="faq" itemscope itemtype="https://schema.org/FAQPage">
   <div class="faq-layout">
     <div class="faq-intro r">
@@ -657,40 +704,10 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
   </div>
 </section>
 
-<!-- ═══ LOVE ═══ -->
-<section class="love">
-  <h2 class="c r">Loved by families everywhere.</h2>
-  <div class="love-grid r">
-    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img2.png" alt="Family using Mochi" loading="lazy">
-    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img4.png" alt="Child with Mochi" loading="lazy">
-    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img6.png" alt="Mochi in a classroom" loading="lazy">
-    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img8.png" alt="Kids learning" loading="lazy">
-    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img10.png?v=1605293549" alt="Mochi playtime" loading="lazy">
-    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img11.png?v=1607078922" alt="Happy family" loading="lazy">
-    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img12.png?v=1607078922" alt="Mochi rover" loading="lazy">
-    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img13.png?v=1607078922" alt="Kids coding" loading="lazy">
-    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img14.png?v=1607078922" alt="Mochi adventures" loading="lazy">
-  </div>
-</section>
-
-<!-- ═══ SUBSCRIPTION — last fold before footer, garden overlay ═══ -->
-<section class="sub">
-  <div class="r">
-    <div class="label c" style="color:rgba(255,255,255,.35)">Monthly Adventures</div>
-    <h2 class="c">A new adventure, every&nbsp;month.</h2>
-  </div>
-  <div class="r d1">
-    <p class="bt c">Each month, a new story arrives at your door. A new world to explore. A new coding concept to master. Mochi never stops being curious. Neither will your&nbsp;child.</p>
-  </div>
-  <div class="sub-illo r d2">
-    <img src="Sample Images/gotmail.png" alt="A new adventure in your mailbox">
-  </div>
-  <div class="r d3"><p class="sub-price">From $29.75 / month</p></div>
-  <div class="r d4"><a href="#" class="btn btn-f">Subscribe to adventure</a></div>
-  <div class="sub-garden">
-    <img src="Sample Images/garden.svg" alt="">
-  </div>
-</section>
+<!-- ═══ GARDEN GROW ═══ -->
+<div class="garden-grow" id="gardenGrow">
+  <img src="Sample Images/garden.svg" alt="" id="gardenImg">
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -719,7 +736,10 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 !function(){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting&&!x.target.dataset.done){x.target.dataset.done='1';const t=+x.target.dataset.t,dur=1800,start=performance.now();!function step(now){const p=Math.min((now-start)/dur,1),ease=1-Math.pow(1-p,3);x.target.textContent=Math.floor(ease*t).toLocaleString();if(p<1)requestAnimationFrame(step)}(start)}})},{threshold:.5});document.querySelectorAll('.ctr').forEach(c=>o.observe(c))}();
 /* FAQ accordion */
 !function(){document.querySelectorAll('.faq-item').forEach(item=>{item.querySelector('.faq-q').addEventListener('click',()=>{const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open')})})}();
-/* (garden now overlaid in subscribe section) */
+/* Garden grow on scroll */
+!function(){const garden=document.getElementById('gardenGrow');const img=document.getElementById('gardenImg');if(!garden||!img)return;function update(){const rect=garden.getBoundingClientRect();const vh=window.innerHeight;if(rect.top<vh&&rect.bottom>0){const progress=Math.min(Math.max((vh-rect.top)/(vh+rect.height),0),1);const scale=0.85+progress*0.15;const opacity=0.5+progress*0.5;const translateY=(1-progress)*40;img.style.transform=`translateX(-50%) scale(${scale}) translateY(${translateY}px)`;img.style.opacity=opacity}requestAnimationFrame(update)}requestAnimationFrame(update)}();
+/* Bee line draw on scroll */
+!function(){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('drawn')})},{threshold:.3});document.querySelectorAll('.bee-line svg').forEach(s=>o.observe(s));const o2=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.3});document.querySelectorAll('.bee-divider').forEach(s=>o2.observe(s))}();
 </script>
 </body>
 </html>
