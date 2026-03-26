@@ -85,27 +85,25 @@ h2.c{text-align:center;max-width:780px;margin-left:auto;margin-right:auto}
    ═══════════════════════════════════════════ */
 .worldview{background:linear-gradient(to bottom,var(--warm) 0%,var(--ivory) 100%);text-align:center;position:relative;overflow:hidden;padding-bottom:clamp(5rem,10vw,8rem)}
 .worldview h2{margin-bottom:2rem}
-.wv-bridge{display:flex;align-items:center;justify-content:center;gap:2.5rem;max-width:680px;margin:4rem auto 4.5rem;position:relative}
-.wv-bridge::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(45,161,125,.15),transparent);pointer-events:none}
-.wv-bridge-illo{width:100px;flex-shrink:0;opacity:.8;position:relative;z-index:1}
-.wv-bridge-illo img{width:100%}
-.wv-bridge-text{position:relative;z-index:1;background:var(--ivory);padding:0 1.5rem}
-.wv-bridge-text p{font-family:var(--serif);font-size:clamp(1.15rem,1.8vw,1.4rem);font-style:italic;font-weight:400;color:var(--mid);line-height:1.6}
+.wv-bridge{display:flex;flex-direction:column;align-items:center;max-width:640px;margin:4.5rem auto 5rem;position:relative}
+.wv-bridge-illo{width:clamp(260px,40vw,380px);margin-bottom:2.5rem;animation:float 6s ease-in-out infinite}
+.wv-bridge-illo img{width:100%;filter:drop-shadow(0 16px 40px rgba(45,161,125,.1))}
+.wv-bridge-text p{font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.7rem);font-style:italic;font-weight:400;color:var(--mid);line-height:1.55;text-align:center}
 .wv-belief-heading{margin:0 auto 3.5rem;max-width:700px}
 .wv-belief-heading .label{margin-bottom:1rem}
 .wv-belief-heading h2{font-size:clamp(1.8rem,3.5vw,2.6rem)}
 .belief-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1100px;margin:0 auto}
-.bcard{padding:2.75rem 2.25rem;background:var(--warm);border:1px solid rgba(26,26,46,.05);border-radius:20px;transition:transform .5s var(--eo),box-shadow .5s var(--eo)}
+.bcard{padding:2.75rem 2.25rem;background:var(--warm);border:1px solid rgba(26,26,46,.05);border-radius:20px;transition:transform .5s var(--eo),box-shadow .5s var(--eo);text-align:center}
 .bcard:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(45,161,125,.08)}
-.bcard .icon{width:52px;height:52px;margin-bottom:1.75rem}
+.bcard .icon{width:52px;height:52px;margin:0 auto 1.75rem}
 .bcard h3{font-family:var(--serif);font-size:1.55rem;font-weight:500;color:var(--ink);margin-bottom:1rem;line-height:1.25}
 .bcard p{font-size:.95rem;font-weight:300;color:var(--mid);line-height:1.75}
 
 /* ═══════════════════════════════════════════
    4. NUMBERS — no images
    ═══════════════════════════════════════════ */
-.numbers{background:var(--ink);color:#fff;position:relative;overflow:hidden}
-.numbers::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 15% 50%,rgba(45,161,125,.12) 0%,transparent 55%),radial-gradient(ellipse at 85% 30%,rgba(231,162,0,.08) 0%,transparent 50%);pointer-events:none}
+.numbers{background:#1a3d32;color:#fff;position:relative;overflow:hidden}
+.numbers::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 15% 50%,rgba(45,161,125,.18) 0%,transparent 55%),radial-gradient(ellipse at 85% 30%,rgba(231,162,0,.1) 0%,transparent 50%);pointer-events:none}
 .num-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;max-width:1000px;margin:0 auto;position:relative;z-index:1;text-align:center}
 .num-val{font-family:var(--serif);font-size:clamp(3rem,6vw,4.5rem);font-weight:300;line-height:1;margin-bottom:.6rem}
 .num-val .hl{color:var(--green-lt)}
@@ -221,12 +219,12 @@ h2.c{text-align:center;max-width:780px;margin-left:auto;margin-right:auto}
 /* ═══════════════════════════════════════════
    11. SUBSCRIPTION — back to aspirational
    ═══════════════════════════════════════════ */
-.sub{background:var(--ink);color:#fff;text-align:center;position:relative;overflow:hidden}
-.sub::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(45,161,125,.25) 0%,transparent 55%),radial-gradient(ellipse at 20% 0%,rgba(231,162,0,.08) 0%,transparent 40%);pointer-events:none}
+.sub{background:#1a3d32;color:#fff;text-align:center;position:relative;overflow:hidden}
+.sub::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(45,161,125,.3) 0%,transparent 55%),radial-gradient(ellipse at 20% 0%,rgba(231,162,0,.08) 0%,transparent 40%);pointer-events:none}
 .sub h2{color:#fff;margin:0 auto 1.5rem}
-.sub .bt{color:rgba(255,255,255,.5);margin-bottom:1.5rem}
-.sub-illo{max-width:180px;margin:0 auto 2rem;opacity:.85;position:relative;z-index:1}
-.sub-illo img{width:100%}
+.sub .bt{color:rgba(255,255,255,.55);margin-bottom:2rem}
+.sub-illo{max-width:clamp(240px,30vw,340px);margin:0 auto 2.5rem;position:relative;z-index:1}
+.sub-illo img{width:100%;filter:drop-shadow(0 20px 50px rgba(0,0,0,.15));animation:float 5s ease-in-out infinite}
 .sub-price{font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--green-lt);margin-bottom:2.5rem;position:relative;z-index:1}
 .sub .btn{position:relative;z-index:1}
 
@@ -345,10 +343,10 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
   <!-- Bridge: problem → belief -->
   <div class="wv-bridge r d3">
     <div class="wv-bridge-illo">
-      <img src="Sample Images/windows.png" alt="">
+      <img src="Sample Images/windows.png" alt="An open window to a world of possibility">
     </div>
     <div class="wv-bridge-text">
-      <p>So we asked a different&nbsp;question: what if we gave children the tools to build the future, not just&nbsp;consume&nbsp;it?</p>
+      <p>What if we opened a&nbsp;window?</p>
     </div>
   </div>
 
