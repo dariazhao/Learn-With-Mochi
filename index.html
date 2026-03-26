@@ -81,18 +81,19 @@ h2.c{text-align:center;max-width:780px;margin-left:auto;margin-right:auto}
 .scroll-line{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);width:1px;height:56px;background:linear-gradient(to bottom,var(--green),transparent);opacity:0;animation:fadeUp .6s 2.8s var(--eo) forwards}
 
 /* ═══════════════════════════════════════════
-   2. STAKES — aspirational illustration
+   2+3. WORLDVIEW — Stakes + Belief as one flow
    ═══════════════════════════════════════════ */
-.stakes{background:var(--warm);text-align:center;position:relative;overflow:hidden}
-.stakes h2{margin-bottom:2rem}
-.stakes-illo{max-width:340px;margin:3rem auto 0;opacity:.85}
-.stakes-border{position:absolute;bottom:0;left:0;right:0;height:80px;background:url('Sample Images/floralbottom.png') center bottom/cover no-repeat;opacity:.5;pointer-events:none}
-
-/* ═══════════════════════════════════════════
-   3. BELIEF — abstract icons only
-   ═══════════════════════════════════════════ */
-.belief{background:var(--ivory)}
-.belief h2{text-align:center;margin:0 auto 4rem;max-width:700px}
+.worldview{background:linear-gradient(to bottom,var(--warm) 0%,var(--ivory) 100%);text-align:center;position:relative;overflow:hidden;padding-bottom:clamp(5rem,10vw,8rem)}
+.worldview h2{margin-bottom:2rem}
+.wv-bridge{display:flex;align-items:center;justify-content:center;gap:2.5rem;max-width:680px;margin:4rem auto 4.5rem;position:relative}
+.wv-bridge::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(45,161,125,.15),transparent);pointer-events:none}
+.wv-bridge-illo{width:100px;flex-shrink:0;opacity:.8;position:relative;z-index:1}
+.wv-bridge-illo img{width:100%}
+.wv-bridge-text{position:relative;z-index:1;background:var(--ivory);padding:0 1.5rem}
+.wv-bridge-text p{font-family:var(--serif);font-size:clamp(1.15rem,1.8vw,1.4rem);font-style:italic;font-weight:400;color:var(--mid);line-height:1.6}
+.wv-belief-heading{margin:0 auto 3.5rem;max-width:700px}
+.wv-belief-heading .label{margin-bottom:1rem}
+.wv-belief-heading h2{font-size:clamp(1.8rem,3.5vw,2.6rem)}
 .belief-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1100px;margin:0 auto}
 .bcard{padding:2.75rem 2.25rem;background:var(--warm);border:1px solid rgba(26,26,46,.05);border-radius:20px;transition:transform .5s var(--eo),box-shadow .5s var(--eo)}
 .bcard:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(45,161,125,.08)}
@@ -331,26 +332,29 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
   <div class="scroll-line"></div>
 </section>
 
-<!-- ═══ 2. STAKES — 0% product, aspirational illustration ═══ -->
-<section class="stakes">
+<!-- ═══ 2+3. WORLDVIEW — one continuous flow ═══ -->
+<section class="worldview" id="belief">
   <div class="r">
     <div class="label c">The world children inherit</div>
     <h2 class="c">The most powerful technologies in history are being handed to children as black&nbsp;boxes.</h2>
   </div>
   <div class="r d2">
-    <p class="bt c" style="margin-top:1.75rem">Today's devices are sleek, polished, and sealed shut. They <em>"just work."</em> And that's the problem. When technology feels like magic, children become consumers of it&nbsp;— not creators. The generation growing up right now will inherit a world shaped by code, AI, and robotics. The question isn't whether they'll use technology. It's whether they'll understand it, question it, and shape&nbsp;it&nbsp;— or just swipe.</p>
+    <p class="bt c" style="margin-top:1.75rem">Today's devices are sleek, polished, and sealed shut. They <em>"just work."</em> And that's the problem. When technology feels like magic, children become consumers of it&nbsp;— not creators. The question isn't whether they'll use technology. It's whether they'll understand it, question it, and shape&nbsp;it&nbsp;— or just swipe.</p>
   </div>
-  <div class="stakes-illo r d3">
-    <img src="Sample Images/windows.png" alt="An open window to a world of possibility">
-  </div>
-  <div class="stakes-border"></div>
-</section>
 
-<!-- ═══ 3. BELIEF — 0% product, abstract icons ═══ -->
-<section class="belief" id="belief">
-  <div class="r">
+  <!-- Bridge: problem → belief -->
+  <div class="wv-bridge r d3">
+    <div class="wv-bridge-illo">
+      <img src="Sample Images/windows.png" alt="">
+    </div>
+    <div class="wv-bridge-text">
+      <p>So we asked a different&nbsp;question: what if we gave children the tools to build the future, not just&nbsp;consume&nbsp;it?</p>
+    </div>
+  </div>
+
+  <div class="wv-belief-heading r">
     <div class="label c">What we believe</div>
-    <h2>Technology is too important to be limited to the 0.01%&nbsp;creating&nbsp;it.</h2>
+    <h2 class="c">Technology is too important to be limited to the 0.01%&nbsp;creating&nbsp;it.</h2>
   </div>
   <div class="belief-grid">
     <div class="bcard r d1">
