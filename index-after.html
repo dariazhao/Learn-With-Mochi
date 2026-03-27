@@ -74,13 +74,13 @@ nav.scrolled{border-bottom-color:rgba(26,26,46,0.06);box-shadow:0 1px 40px rgba(
 .r.d1{transition-delay:.1s}.r.d2{transition-delay:.2s}.r.d3{transition-delay:.3s}.r.d4{transition-delay:.4s}.r.d5{transition-delay:.5s}
 
 /* =========================================
-   1. HERO - Globe as backdrop, quotes overlaid
+   1. HERO - H1 above globe, subtitle+quotes on globe
    ========================================= */
 .hero{
   min-height:100vh;
   display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  padding:100px clamp(1.5rem,5vw,5rem) 40px;
+  align-items:center;
+  padding:110px clamp(1.5rem,5vw,5rem) 40px;
   text-align:center;
   position:relative;overflow:hidden;
   background:var(--ivory);
@@ -91,7 +91,7 @@ nav.scrolled{border-bottom-color:rgba(26,26,46,0.06);box-shadow:0 1px 40px rgba(
   font-weight:400;line-height:1.02;
   letter-spacing:-0.04em;
   color:var(--ink);
-  margin-bottom:1.5rem;
+  margin-bottom:0;
   position:relative;z-index:2;
   max-width:1050px;
 }
@@ -101,19 +101,37 @@ nav.scrolled{border-bottom-color:rgba(26,26,46,0.06);box-shadow:0 1px 40px rgba(
 }
 .hero h1 .word-em{color:var(--green)}
 @keyframes wordIn{to{opacity:1;transform:translateY(0)}}
+/* Globe container — relative, holds the globe + overlaid content */
+.hero-globe-zone{
+  position:relative;
+  width:clamp(480px,65vw,820px);
+  height:clamp(480px,65vw,820px);
+  margin-top:-1rem;
+  flex-shrink:0;
+  opacity:0;animation:fadeUpGlobe 1.4s 1.4s var(--eo) forwards;
+}
+@keyframes fadeUpGlobe{from{opacity:0;transform:translateY(30px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+.hero-globe-zone canvas{
+  position:absolute;inset:0;width:100%;height:100%;cursor:grab;
+}
+.hero-globe-zone canvas:active{cursor:grabbing}
+/* Subtitle overlaid on top half of globe */
 .hero-sub{
-  font-size:clamp(1rem,1.5vw,1.2rem);
-  font-weight:300;color:var(--mid);
-  max-width:560px;margin:0 auto;line-height:1.8;
-  position:relative;z-index:2;
-  opacity:0;animation:fadeUpSimple .9s 1.6s var(--eo) forwards;
+  position:absolute;
+  top:clamp(60px,12%,110px);left:50%;
+  transform:translateX(-50%);
+  width:90%;max-width:540px;
+  font-size:clamp(.95rem,1.4vw,1.15rem);
+  font-weight:300;color:var(--text);
+  line-height:1.75;z-index:2;
+  opacity:0;animation:fadeUpSimple .9s 2s var(--eo) forwards;
 }
 .screen-free-badge{
   display:inline-flex;align-items:center;gap:6px;
   font-weight:600;color:var(--green);
-  background:var(--green-pale);
+  background:rgba(237,247,244,.9);
   padding:2px 10px;border-radius:6px;
-  border:1px solid rgba(45,161,125,.15);
+  border:1px solid rgba(45,161,125,.2);
   cursor:default;position:relative;
   transition:all .4s var(--eo);
 }
@@ -128,28 +146,16 @@ nav.scrolled{border-bottom-color:rgba(26,26,46,0.06);box-shadow:0 1px 40px rgba(
   animation:sfPulse 2s ease-in-out infinite;
 }
 @keyframes sfPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
-/* Globe as background */
-.hero-globe-wrap{
-  position:absolute;
-  top:50%;left:50%;
-  transform:translate(-50%,-46%);
-  width:clamp(500px,70vw,900px);
-  height:clamp(500px,70vw,900px);
-  z-index:0;
-  opacity:0;animation:fadeUp 1.5s 1.8s var(--eo) forwards;
-}
-.hero-globe-wrap canvas{width:100%;height:100%;cursor:grab}
-.hero-globe-wrap canvas:active{cursor:grabbing}
-@keyframes fadeUp{from{opacity:0;transform:translate(-50%,-46%) scale(.95)}to{opacity:1;transform:translate(-50%,-46%) scale(1)}}
-/* Testimonial overlaid at bottom of hero */
+/* Testimonial overlaid on bottom half of globe */
 .hero-testimonial{
-  position:relative;z-index:2;
-  margin-top:auto;
-  padding-top:2rem;
-  min-height:90px;max-width:600px;
-  opacity:0;animation:fadeUpSimple .8s 3s var(--eo) forwards;
+  position:absolute;
+  bottom:clamp(30px,8%,80px);left:50%;
+  transform:translateX(-50%);
+  width:90%;max-width:600px;
+  z-index:2;min-height:80px;
+  opacity:0;animation:fadeUpSimple .8s 2.8s var(--eo) forwards;
 }
-@keyframes fadeUpSimple{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUpSimple{from{opacity:0;transform:translateX(-50%) translateY(20px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
 .hero-test-region{text-align:center}
 .hero-test-loc{
   display:inline-block;
@@ -699,18 +705,17 @@ body{padding-bottom:48px}
 
 <!-- ======= 1. HERO ======= -->
 <section class="hero">
-  <!-- Globe sits behind everything -->
-  <div class="hero-globe-wrap">
-    <canvas id="globeCanvas"></canvas>
-  </div>
   <h1 id="heroH"></h1>
-  <p class="hero-sub">A public-benefit corporation building hands-on AI literacy for ages 3 to 9. Montessori-grounded. <span class="screen-free-badge">Screen-free</span> by design.</p>
-  <div class="hero-testimonial" id="heroTest">
-    <div class="hero-test-region">
-      <div class="hero-test-loc" id="testLoc"></div>
-      <div class="hero-test-quote" id="testQuote"><span class="cursor"></span></div>
+  <div class="hero-globe-zone">
+    <canvas id="globeCanvas"></canvas>
+    <p class="hero-sub">A public-benefit corporation building hands-on AI literacy for ages 3 to 9. Montessori-grounded. <span class="screen-free-badge">Screen-free</span> by design.</p>
+    <div class="hero-testimonial" id="heroTest">
+      <div class="hero-test-region">
+        <div class="hero-test-loc" id="testLoc"></div>
+        <div class="hero-test-quote" id="testQuote"><span class="cursor"></span></div>
+      </div>
+      <div class="hero-dots" id="testDots"></div>
     </div>
-    <div class="hero-dots" id="testDots"></div>
   </div>
 </section>
 
