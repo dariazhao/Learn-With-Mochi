@@ -115,15 +115,19 @@ nav.scrolled{border-bottom-color:rgba(26,26,46,0.06);box-shadow:0 1px 40px rgba(
   position:absolute;inset:0;width:100%;height:100%;cursor:grab;
 }
 .hero-globe-zone canvas:active{cursor:grabbing}
-/* Subtitle overlaid on top half of globe */
+/* Subtitle overlaid on top of globe with frosted background */
 .hero-sub{
   position:absolute;
-  top:clamp(60px,12%,110px);left:50%;
+  top:clamp(50px,10%,100px);left:50%;
   transform:translateX(-50%);
-  width:90%;max-width:540px;
+  width:90%;max-width:560px;
   font-size:clamp(.95rem,1.4vw,1.15rem);
   font-weight:300;color:var(--text);
   line-height:1.75;z-index:2;
+  background:rgba(255,248,240,.75);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  padding:1rem 1.5rem;border-radius:14px;
+  border:1px solid rgba(26,26,46,.04);
   opacity:0;animation:fadeUpSimple .9s 2s var(--eo) forwards;
 }
 .screen-free-badge{
@@ -146,15 +150,16 @@ nav.scrolled{border-bottom-color:rgba(26,26,46,0.06);box-shadow:0 1px 40px rgba(
   animation:sfPulse 2s ease-in-out infinite;
 }
 @keyframes sfPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
-/* Testimonial overlaid on bottom half of globe */
+/* Testimonial overlaid at center of globe */
 .hero-testimonial{
   position:absolute;
-  bottom:clamp(30px,8%,80px);left:50%;
-  transform:translateX(-50%);
-  width:90%;max-width:600px;
+  top:50%;left:50%;
+  transform:translate(-50%,-40%);
+  width:90%;max-width:580px;
   z-index:2;min-height:80px;
-  opacity:0;animation:fadeUpSimple .8s 2.8s var(--eo) forwards;
+  opacity:0;animation:fadeUpTest .8s 2.8s var(--eo) forwards;
 }
+@keyframes fadeUpTest{from{opacity:0;transform:translate(-50%,-35%)}to{opacity:1;transform:translate(-50%,-40%)}}
 @keyframes fadeUpSimple{from{opacity:0;transform:translateX(-50%) translateY(20px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
 .hero-test-region{text-align:center}
 .hero-test-loc{
