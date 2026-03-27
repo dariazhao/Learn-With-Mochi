@@ -494,62 +494,58 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
       </div>
     </div>
   </div>
-  <div class="cta-row r d5">
-    <a href="#kit" class="btn btn-o">Explore Mochi's World &rarr;</a>
+  <!-- Story reveal toggle (replaces "Explore Mochi's World") -->
+  <div class="adv-reveal r d5" id="storyReveal" style="max-width:700px;margin:2rem auto 0">
+    <button class="adv-reveal-toggle" onclick="document.getElementById('storyReveal').classList.toggle('open')">
+      Read our founding story <span class="arrow">&#8595;</span>
+    </button>
+    <div class="adv-reveal-content">
+      <div class="adv-reveal-inner" style="padding-top:3rem">
+        <div class="label c" style="margin-bottom:.75rem">Our story</div>
+        <h2 class="c" style="font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:400;color:var(--ink);margin-bottom:.5rem">How it started</h2>
+        <p class="story-sub" style="text-align:center;font-family:var(--serif);font-size:1.1rem;font-style:italic;font-weight:300;color:var(--mid);margin-bottom:3rem">Recreating childhood magic: one bear, one family, one child at a time.</p>
+        <div class="timeline" style="max-width:700px;margin:0 auto">
+          <div class="tl-item r">
+            <div class="tl-img"><img src="https://substack-post-media.s3.amazonaws.com/public/images/28377b20-a1d6-4905-8cdb-c0fbf08203f0_960x720.jpeg" alt="Young Mark building with LEGOs in Ukraine" loading="lazy"></div>
+            <div class="tl-text">
+              <span class="tl-year">Ukraine, 1990s</span>
+              <h3>A grandmother's apartment in post-Soviet&nbsp;Ukraine.</h3>
+              <p>Mark grew up taking apart rusty electronics with his babusya. She taught him that nothing was ever broken, just waiting for someone with imagination to turn it into what could&nbsp;be.</p>
+            </div>
+          </div>
+          <div class="tl-item r">
+            <div class="tl-img"><img src="Sample Images/little-daria.png" alt="Little Daria with her bears" loading="lazy"></div>
+            <div class="tl-text">
+              <span class="tl-year">Canada, 1990s</span>
+              <h3>A new country, a new language, a borrowed&nbsp;home.</h3>
+              <p>Daria arrived in Canada from China barely able to speak English. A family of refugees took her in and taught her that generosity can exist even when we have so little. <em>Especially when we have so&nbsp;little.</em></p>
+            </div>
+          </div>
+          <div class="tl-item r">
+            <div class="tl-img"><img src="https://substack-post-media.s3.amazonaws.com/public/images/a328c053-d064-42c3-84e0-55d98831a9eb_2703x3604.jpeg" alt="Laser-cut coding blocks from Home Depot plywood" loading="lazy"></div>
+            <div class="tl-text">
+              <span class="tl-year">San Francisco, 2018</span>
+              <h3>Every VC said&nbsp;no.</h3>
+              <p>"Make it an app," they said. So they built it themselves. First blocks: laser-cut on plywood from Home Depot. First audio: recorded on a phone. First factory: months living in&nbsp;Shenzhen.</p>
+            </div>
+          </div>
+          <div class="tl-item r">
+            <div class="tl-img"><img src="https://substack-post-media.s3.amazonaws.com/public/images/0e75c53e-37b0-4ee5-b674-3f958ea57f86_936x529.webp" alt="Kickstarter launch video film day" loading="lazy"></div>
+            <div class="tl-text">
+              <span class="tl-year">Christmas 2019</span>
+              <h3>Promise&nbsp;kept.</h3>
+              <p>720 Kickstarter backers. $218,000 raised in 38 days. Every single kit shipped on time for Christmas. Mochi's first adventure had&nbsp;begun.</p>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:2rem">
+          <a href="about.html" class="btn btn-o" style="font-size:.85rem">Read the full story &rarr;</a>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="bee-divider r">
     <svg viewBox="0 0 500 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,14 C18,4 32,24 50,14 C68,4 82,24 100,14 C118,4 132,24 150,14 C168,4 182,24 200,14 C218,4 232,24 250,14 C268,4 282,24 300,14 C318,4 332,24 350,14 C368,4 382,24 400,14 C418,4 432,24 450,14 C465,6 478,18 490,14" stroke="#E7A200" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round" fill="none"/><circle cx="493" cy="14" r="4.5" fill="#E7A200"/><circle cx="490" cy="11" r="1.5" fill="#E7A200" opacity="0.4"/></svg>
-  </div>
-</section>
-
-<!-- ═══ 6. OUR STORY — ~15% product, narrative ═══ -->
-<section class="story" id="story">
-  <div class="r">
-    <div class="label c">Our story</div>
-    <h2 class="c">How it started</h2>
-    <p class="story-sub">Recreating childhood magic: one bear, one family, one child at a time.</p>
-  </div>
-  <div class="timeline">
-    <div class="tl-item r">
-      <div class="tl-img"><img src="https://substack-post-media.s3.amazonaws.com/public/images/28377b20-a1d6-4905-8cdb-c0fbf08203f0_960x720.jpeg" alt="Young Mark building with LEGOs in Ukraine" loading="lazy"></div>
-      <div class="tl-text">
-        <span class="tl-year">Ukraine, 1990s</span>
-        <h3>A grandmother's apartment in post-Soviet&nbsp;Ukraine.</h3>
-        <p>Mark grew up taking apart rusty electronics with his babusya. She taught him that nothing was ever broken&nbsp;— things were just waiting for someone with imagination to turn them into what could&nbsp;be.</p>
-      </div>
-    </div>
-    <div class="tl-item r">
-      <div class="tl-img"><img src="Sample Images/little-daria.png" alt="Little Daria with her bears" loading="lazy"></div>
-      <div class="tl-text">
-        <span class="tl-year">Canada, 1990s</span>
-        <h3>A new country, a new language, a borrowed&nbsp;home.</h3>
-        <p>Daria arrived in Canada from China barely able to speak English. A family of refugees from the former Yugoslavia took her in. They taught her that generosity can exist even when we have so little. <em>Especially when we have so&nbsp;little.</em></p>
-      </div>
-    </div>
-    <div class="tl-item r">
-      <div class="tl-img"><img src="https://substack-post-media.s3.amazonaws.com/public/images/a328c053-d064-42c3-84e0-55d98831a9eb_2703x3604.jpeg" alt="Laser-cut coding blocks from Home Depot plywood" loading="lazy"></div>
-      <div class="tl-text">
-        <span class="tl-year">San Francisco, 2018</span>
-        <h3>Every VC said&nbsp;no.</h3>
-        <p>"Make it an app," they said. "Software scales." So they built it themselves. First blocks: laser-cut on plywood from Home Depot. First audio: recorded on a phone. First factory: months living in&nbsp;Shenzhen.</p>
-      </div>
-    </div>
-    <div class="tl-item r">
-      <div class="tl-img"><img src="https://substack-post-media.s3.amazonaws.com/public/images/760cb6fa-6621-47a2-a48e-1f168a64876e_1125x813.jpeg" alt="In-home user testing with kids and families" loading="lazy"></div>
-      <div class="tl-text">
-        <span class="tl-year">2019</span>
-        <h3>Hundreds of hours of testing.</h3>
-        <p>Prototyped by finding family friends willing to host in-home tests. Spent hundreds of hours designing, prototyping, testing, and collecting feedback from dozens of parents, kids, teachers, and&nbsp;families.</p>
-      </div>
-    </div>
-    <div class="tl-item r">
-      <div class="tl-img"><img src="https://substack-post-media.s3.amazonaws.com/public/images/0e75c53e-37b0-4ee5-b674-3f958ea57f86_936x529.webp" alt="Kickstarter launch video film day" loading="lazy"></div>
-      <div class="tl-text">
-        <span class="tl-year">Christmas 2019</span>
-        <h3>Promise&nbsp;kept.</h3>
-        <p>720 Kickstarter backers. $218,000 raised in 38 days. Every single kit shipped on time for Christmas. Mochi's first adventure had&nbsp;begun.</p>
-      </div>
-    </div>
   </div>
 </section>
 
