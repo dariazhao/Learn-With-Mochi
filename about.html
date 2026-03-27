@@ -123,7 +123,7 @@ nav.scrolled{border-bottom-color:rgba(26,26,46,0.06);box-shadow:0 1px 40px rgba(
 /* ═══════════════════════════════
    JOIN
    ═══════════════════════════════ */
-.join{padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,5rem);text-align:center;background:var(--ivory)}
+.join{padding:clamp(4rem,7vw,5rem) clamp(1.5rem,5vw,5rem) 2rem;text-align:center;background:var(--ivory)}
 .join h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;color:var(--ink);margin-bottom:1rem}
 .join p{font-size:1rem;font-weight:300;color:var(--mid);line-height:1.8;max-width:540px;margin:0 auto 3rem}
 .join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:900px;margin:0 auto}
@@ -135,7 +135,7 @@ nav.scrolled{border-bottom-color:rgba(26,26,46,0.06);box-shadow:0 1px 40px rgba(
 .join-card a:hover{color:var(--green-dk)}
 
 /* GARDEN + FOOTER */
-.garden-grow{position:relative;height:420px;overflow:hidden;background:linear-gradient(to bottom,var(--ivory) 0%,var(--warm) 100%);pointer-events:none;margin-top:-4rem}
+.garden-grow{position:relative;height:420px;overflow:hidden;background:linear-gradient(to bottom,var(--ivory) 0%,var(--warm) 100%);pointer-events:none;margin-top:-6rem}
 .garden-grow img{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);width:max(140%,1600px);height:auto;transform-origin:bottom center;will-change:transform,opacity}
 footer{background:var(--warm);border-top:none;padding:clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,5rem)}
 .footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem}
@@ -161,6 +161,48 @@ footer{background:var(--warm);border-top:none;padding:clamp(3rem,6vw,5rem) clamp
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:1rem;text-align:center}
 }
+
+/* ═══════════════════════════════
+   INTERACTION EFFECTS
+   ═══════════════════════════════ */
+/* Paragraph-by-paragraph staggered reveal */
+.prose p.r{transform:translateY(30px)}
+/* Blockquote highlight sweep */
+.prose blockquote{position:relative;overflow:hidden}
+.prose blockquote::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--green);transform:scaleY(0);transform-origin:top;transition:transform .8s var(--eo)}
+.prose blockquote.lit::after{transform:scaleY(1)}
+.prose blockquote.lit{border-left-color:var(--green);color:var(--text)}
+/* Image parallax-lite on scroll */
+.prose-img{overflow:hidden}
+.prose-img img{transition:transform .6s var(--eo);will-change:transform}
+.prose-img:hover img{transform:scale(1.02)}
+/* Principle animated dot */
+.principle::before{transition:transform .5s var(--eo),background .5s}
+.principle:hover::before{transform:scale(1.5);background:var(--gold)}
+/* Principle text slide-in from left */
+.principle.r{transform:translateX(-30px) translateY(0);opacity:0}
+.principle.r.v{transform:translateX(0) translateY(0);opacity:1}
+/* Team card glow on hover */
+.team-card{position:relative;overflow:hidden}
+.team-card::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(45,161,125,.06) 0%,transparent 60%);opacity:0;transition:opacity .5s;pointer-events:none}
+.team-card:hover::after{opacity:1}
+/* Join card arrow slide */
+.join-card a{position:relative;overflow:hidden}
+.join-card a::after{content:'';display:inline-block;width:0;height:1px;background:var(--green);vertical-align:middle;margin-left:4px;transition:width .4s var(--eo)}
+.join-card:hover a::after{width:20px}
+/* Full-break image Ken Burns */
+.full-break-inner img{transition:transform 8s ease-out}
+.full-break.v img:first-child{transform:scale(1.05)}
+.full-break.v img:last-child{transform:scale(1.05)}
+/* Vision text glow */
+.vision h2{text-shadow:0 0 80px rgba(45,161,125,0);transition:text-shadow 1.5s}
+.vision h2.v{text-shadow:0 0 80px rgba(45,161,125,.15)}
+/* Prose divider grow */
+.prose-divider{transform:scaleX(0);transition:transform .8s var(--eo)}
+.prose-divider.v{transform:scaleX(1)}
+/* Stagger children inside principles */
+.principle h3{transition:color .3s}
+.principle:hover h3{color:var(--green)}
 
 /* Grain */
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px 256px}
@@ -367,7 +409,19 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 /* Hero word-by-word */
 !function(){const h=document.getElementById('heroH');'We believe the children who will shape the future should understand how it works.'.split(' ').forEach((w,i)=>{const s=document.createElement('span');s.className='word';s.style.animationDelay=`${.2+i*.1}s`;s.textContent=w;h.appendChild(s);if(i<14)h.appendChild(document.createTextNode('\u00A0'))})}();
 /* Scroll reveals */
-!function(){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});document.querySelectorAll('.r').forEach(el=>o.observe(el))}();
+!function(){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});document.querySelectorAll('.r').forEach(el=>o.observe(el));
+/* Auto-add reveal to prose paragraphs */
+document.querySelectorAll('.prose p, .prose blockquote, .prose figure').forEach((el,i)=>{if(!el.classList.contains('r')){el.classList.add('r');el.style.transitionDelay=`${Math.min(i*.05,.3)}s`;o.observe(el)}});
+/* Blockquote highlight */
+const bq=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){setTimeout(()=>x.target.classList.add('lit'),300)}})},{threshold:.5});
+document.querySelectorAll('.prose blockquote').forEach(el=>bq.observe(el));
+/* Prose dividers */
+document.querySelectorAll('.prose-divider').forEach(el=>{if(!el.classList.contains('r')){el.classList.add('r');o.observe(el)}});
+/* Full break */
+document.querySelectorAll('.full-break').forEach(el=>{if(!el.classList.contains('r')){el.classList.add('r');o.observe(el)}});
+/* Vision h2 */
+document.querySelectorAll('.vision h2').forEach(el=>{if(!el.classList.contains('r')){el.classList.add('r');o.observe(el)}})
+}();
 /* Nav scroll */
 !function(){const n=document.getElementById('nav');let t=false;window.addEventListener('scroll',()=>{if(!t){requestAnimationFrame(()=>{n.classList.toggle('scrolled',scrollY>30);t=false});t=true}})}();
 /* Mobile nav */
