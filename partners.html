@@ -174,6 +174,14 @@ footer{background:var(--warm);border-top:none;padding:clamp(3rem,6vw,5rem) clamp
   .footer-bottom{flex-direction:column;gap:1rem;text-align:center}
 }
 
+/* Bee divider */
+.bee-divider{text-align:center;overflow:hidden}
+.bee-divider svg{width:min(500px,80%);height:24px}
+.bee-divider svg path{stroke-dasharray:600;stroke-dashoffset:600;transition:stroke-dashoffset 1.5s var(--eo)}
+.bee-divider.v svg path{stroke-dashoffset:0}
+.bee-divider svg circle{opacity:0;transition:opacity .4s 1.3s}
+.bee-divider.v svg circle{opacity:.6}
+
 /* Grain */
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px 256px}
 </style>
@@ -313,6 +321,11 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
   </div>
 </section>
 
+<!-- SQUIGGLY DIVIDER -->
+<div class="bee-divider r" style="padding:0.5rem 0">
+  <svg viewBox="0 0 500 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,14 C18,4 32,24 50,14 C68,4 82,24 100,14 C118,4 132,24 150,14 C168,4 182,24 200,14 C218,4 232,24 250,14 C268,4 282,24 300,14 C318,4 332,24 350,14 C368,4 382,24 400,14 C418,4 432,24 450,14 C465,6 478,18 490,14" stroke="#E7A200" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round" fill="none"/><circle cx="493" cy="14" r="4.5" fill="#E7A200"/><circle cx="490" cy="11" r="1.5" fill="#E7A200" opacity="0.4"/></svg>
+</div>
+
 <!-- CONTACT CLOSER -->
 <section class="contact-closer">
   <div class="contact-closer-illo r">
@@ -324,8 +337,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 </section>
 
 <!-- FOOTER DECORATION -->
-<div style="width:100%;overflow:hidden;line-height:0;pointer-events:none;background:linear-gradient(to bottom,var(--ivory),var(--warm))">
-  <img src="Sample Images/garden.svg" alt="" style="width:max(100%,1200px);display:block;margin:0 auto;opacity:.7;transform:translateX(-5%)">
+<div class="footer-flowers" id="footerFlowers" style="width:100%;overflow:hidden;line-height:0;pointer-events:none;background:linear-gradient(to bottom,var(--ivory),var(--warm));margin-top:-2rem">
+  <img src="Sample Images/whiteflowers.svg" alt="" id="footerFlowersImg" style="width:max(120%,1400px);display:block;margin:0 auto;opacity:.6;transform-origin:bottom center;will-change:transform,opacity">
 </div>
 
 <!-- FOOTER -->
@@ -393,8 +406,10 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 /* Mobile nav */
 !function(){const b=document.getElementById('mobTog'),l=document.getElementById('navLinks');b.addEventListener('click',()=>l.classList.toggle('open'));l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')))}();
 
-/* Garden grow */
-!function(){const g=document.getElementById('gardenGrow'),i=document.getElementById('gardenImg');if(!g||!i)return;function u(){const r=g.getBoundingClientRect(),vh=window.innerHeight;if(r.top<vh&&r.bottom>0){const p=Math.min(Math.max((vh-r.top)/(vh+r.height),0),1);i.style.transform='translateX(-50%) scale('+(0.85+p*0.15)+') translateY('+((1-p)*40)+'px)';i.style.opacity=0.5+p*0.5}requestAnimationFrame(u)}requestAnimationFrame(u)}();
+/* Flowers zoom on scroll */
+!function(){const g=document.getElementById('footerFlowers'),i=document.getElementById('footerFlowersImg');if(!g||!i)return;function u(){const r=g.getBoundingClientRect(),vh=window.innerHeight;if(r.top<vh&&r.bottom>0){const p=Math.min(Math.max((vh-r.top)/(vh+r.height),0),1);const s=0.9+p*0.15;i.style.transform='scale('+s+')';i.style.opacity=0.4+p*0.5}requestAnimationFrame(u)}requestAnimationFrame(u)}();
+/* Bee divider animate */
+!function(){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.3});document.querySelectorAll('.bee-divider').forEach(s=>o.observe(s))}();
 </script>
 </body>
 </html>
