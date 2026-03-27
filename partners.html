@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner With Us | Learn with Mochi</title>
+<meta name="description" content="Join the Mochi mission. Partnership opportunities for educators, distributors, retailers, and press covering screen-free STEM education.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="Partner With Us | Learn with Mochi">
+<meta property="og:description" content="Join the Mochi mission. Partnership opportunities for educators, distributors, retailers, and press.">
+<meta property="og:image" content="https://learn-with-mochi.vercel.app/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FFFAF5;--parchment:#FFFCF8;--warm:#FEFDFB;
+  --ink:#111118;--text:#2d2d3a;--mid:#4a4a5e;--light:#7a7a8e;
+  --green:#2DA17D;--green-dk:#1f8566;--green-lt:#D0ECE5;--green-pale:#EDF7F4;
+  --gold:#E7A200;--gold-lt:#FEE29E;--gold-pale:#FFF8E7;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --eo:cubic-bezier(0.16,1,0.3,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);color:var(--text);background:var(--ivory);line-height:1.7;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 clamp(1.5rem,5vw,5rem);height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,250,245,0.9);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);border-bottom:1px solid transparent;transition:border-color .5s,box-shadow .5s}
+nav.scrolled{border-bottom-color:rgba(26,26,46,0.06);box-shadow:0 1px 40px rgba(26,26,46,0.04)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.nav-logo img{width:38px;height:38px;border-radius:10px}
+.nav-logo span{font-family:var(--serif);font-size:1.2rem;font-weight:600;letter-spacing:-0.01em}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.85rem;font-weight:400;color:var(--light);text-decoration:none;transition:color .3s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.active{color:var(--ink);font-weight:500}
+.nav-cta{font-size:.8rem!important;font-weight:500!important;color:var(--green)!important;padding:8px 22px;border:1.5px solid var(--green);border-radius:100px;transition:all .3s!important}
+.nav-cta:hover{background:var(--green)!important;color:#fff!important}
+.mob-tog{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.mob-tog span{display:block;width:20px;height:1.5px;background:var(--ink);margin:5px 0}
+
+/* Shared */
+.r{opacity:0;transform:translateY(50px);transition:opacity .9s var(--eo),transform .9s var(--eo)}
+.r.v{opacity:1;transform:translateY(0)}
+.r.d1{transition-delay:.1s}.r.d2{transition-delay:.2s}.r.d3{transition-delay:.3s}.r.d4{transition-delay:.35s}
+
+/* ===============================
+   HERO
+   =============================== */
+.partner-hero{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px clamp(1.5rem,5vw,5rem) 50px;position:relative}
+.partner-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(208,236,229,.25) 0%,transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(254,226,158,.12) 0%,transparent 45%);pointer-events:none}
+.partner-hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5.5vw,4rem);font-weight:400;line-height:1.12;letter-spacing:-0.025em;color:var(--ink);max-width:720px;margin-bottom:1.5rem;position:relative;z-index:1}
+.partner-hero h1 .word{display:inline-block;opacity:0;transform:translateY(30px);animation:wordIn .8s var(--eo) forwards}
+@keyframes wordIn{to{opacity:1;transform:translateY(0)}}
+.partner-hero-sub{font-size:clamp(.92rem,1.4vw,1.08rem);font-weight:300;color:var(--mid);max-width:520px;line-height:1.8;position:relative;z-index:1;opacity:0;animation:fadeUp .9s 1.6s var(--eo) forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.partner-hero-illo{margin-top:2rem;position:relative;z-index:1;opacity:0;animation:fadeUp 1s 2s var(--eo) forwards}
+.partner-hero-illo img{width:clamp(180px,22vw,280px);animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+/* ===============================
+   THE OPPORTUNITY (side-by-side)
+   =============================== */
+.opportunity{padding:clamp(3rem,7vw,5rem) clamp(1.5rem,5vw,5rem);max-width:1100px;margin:0 auto}
+.opp-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+.opp-text .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1rem}
+.opp-text h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;line-height:1.15;letter-spacing:-0.02em;color:var(--ink);margin-bottom:1.5rem}
+.opp-text p{font-size:clamp(.95rem,1.2vw,1.05rem);font-weight:300;color:var(--mid);line-height:1.85;margin-bottom:1.25rem}
+.opp-text p:last-child{margin-bottom:0}
+.opp-visual{position:relative;display:flex;align-items:center;justify-content:center}
+.opp-visual img{border-radius:20px;width:100%;max-width:400px;animation:float 8s ease-in-out infinite;transition:transform .6s var(--eo);will-change:transform}
+.opp-visual:hover img{transform:scale(1.02)}
+
+/* Stat mini cards */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:1100px;margin:2.5rem auto 0;padding:0 clamp(1.5rem,5vw,5rem)}
+.mini-stat{background:var(--warm);border:1px solid rgba(26,26,46,.05);border-radius:16px;padding:1.75rem 1.25rem;text-align:center;transition:transform .4s var(--eo),box-shadow .4s var(--eo)}
+.mini-stat:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(26,26,46,.06)}
+.mini-stat .stat-num{font-family:var(--serif);font-size:clamp(2.4rem,4vw,3.2rem);font-weight:300;color:var(--green);line-height:1}
+.mini-stat .stat-label{font-size:.88rem;font-weight:400;color:var(--ink);margin-top:.4rem;line-height:1.4}
+
+/* ===============================
+   AUDIENCE CARDS
+   =============================== */
+.audiences{padding:clamp(4rem,8vw,6rem) clamp(1.5rem,5vw,5rem);background:var(--warm)}
+.audiences-header{text-align:center;max-width:600px;margin:0 auto 3rem}
+.audiences-header .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1rem}
+.audiences-header h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;color:var(--ink)}
+.aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:0 auto}
+.aud-card{background:#fff;border:1px solid rgba(26,26,46,.04);border-radius:20px;padding:2.25rem 1.75rem;position:relative;overflow:hidden;transition:transform .5s var(--eo),box-shadow .5s var(--eo)}
+.aud-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(26,26,46,.07)}
+.aud-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0}
+.aud-card.border-green::before{background:var(--green)}
+.aud-card.border-gold::before{background:var(--gold)}
+.aud-card.border-green-lt::before{background:var(--green-lt)}
+.aud-card::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(45,161,125,.05) 0%,transparent 60%);opacity:0;transition:opacity .5s;pointer-events:none}
+.aud-card:hover::after{opacity:1}
+.aud-icon{width:56px;height:56px;border-radius:14px;background:var(--green-pale);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem}
+.aud-icon img{width:30px;height:30px}
+.aud-card h3{font-family:var(--serif);font-size:clamp(1.25rem,2vw,1.5rem);font-weight:500;color:var(--ink);margin-bottom:.5rem;line-height:1.25}
+.aud-card .aud-tagline{font-size:.92rem;font-weight:400;color:var(--mid);font-style:italic;margin-bottom:1.25rem;line-height:1.6}
+.aud-card ul{list-style:none;margin-bottom:1.75rem}
+.aud-card ul li{font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.7;padding:.3rem 0 .3rem 1.25rem;position:relative}
+.aud-card ul li::before{content:'';position:absolute;left:0;top:.75rem;width:6px;height:6px;border-radius:50%;background:var(--green-lt)}
+.aud-cta{display:inline-block;font-size:.85rem;font-weight:500;color:#fff;background:var(--green);padding:10px 28px;border-radius:100px;text-decoration:none;transition:all .3s var(--eo)}
+.aud-cta:hover{background:var(--green-dk);transform:translateY(-1px);box-shadow:0 6px 20px rgba(45,161,125,.25)}
+
+/* ===============================
+   SOCIAL PROOF
+   =============================== */
+.social-proof{padding:clamp(4rem,8vw,6rem) clamp(1.5rem,5vw,5rem);text-align:center}
+.social-proof .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1rem}
+.social-proof h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;line-height:1.18;color:var(--ink);margin-bottom:2.5rem}
+.award-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2.5rem;max-width:900px;margin:0 auto 2.5rem}
+.award-row img{height:100px;width:auto;opacity:.7;filter:grayscale(.2);transition:opacity .3s,filter .3s}
+.award-row img:hover{opacity:1;filter:grayscale(0)}
+.press-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.6rem;max-width:900px;margin:0 auto}
+.press-logo{display:flex;align-items:center;justify-content:center;padding:6px 12px;border:1px solid rgba(26,26,46,.05);border-radius:8px;background:var(--warm)}
+.press-logo img{height:18px;width:auto;filter:grayscale(1);opacity:.4;transition:filter .3s,opacity .3s}
+.press-logo:hover img{filter:grayscale(0);opacity:.8}
+
+/* ===============================
+   CONTACT CLOSER
+   =============================== */
+.contact-closer{padding:clamp(3rem,7vw,5rem) clamp(1.5rem,5vw,5rem) 2rem;text-align:center;background:var(--ivory)}
+.contact-closer-illo{margin:0 auto 2rem;max-width:220px;position:relative;z-index:1}
+.contact-closer-illo img{width:100%;animation:float 6s ease-in-out infinite}
+.contact-closer h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;color:var(--ink);margin-bottom:1rem}
+.contact-closer p{font-size:clamp(.95rem,1.2vw,1.05rem);font-weight:300;color:var(--mid);line-height:1.85;max-width:520px;margin:0 auto 2rem}
+.contact-cta{display:inline-block;font-size:.95rem;font-weight:500;color:#fff;background:var(--green);padding:14px 40px;border-radius:100px;text-decoration:none;transition:all .3s var(--eo)}
+.contact-cta:hover{background:var(--green-dk);transform:translateY(-2px);box-shadow:0 8px 30px rgba(45,161,125,.25)}
+
+/* ===============================
+   TROPICAL BORDER
+   =============================== */
+.tropical-border{width:100%;overflow:hidden;line-height:0}
+.tropical-border img{width:100%;object-fit:cover;max-height:120px}
+
+/* GARDEN + FOOTER */
+.garden-grow{position:relative;height:420px;overflow:hidden;background:linear-gradient(to bottom,var(--ivory) 0%,var(--warm) 100%);pointer-events:none;margin-top:-6rem}
+.garden-grow img{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);width:max(140%,1600px);height:auto;transform-origin:bottom center;will-change:transform,opacity}
+footer{background:var(--warm);border-top:none;padding:clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,5rem)}
+.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem}
+.footer-brand p{font-size:.85rem;font-weight:300;color:var(--light);line-height:1.7;max-width:280px;margin-top:1rem}
+.footer-col h4{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:1rem}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:.55rem}
+.footer-col ul li a{font-size:.85rem;font-weight:300;color:var(--light);text-decoration:none;transition:color .3s}
+.footer-col ul li a:hover{color:var(--green)}
+.footer-bottom{max-width:1100px;margin:3rem auto 0;padding-top:2rem;border-top:1px solid rgba(26,26,46,.06);display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:.78rem;color:var(--light);font-weight:300}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media(max-width:900px){
+  .nav-links{display:none}.mob-tog{display:block}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--ivory);padding:2rem;gap:1.5rem;border-bottom:1px solid rgba(26,26,46,.06)}
+  .opp-grid{grid-template-columns:1fr;text-align:center}
+  .opp-visual{order:-1}
+  .opp-visual img{max-width:320px;margin:0 auto}
+  .stat-row{grid-template-columns:1fr;max-width:360px;margin-left:auto;margin-right:auto}
+  .aud-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
+  .award-row img{height:72px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .partner-hero h1{font-size:2.2rem}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:1rem;text-align:center}
+}
+
+/* Grain */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px 256px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="Sample Images/SunbearLOGO.png" alt="Mochi">
+    <span>Learn with Mochi</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="about.html">Our Story</a></li>
+    <li><a href="trust.html">Trust &amp; Safety</a></li>
+    <li><a href="partners.html" class="active">Partner With Us</a></li>
+    <li><a href="index.html#kit" class="nav-cta">Explore Mochi</a></li>
+  </ul>
+  <button class="mob-tog" id="mobTog" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="partner-hero">
+  <h1 id="heroH"></h1>
+  <p class="partner-hero-sub">Whether you're an educator, distributor, or journalist, there's a place for you in the Mochi mission.</p>
+  <div class="partner-hero-illo">
+    <img src="Sample Images/hilltop_crop.png" alt="">
+  </div>
+</section>
+
+<!-- THE OPPORTUNITY -->
+<section class="opportunity">
+  <div class="opp-grid">
+    <div class="opp-text r">
+      <div class="label">The opportunity</div>
+      <h2>A growing movement for screen-free&nbsp;education.</h2>
+      <p>The global STEM toys market is valued at over $4.2 billion and growing. Families and educators across 62 countries are choosing hands-on, screen-free tools that develop real computational thinking. Mochi has shipped over 20,000 units across six continents, and demand continues to accelerate as schools seek alternatives to screen-based learning.</p>
+    </div>
+    <div class="opp-visual r d2">
+      <img src="Sample Images/moving.png" alt="Growth and expansion">
+    </div>
+  </div>
+</section>
+
+<!-- STAT MINI CARDS -->
+<div class="stat-row">
+  <div class="mini-stat r">
+    <div class="stat-num" data-count="20000" data-suffix="+">0</div>
+    <div class="stat-label">Units shipped</div>
+  </div>
+  <div class="mini-stat r d1">
+    <div class="stat-num" data-count="62">0</div>
+    <div class="stat-label">Countries reached</div>
+  </div>
+  <div class="mini-stat r d2">
+    <div class="stat-num" data-prefix="$" data-count="4.2" data-suffix="B" data-decimal="1">0</div>
+    <div class="stat-label">STEM toy market</div>
+  </div>
+</div>
+
+<!-- THREE AUDIENCE CARDS -->
+<section class="audiences">
+  <div class="audiences-header r">
+    <div class="label">How to partner</div>
+    <h2>Three ways to join the&nbsp;mission.</h2>
+  </div>
+
+  <div class="aud-grid">
+
+    <!-- Card A: Educators -->
+    <div class="aud-card border-green r">
+      <div class="aud-icon"><img src="Sample Images/compass.svg" alt=""></div>
+      <h3>Educators &amp; Schools</h3>
+      <p class="aud-tagline">Bring computational thinking to your classroom.</p>
+      <ul>
+        <li>STEM-certified curriculum integration for ages 3 to 9</li>
+        <li>Educator training and professional development</li>
+        <li>Volume pricing for schools and districts</li>
+        <li>No IT setup required. Screen-free and self-contained.</li>
+      </ul>
+      <a href="mailto:hello@LearnWithMochi.com?subject=Educator%20Partnership" class="aud-cta">Get started</a>
+    </div>
+
+    <!-- Card B: Distributors -->
+    <div class="aud-card border-gold r d1">
+      <div class="aud-icon"><img src="Sample Images/seedling.svg" alt=""></div>
+      <h3>Distributors &amp; Retail</h3>
+      <p class="aud-tagline">Help Mochi reach more families worldwide.</p>
+      <ul>
+        <li>Wholesale and distributor pricing</li>
+        <li>Marketing assets, product samples, and sell sheets</li>
+        <li>Currently in 62 countries across six continents</li>
+        <li>Seeking retail, e-commerce, and educational supply partners</li>
+      </ul>
+      <a href="mailto:hello@LearnWithMochi.com?subject=Distribution%20Partnership" class="aud-cta">Become a partner</a>
+    </div>
+
+    <!-- Card C: Press -->
+    <div class="aud-card border-green-lt r d2">
+      <div class="aud-icon"><img src="Sample Images/brightidea.svg" alt=""></div>
+      <h3>Press &amp; Media</h3>
+      <p class="aud-tagline">Tell a story that matters.</p>
+      <ul>
+        <li>Press kits with high-resolution imagery</li>
+        <li>Founder interviews (Forbes 30 Under 30, Princeton, Oxford)</li>
+        <li>Product samples for review</li>
+        <li>Featured in Smithsonian, USA Today, Mashable, and 14+ outlets</li>
+      </ul>
+      <a href="mailto:hello@LearnWithMochi.com?subject=Press%20Inquiry" class="aud-cta">Request press kit</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social-proof">
+  <div class="label r">Recognition</div>
+  <h2 class="r">Trusted by educators and families in 62&nbsp;countries.</h2>
+
+  <div class="award-row r">
+    <img src="https://robotics.learnwithmochi.com/cdn/shop/t/47/assets/moms-choice2x.png" alt="Mom's Choice Award Gold">
+    <img src="https://robotics.learnwithmochi.com/cdn/shop/t/47/assets/2020-product-awards2x.png" alt="NAPPA Award Winner 2020">
+    <img src="https://robotics.learnwithmochi.com/cdn/shop/t/47/assets/parents-picks2x.png" alt="Parents' Picks Award">
+    <img src="https://robotics.learnwithmochi.com/cdn/shop/t/47/assets/stem-autism-2x.png" alt="STEM.org Authenticated">
+  </div>
+
+  <div class="press-logos r d1">
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/Forbes_logo.png?v=1592602935" alt="Forbes"></div>
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/USA_today.png?v=1613682201" alt="USA Today"></div>
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/yahoo-finance-logo.png?v=1586519445" alt="Yahoo Finance"></div>
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/mashable-logon.png?v=1586523012" alt="Mashable"></div>
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/reviewed-logo_38813323-1269-4d1a-9327-2c62572c3cab.png?v=1586519700" alt="Reviewed"></div>
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/gadget-flow-logo.png?v=1586519417" alt="GadgetFlow"></div>
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/interesting-engineering-logo.png?v=1586519468" alt="Interesting Engineering"></div>
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/product-hunt-logo.png?v=1586519654" alt="Product Hunt"></div>
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/HM-b_w.png?v=1588608881" alt="Homeschool Mastery Academy"></div>
+  </div>
+</section>
+
+<!-- CONTACT CLOSER -->
+<section class="contact-closer">
+  <div class="contact-closer-illo r">
+    <img src="Sample Images/gotmail.png" alt="">
+  </div>
+  <h2 class="r">Ready to start?</h2>
+  <p class="r d1">Reach out to <strong>hello@LearnWithMochi.com</strong> and tell us about your organization. We respond to every inquiry.</p>
+  <a href="mailto:hello@LearnWithMochi.com?subject=Partnership%20Inquiry" class="contact-cta r d2">Send us a message</a>
+</section>
+
+<!-- TROPICAL BORDER -->
+<div class="tropical-border">
+  <img src="Sample Images/blooms_crop.png" alt="">
+</div>
+
+<!-- GARDEN -->
+<div class="garden-grow" id="gardenGrow">
+  <img src="Sample Images/garden.svg" alt="" id="gardenImg">
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><img src="Sample Images/SunbearLOGO.png" alt="Mochi"><span>Learn with Mochi</span></a>
+      <p>A public-benefit corporation building the Montessori method for AI literacy and robotics. Empowering children to create with technology since&nbsp;2019.</p>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul><li><a href="about.html">Our Story</a></li><li><a href="trust.html">Trust &amp; Safety</a></li><li><a href="partners.html">Partner With Us</a></li><li><a href="index.html#kit">Explorer's Kit</a></li></ul></div>
+    <div class="footer-col"><h4>Shop</h4><ul><li><a href="index.html#kit">Robotics Kit</a></li><li><a href="index.html#kit">Adventure Packs</a></li><li><a href="index.html#kit">Bundles</a></li></ul></div>
+    <div class="footer-col"><h4>Connect</h4><ul><li><a href="mailto:hello@LearnWithMochi.com">hello@LearnWithMochi.com</a></li><li><a href="https://instagram.com/learnwithmochi">Instagram</a></li><li><a href="https://facebook.com/LearnWithMochi">Facebook</a></li><li><a href="https://youtube.com/learnwithmochi">YouTube</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2019-2026 Learn with Mochi. All rights reserved.</p></div>
+</footer>
+
+<script>
+/* Hero word-by-word */
+!function(){const h=document.getElementById('heroH');var words="Let's build the future of learning together.".split(' ');words.forEach((w,i)=>{const s=document.createElement('span');s.className='word';s.style.animationDelay=(.2+i*.1)+'s';s.textContent=w;h.appendChild(s);if(i<words.length-1)h.appendChild(document.createTextNode('\u00A0'))})}();
+
+/* Scroll reveals */
+!function(){
+  const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.r').forEach(el=>o.observe(el));
+
+  /* Vision h2 */
+  document.querySelectorAll('.vision h2').forEach(el=>{if(!el.classList.contains('r')){el.classList.add('r');o.observe(el)}});
+}();
+
+/* Stat counter animation */
+!function(){
+  const nums=document.querySelectorAll('[data-count]');
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      const el=entry.target;
+      if(el.dataset.counted)return;
+      el.dataset.counted='1';
+      const target=parseFloat(el.dataset.count);
+      const prefix=el.dataset.prefix||'';
+      const suffix=el.dataset.suffix||'';
+      const decimal=parseInt(el.dataset.decimal)||0;
+      const duration=1600;
+      const start=performance.now();
+      function tick(now){
+        const t=Math.min((now-start)/duration,1);
+        const ease=1-Math.pow(1-t,4);
+        const val=target*ease;
+        if(decimal>0){
+          el.textContent=prefix+val.toFixed(decimal)+suffix;
+        }else{
+          el.textContent=prefix+Math.floor(val).toLocaleString()+suffix;
+        }
+        if(t<1)requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  },{threshold:.3});
+  nums.forEach(n=>io.observe(n));
+}();
+
+/* Nav scroll */
+!function(){const n=document.getElementById('nav');let t=false;window.addEventListener('scroll',()=>{if(!t){requestAnimationFrame(()=>{n.classList.toggle('scrolled',scrollY>30);t=false});t=true}})}();
+
+/* Mobile nav */
+!function(){const b=document.getElementById('mobTog'),l=document.getElementById('navLinks');b.addEventListener('click',()=>l.classList.toggle('open'));l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')))}();
+
+/* Garden grow */
+!function(){const g=document.getElementById('gardenGrow'),i=document.getElementById('gardenImg');if(!g||!i)return;function u(){const r=g.getBoundingClientRect(),vh=window.innerHeight;if(r.top<vh&&r.bottom>0){const p=Math.min(Math.max((vh-r.top)/(vh+r.height),0),1);i.style.transform='translateX(-50%) scale('+(0.85+p*0.15)+') translateY('+((1-p)*40)+'px)';i.style.opacity=0.5+p*0.5}requestAnimationFrame(u)}requestAnimationFrame(u)}();
+</script>
+</body>
+</html>
