@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Story — Learn with Mochi</title>
-<meta name="description" content="We believe the children who will shape the future should understand how it works. The founding story, philosophy, and mission behind Learn with Mochi.">
+<title>Trust & Safety — Learn with Mochi</title>
+<meta name="description" content="Our approach to screen-free learning, child safety, and responsible technology — grounded in research, guided by care.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta property="og:title" content="Our Story — Learn with Mochi">
-<meta property="og:description" content="We believe the children who will shape the future should understand how it works.">
+<meta property="og:title" content="Trust & Safety — Learn with Mochi">
+<meta property="og:description" content="Our approach to screen-free learning, child safety, and responsible technology — grounded in research, guided by care.">
 <meta property="og:image" content="https://learn-with-mochi.vercel.app/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +57,7 @@ nav.scrolled{border-bottom-color:rgba(26,26,46,0.06);box-shadow:0 1px 40px rgba(
 .about-hero h1{font-family:var(--serif);font-size:clamp(2.8rem,6vw,4.5rem);font-weight:400;line-height:1.12;letter-spacing:-0.025em;color:var(--ink);max-width:800px;margin-bottom:2rem;position:relative;z-index:1}
 .about-hero h1 .word{display:inline-block;opacity:0;transform:translateY(30px);animation:wordIn .8s var(--eo) forwards}
 @keyframes wordIn{to{opacity:1;transform:translateY(0)}}
-.about-hero-sub{font-size:clamp(1rem,1.6vw,1.2rem);font-weight:300;color:var(--mid);max-width:520px;line-height:1.85;position:relative;z-index:1;opacity:0;animation:fadeUp .9s 1.6s var(--eo) forwards}
+.about-hero-sub{font-size:clamp(1rem,1.6vw,1.2rem);font-weight:300;color:var(--mid);max-width:580px;line-height:1.85;position:relative;z-index:1;opacity:0;animation:fadeUp .9s 1.6s var(--eo) forwards}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .about-hero-illo{margin-top:3rem;position:relative;z-index:1;opacity:0;animation:fadeUp 1s 2s var(--eo) forwards}
 .about-hero-illo img{width:clamp(200px,25vw,320px);animation:float 6s ease-in-out infinite}
@@ -80,13 +80,6 @@ nav.scrolled{border-bottom-color:rgba(26,26,46,0.06);box-shadow:0 1px 40px rgba(
 .prose-img figcaption{font-size:.8rem;font-weight:300;color:var(--light);margin-top:.75rem;text-align:center;font-style:italic}
 
 /* ═══════════════════════════════
-   FULLBLEED IMAGE BREAK
-   ═══════════════════════════════ */
-.full-break{padding:0 clamp(1.5rem,5vw,5rem);margin:0 auto;max-width:1100px}
-.full-break-inner{display:grid;grid-template-columns:1fr 1fr;gap:1rem;border-radius:20px;overflow:hidden}
-.full-break-inner img{width:100%;height:300px;object-fit:cover}
-
-/* ═══════════════════════════════
    PRINCIPLES
    ═══════════════════════════════ */
 .principles{padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,5rem);background:var(--warm)}
@@ -99,17 +92,15 @@ nav.scrolled{border-bottom-color:rgba(26,26,46,0.06);box-shadow:0 1px 40px rgba(
 .principle p{font-size:1rem;font-weight:300;color:var(--mid);line-height:1.85}
 
 /* ═══════════════════════════════
-   TEAM
+   CERTIFICATIONS
    ═══════════════════════════════ */
-.team{padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,5rem);background:var(--ivory)}
-.team .label{text-align:center;font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1.25rem}
-.team>h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;color:var(--ink);text-align:center;margin-bottom:4rem}
-.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;max-width:900px;margin:0 auto}
-.team-card{background:var(--warm);border:1px solid rgba(26,26,46,.04);border-radius:20px;padding:2.5rem;transition:transform .5s var(--eo)}
-.team-card:hover{transform:translateY(-3px)}
-.team-card .team-role{font-size:.65rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:.75rem}
-.team-card h3{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--ink);margin-bottom:.75rem}
-.team-card p{font-size:.9rem;font-weight:300;color:var(--mid);line-height:1.75}
+.certs{padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,5rem);max-width:760px;margin:0 auto}
+.certs .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1.25rem}
+.certs h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;letter-spacing:-0.02em;color:var(--ink);margin-bottom:2rem}
+.certs p{font-size:clamp(1rem,1.3vw,1.1rem);font-weight:300;color:var(--mid);line-height:1.9;margin-bottom:2rem}
+.cert-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cert-list li{display:flex;align-items:flex-start;gap:.75rem;font-size:.95rem;font-weight:300;color:var(--mid);line-height:1.7}
+.cert-list li::before{content:'';flex-shrink:0;width:8px;height:8px;border-radius:50%;background:var(--green);margin-top:.45rem}
 
 /* ═══════════════════════════════
    VISION
@@ -154,8 +145,8 @@ footer{background:var(--warm);border-top:none;padding:clamp(3rem,6vw,5rem) clamp
 @media(max-width:900px){
   .nav-links{display:none}.mob-tog{display:block}
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--ivory);padding:2rem;gap:1.5rem;border-bottom:1px solid rgba(26,26,46,.06)}
-  .full-break-inner{grid-template-columns:1fr}
-  .team-grid,.join-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
+  .join-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
+  .cert-list{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:600px){
@@ -184,18 +175,10 @@ footer{background:var(--warm);border-top:none;padding:clamp(3rem,6vw,5rem) clamp
 /* Principle text slide-in from left */
 .principle.r{transform:translateX(-30px) translateY(0);opacity:0}
 .principle.r.v{transform:translateX(0) translateY(0);opacity:1}
-/* Team card glow on hover */
-.team-card{position:relative;overflow:hidden}
-.team-card::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(45,161,125,.06) 0%,transparent 60%);opacity:0;transition:opacity .5s;pointer-events:none}
-.team-card:hover::after{opacity:1}
 /* Join card arrow slide */
 .join-card a{position:relative;overflow:hidden}
 .join-card a::after{content:'';display:inline-block;width:0;height:1px;background:var(--green);vertical-align:middle;margin-left:4px;transition:width .4s var(--eo)}
 .join-card:hover a::after{width:20px}
-/* Full-break image Ken Burns */
-.full-break-inner img{transition:transform 8s ease-out}
-.full-break.v img:first-child{transform:scale(1.05)}
-.full-break.v img:last-child{transform:scale(1.05)}
 /* Vision text glow */
 .vision h2{text-shadow:0 0 80px rgba(45,161,125,0);transition:text-shadow 1.5s}
 .vision h2.v{text-shadow:0 0 80px rgba(45,161,125,.15)}
@@ -205,6 +188,8 @@ footer{background:var(--warm);border-top:none;padding:clamp(3rem,6vw,5rem) clamp
 /* Stagger children inside principles */
 .principle h3{transition:color .3s}
 .principle:hover h3{color:var(--green)}
+/* Cert list item reveal */
+.cert-list li.r{transform:translateY(20px)}
 
 /* Grain */
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px 256px}
@@ -219,8 +204,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
     <span>Learn with Mochi</span>
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="about.html" class="active">Our Story</a></li>
-    <li><a href="trust.html">Trust &amp; Safety</a></li>
+    <li><a href="about.html">Our Story</a></li>
+    <li><a href="trust.html" class="active">Trust &amp; Safety</a></li>
     <li><a href="index.html#kit" class="nav-cta">Explore Mochi</a></li>
   </ul>
   <button class="mob-tog" id="mobTog" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -229,139 +214,88 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 <!-- ═══ HERO ═══ -->
 <section class="about-hero">
   <h1 id="heroH"></h1>
-  <p class="about-hero-sub">Learn with Mochi is a public-benefit corporation founded in 2018. We build the Montessori method for AI literacy and computational thinking — one bear, one family, one child at a time.</p>
+  <p class="about-hero-sub">Our approach to screen-free learning, child safety, and responsible technology — grounded in research, guided by&nbsp;care.</p>
   <div class="about-hero-illo">
-    <img src="Sample Images/hilltop_crop.png" alt="">
+    <img src="Sample Images/windows.png" alt="">
   </div>
 </section>
 
-<!-- ═══ THE WORLD WE SEE ═══ -->
+<!-- ═══ OUR COMMITMENT ═══ -->
 <div class="prose r">
-  <div class="label">The world we see</div>
-  <h2>A generation is growing up inside sealed&nbsp;machines.</h2>
-  <p>In 2007, the iPhone was introduced. By 2012, the iPad had become the default babysitter. By 2018 — when we founded this company — the average American child was spending over four hours a day on screens before the age of&nbsp;two.</p>
-  <p>These devices are miracles of engineering. They are also perfectly sealed black boxes. Unlike the clunky Commodore 64 that invited tinkering, or the Soviet-era radios that a curious child in Ukraine could take apart with a screwdriver, today's technology <em>masks its own inner workings</em>. It "just works." And that is precisely the&nbsp;problem.</p>
-  <p>When technology feels like magic, children learn to consume it. When it feels like a language — something with grammar, logic, and creative possibility — children learn to create with it. The difference between those two outcomes will define the next&nbsp;century.</p>
-  <blockquote>Technology is too important to be limited to the 0.01% creating it in Silicon&nbsp;Valley.</blockquote>
-  <p>We believe computational thinking is a foundational literacy — as essential as reading, writing, and arithmetic. And we believe it should begin not at age 12, in a computer lab, but at age 3, on a living room floor, with wooden blocks and a curious&nbsp;bear.</p>
+  <div class="label">Why this matters</div>
+  <h2>Children deserve technology designed with their development in&nbsp;mind.</h2>
+  <p>Most technology built for children is not designed for children. It is designed for engagement metrics, advertising revenue, and retention curves. The incentive structures of consumer technology reward products that capture attention — not products that nurture development. The American Academy of Pediatrics recommends avoiding screen-based media for children under 18 months and limiting use to one hour of high-quality programming for children ages 2 to 5. The reality is that the average preschooler in America now exceeds those guidelines by a factor of&nbsp;three.</p>
+  <p>This is not a failure of parenting. It is a failure of design. When the most well-funded, most sophisticated product teams in the world optimize for time-on-screen, even the most attentive families find themselves outmatched. The problem is structural, and the solution must be&nbsp;structural&nbsp;too.</p>
+  <p>Learn with Mochi exists because we believe technology can be <em>genuinely beneficial for the humans who matter most — children</em>. We are a public-benefit corporation. That is not a marketing label. It is a legal structure that encodes our commitment to child wellbeing into our corporate charter, with the same weight as our obligation to shareholders. When the interests of growth and the interests of children conflict, our legal structure requires us to choose&nbsp;children.</p>
 </div>
 
 <div class="prose-divider r"></div>
 
-<!-- ═══ ORIGIN ═══ -->
-<div class="prose r">
-  <div class="label">Where we come from</div>
-  <h2>Two immigrants, one&nbsp;question.</h2>
-
-  <figure class="prose-img r">
-    <img src="https://substack-post-media.s3.amazonaws.com/public/images/28377b20-a1d6-4905-8cdb-c0fbf08203f0_960x720.jpeg" alt="Young Mark building with LEGOs in Ukraine">
-    <figcaption>Mark building with LEGOs in his grandmother's apartment, Ukraine, early 1990s</figcaption>
-  </figure>
-
-  <p>Mark Pavlyukovskyy grew up in post-Soviet Ukraine, in his grandmother's apartment, taking apart rusty electronics. His babusya taught him that <em>nothing was ever broken — things were just waiting for someone with imagination to turn them into what could be.</em> He went on to study molecular biology at Princeton, then biomedical engineering at Oxford as an NIH Scholar. A medical diagnosis during his first year compressed his sense of time and made him ask: what can I build that will outlast&nbsp;me?</p>
-  <p>His answer was Play Piper — a computer kit that shipped over 100,000 units to children in 70+ countries, earned endorsements from Steve Wozniak, and landed him on Forbes 30 Under 30 in Education. But Piper was for older children. The question that haunted Mark was: what about the youngest&nbsp;ones?</p>
-
-  <figure class="prose-img sm r">
-    <img src="Sample Images/little-daria.png" alt="Little Daria with a bear" style="border-radius:16px">
-    <figcaption>Little Daria, always finding bears</figcaption>
-  </figure>
-
-  <p>Daria Zhao arrived in Canada from China as a child, barely able to speak English. A family of refugees from the former Yugoslavia took her in while her parents enrolled in language classes and worked odd jobs. They taught her that <em>generosity can exist even when we have so little. Especially when we have so&nbsp;little.</em></p>
-  <p>Daria built a career on Wall Street, then walked away from it. She moved to San Francisco and began teaching STEM classes three times a week at the Potrero Hill Neighborhood House — trading her time for free office space. She discovered something that every parent knows but few curricula acknowledge: children of every age learn best when they can <em>touch</em>&nbsp;things.</p>
-  <p>In 2018, Mark and Daria connected. They saw the same gap: a generation growing up with polished devices that masked how technology actually works. And they asked the same question: <em>What if we gave children the tools to build the future, not just consume&nbsp;it?</em></p>
-</div>
-
-<div class="prose-divider r"></div>
-
-<!-- ═══ THE HARD CHOICE ═══ -->
-<div class="prose r">
-  <div class="label">The hard choice</div>
-  <h2>Every VC said&nbsp;no.</h2>
-  <p>"Make it an app," they said on Sand Hill Road. "Software scales. Hardware doesn't. The returns aren't&nbsp;there."</p>
-  <p>But Mark and Daria were adamant. A pure software product meant delivering their screen-free solution through the very enemy they were fighting: <em>screen time</em>. The whole point was that children should hold something real. Feel the weight of a wooden block. Hear the click of a rover coming to life. Watch their code execute in physical space, not behind&nbsp;glass.</p>
-  <blockquote>It had to be hands-on. Or nothing at&nbsp;all.</blockquote>
-
-  <figure class="prose-img r">
-    <img src="https://substack-post-media.s3.amazonaws.com/public/images/a328c053-d064-42c3-84e0-55d98831a9eb_2703x3604.jpeg" alt="First coding blocks laser-cut from Home Depot plywood">
-    <figcaption>First coding blocks — laser-cut on plywood from Home Depot</figcaption>
-  </figure>
-
-  <p>So they built it themselves. The first coding blocks were laser-cut on plywood from Home Depot. The first audio files were recorded on Daria's phone. The first user tests happened in family friends' living rooms. They spent months living in Shenzhen, learning manufacturing from the ground&nbsp;up.</p>
-  <p>On October 16, 2019, they launched on Kickstarter. They were funded in under 12 hours. 720 backers pledged $218,000 — over four times their goal. And on Christmas morning 2019, every single kit arrived on&nbsp;time.</p>
-</div>
-
-<!-- ═══ PHOTO BREAK ═══ -->
-<div class="full-break r">
-  <div class="full-break-inner">
-    <img src="https://substack-post-media.s3.amazonaws.com/public/images/760cb6fa-6621-47a2-a48e-1f168a64876e_1125x813.jpeg" alt="In-home user testing">
-    <img src="https://substack-post-media.s3.amazonaws.com/public/images/0e75c53e-37b0-4ee5-b674-3f958ea57f86_936x529.webp" alt="Kickstarter film day">
-  </div>
-</div>
-
-<!-- ═══ PRINCIPLES ═══ -->
+<!-- ═══ FIVE PILLARS ═══ -->
 <section class="principles">
-  <div class="label r">What we stand for</div>
-  <h2 class="r">Four convictions that shape everything we&nbsp;build.</h2>
+  <div class="label r">Our principles</div>
+  <h2 class="r">Five pillars that guide everything we&nbsp;build.</h2>
 
   <div class="principle r">
-    <h3>Hands touch what screens&nbsp;can't.</h3>
-    <p>Maria Montessori proved over a century ago that children construct knowledge through their senses — through touch, sequence, repetition, and self-correction. Neuroscience has since confirmed it: motor engagement during learning strengthens memory formation and conceptual understanding. Our coding blocks are made from natural wood. Our adventure maps are fabric you unfold on the floor. Our rover moves through real space. None of this is nostalgic. It is&nbsp;neurological.</p>
+    <h3>Screen-free by conviction, not by&nbsp;trend.</h3>
+    <p>We are not anti-technology. We are pro-appropriate-technology. The research on screen time before age six is unambiguous: studies consistently link early excessive screen exposure to delayed speech development, reduced attention span, and limited social engagement. But the answer is not <em>no</em> technology — it is the <em>right</em> technology. Physical. Tactile. Multi-sensory. The kind that engages the whole body, not just the eyes and fingertips. Our wooden coding blocks, fabric adventure maps, and physical programming board are designed to meet children where developmental science says they learn best: through their&nbsp;hands.</p>
   </div>
 
   <div class="principle r">
-    <h3>Stories outlast&nbsp;features.</h3>
-    <p>Children don't remember specifications. They remember characters, journeys, and the feeling of discovery. Every Mochi adventure is built around narrative: a curious bear, a new world to explore, a problem to solve. The coding concepts — sequences, loops, functions, decomposition — are embedded in the story, not bolted on. A child doesn't "learn to code." They help Mochi travel the solar system, and the code is how they get&nbsp;there.</p>
+    <h3>Montessori-grounded, science-validated.</h3>
+    <p>Maria Montessori's insights about self-directed learning, tactile exploration, and sequential thinking have been validated by over a century of developmental psychology and modern neuroscience. Motor engagement during learning strengthens memory formation. Haptic feedback improves spatial reasoning. Self-paced exploration builds executive function. Our wooden blocks, fabric maps, and physical programming board are not nostalgic design choices — they are neurological tools, each one informed by research on how young minds construct knowledge through sensory&nbsp;experience.</p>
   </div>
 
   <div class="principle r">
-    <h3>Inclusion is the&nbsp;point.</h3>
-    <p>Both of our founders are immigrants. Mark arrived from Ukraine. Daria from China. They know what it means to be outside a system that wasn't designed for you. Learn with Mochi is a public-benefit corporation because the mission isn't to capture a market — it's to expand who gets to participate in the technological future. We have shipped to 62 countries across six continents. The product arrives as a blank slate so every child can create experiences in their own&nbsp;image.</p>
+    <h3>Story-based, not screen-based.</h3>
+    <p>Children construct meaning through narrative. This is not pedagogical theory — it is how the developing brain organizes information, assigns emotional significance, and builds long-term memory. Every Mochi adventure is designed around a story arc: a character, a journey, a problem to solve. Coding concepts — sequences, loops, functions, decomposition — are embedded in the narrative, not bolted on. A child does not "do a coding exercise." They help Mochi explore the solar system, navigate an ancient forest, or build a robot city. The code is how they get&nbsp;there.</p>
   </div>
 
   <div class="principle r">
-    <h3>A child is a&nbsp;scientist.</h3>
-    <p>Not metaphorically. Literally. Children form hypotheses, test them, observe outcomes, and revise their understanding — naturally, instinctively, joyfully. The role of an educational tool is not to instruct but to create the conditions for this process to flourish. Our system is designed for open-ended play: there is no single "right answer," no score, no fail state. There is only what the child imagines, codes, and discovers for&nbsp;themselves.</p>
+    <h3>Open-ended play, no fail&nbsp;states.</h3>
+    <p>There is no score in Mochi. No timer. No "wrong answer." The system is designed for divergent thinking and creative exploration. A child who codes the rover in an unexpected direction has not failed — they have discovered something. This design philosophy aligns with decades of research on growth mindset and intrinsic motivation: when children are freed from the anxiety of evaluation, they experiment more boldly, persist longer, and develop deeper conceptual understanding. Play is not the opposite of learning. It is the mechanism&nbsp;of&nbsp;it.</p>
+  </div>
+
+  <div class="principle r">
+    <h3>Inclusive by design, accessible by&nbsp;mission.</h3>
+    <p>Mochi arrives as a blank slate. No gendered marketing. No cultural assumptions baked into the product. No language barriers in the physical play. Our kits ship to 62 countries across six continents because computational thinking is a universal literacy, not a privilege reserved for children in well-funded school districts. As a public-benefit corporation, expanding access is encoded in our legal charter — not just our marketing copy. Every design decision we make is tested against a simple question: does this work for <em>every</em>&nbsp;child?</p>
   </div>
 </section>
 
-<!-- ═══ TEAM ═══ -->
-<section class="team">
-  <div class="label r">The people</div>
-  <h2 class="r">Built by educators, scientists, and&nbsp;parents.</h2>
-  <div class="team-grid">
-    <div class="team-card r">
-      <div class="team-role">Founder & Chief Bear</div>
-      <h3>Mark Pavlyukovskyy</h3>
-      <p>Princeton (Molecular Biology), Oxford (Biomedical Engineering). Previously founded Play Piper (100K+ units, Forbes 30 Under 30). Believes nothing is ever broken — things are just waiting for imagination.</p>
-    </div>
-    <div class="team-card r d1">
-      <div class="team-role">Co-Founder & Chief Creative Octopus</div>
-      <h3>Daria Zhao</h3>
-      <p>Former Wall Street analyst turned educator. Left finance to teach STEM in exchange for office space. Designed the first coding blocks on her iPad. Believes generosity can exist especially when we have so little.</p>
-    </div>
-    <div class="team-card r d2">
-      <div class="team-role">Chief Scientist</div>
-      <h3>Dr. Mihran Vardanyan</h3>
-      <p>Oxford-trained astrophysicist with a secondary degree in pedagogy. Directs R&D on robotics, algorithms, and computer vision. Brings the rigor of physics to the gentleness of early childhood education.</p>
-    </div>
-    <div class="team-card r d3">
-      <div class="team-role">Mom in Chief</div>
-      <h3>Vaneni Vardanyan</h3>
-      <p>STEM educator with decades of experience implementing curricula across Denmark, England, Armenia, and the United States. Mother of three daughters. Brings psychology expertise to every learning sequence we design.</p>
-    </div>
-  </div>
-</section>
+<div class="prose-divider r"></div>
+
+<!-- ═══ DATA & PRIVACY ═══ -->
+<div class="prose r">
+  <div class="label">Your family's privacy</div>
+  <h2>No accounts. No tracking. No data&nbsp;collection.</h2>
+  <p>Mochi requires zero internet connection, zero app downloads, and zero account creation. There is no telemetry. No analytics. No behavioral data collected from children. The programming board reads wooden blocks via physical contact — no Bluetooth, no WiFi, no cloud processing. Your child's play stays in your living&nbsp;room.</p>
+  <p>We believe the best data policy is collecting no data at all. In an era when children's digital footprints are monetized before they can spell their own names, we made a deliberate architectural decision: <em>Mochi has no digital footprint because Mochi has no digital&nbsp;connection.</em></p>
+  <p>This approach exceeds the requirements of the Children's Online Privacy Protection Act (COPPA) — not by implementing better consent flows or more secure databases, but by eliminating the need for them entirely. There is nothing to breach because there is nothing to collect. Privacy is not a feature we added. It is a consequence of how we built the product from the ground&nbsp;up.</p>
+</div>
+
+<div class="prose-divider r"></div>
+
+<!-- ═══ RESEARCH & STANDARDS ═══ -->
+<div class="certs r">
+  <div class="label">Certifications &amp; research</div>
+  <h2>Validated by educators, certified by&nbsp;institutions.</h2>
+  <p>We do not ask families to take our word for it. Independent institutions have evaluated Mochi against rigorous standards for educational quality, developmental appropriateness, and safety. These certifications are not awards we applied for — they are third-party validations from organizations whose sole purpose is to protect the families we&nbsp;serve.</p>
+  <ul class="cert-list">
+    <li class="r">Montessori-Approved Educational Product</li>
+    <li class="r d1">Mom's Choice Awards — Gold Recipient</li>
+    <li class="r d2">National Parenting Product Awards (NAPPA)</li>
+    <li class="r d3">STEM.org Authenticated</li>
+    <li class="r">Purdue University INSPIRE Research Lab — Validated</li>
+    <li class="r d1">Smithsonian Magazine — Best STEM Toys</li>
+  </ul>
+</div>
 
 <!-- ═══ VISION ═══ -->
 <section class="vision">
-  <div class="label r">Where we're going</div>
-  <h2 class="r">A world where every child understands the technology that shapes their&nbsp;life.</h2>
-  <p class="r d1">Today, a few thousand engineers in a handful of cities decide how billions of people communicate, learn, work, and play. That concentration of creative power is unprecedented in human history — and it is&nbsp;unsustainable.</p>
-  <p class="r d2">We are building toward a future where computational thinking is as universal as literacy. Where a child in rural Arkansas and a child in Nairobi both grow up knowing that technology is not magic — it is a language they can speak, a tool they can wield, a world they can&nbsp;shape.</p>
-  <p class="r d3">Mochi is where that future begins: on a living room floor, with wooden blocks, a storybook, and a very curious&nbsp;bear.</p>
-  <div class="vision-illo r">
-    <img src="Sample Images/windows.png" alt="">
-  </div>
+  <div class="label r">Our long-term vision</div>
+  <h2 class="r">Technology should serve childhood, not consume&nbsp;it.</h2>
+  <p class="r d1">We imagine a future where every educational technology is designed with the same care we bring to Mochi. Where "safe for children" means more than content filters and parental controls — it means tools that develop agency, creativity, and genuine understanding. Where the measure of a product is not how long a child uses it, but how much they grow from&nbsp;it.</p>
+  <p class="r d2">The world does not need more software that teaches children to swipe. It needs tools that teach them to think, to build, to question, and to create. That is the standard we hold ourselves to — and the standard we believe every company building for children should be held to as well. Not because it is good marketing. Because it is the right thing to&nbsp;do.</p>
 </section>
 
 <!-- ═══ JOIN ═══ -->
@@ -408,7 +342,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 
 <script>
 /* Hero word-by-word */
-!function(){const h=document.getElementById('heroH');'We believe the children who will shape the future should understand how it works.'.split(' ').forEach((w,i)=>{const s=document.createElement('span');s.className='word';s.style.animationDelay=`${.2+i*.1}s`;s.textContent=w;h.appendChild(s);if(i<14)h.appendChild(document.createTextNode('\u00A0'))})}();
+!function(){const h=document.getElementById('heroH');'Built for the humans who matter most.'.split(' ').forEach((w,i)=>{const s=document.createElement('span');s.className='word';s.style.animationDelay=`${.2+i*.1}s`;s.textContent=w;h.appendChild(s);if(i<7)h.appendChild(document.createTextNode('\u00A0'))})}();
 /* Scroll reveals */
 !function(){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});document.querySelectorAll('.r').forEach(el=>o.observe(el));
 /* Auto-add reveal to prose paragraphs */
@@ -418,8 +352,6 @@ const bq=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){setTime
 document.querySelectorAll('.prose blockquote').forEach(el=>bq.observe(el));
 /* Prose dividers */
 document.querySelectorAll('.prose-divider').forEach(el=>{if(!el.classList.contains('r')){el.classList.add('r');o.observe(el)}});
-/* Full break */
-document.querySelectorAll('.full-break').forEach(el=>{if(!el.classList.contains('r')){el.classList.add('r');o.observe(el)}});
 /* Vision h2 */
 document.querySelectorAll('.vision h2').forEach(el=>{if(!el.classList.contains('r')){el.classList.add('r');o.observe(el)}})
 }();
