@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn with Mochi — Every child is born a creator</title>
+<meta name="description" content="Screen-free coding for ages 3 and up. The Montessori method applied to robotics, storytelling, and computational thinking.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Learn with Mochi — Every child is born a creator">
+<meta property="og:description" content="Screen-free coding robotics kit for ages 3-9. Montessori-approved, LEGO-compatible, story-driven. No screens, no apps — just a child, a bear, and an adventure.">
+<meta property="og:image" content="https://learn-with-mochi.vercel.app/og-image.png">
+<meta property="og:url" content="https://learn-with-mochi.vercel.app">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Learn with Mochi — Every child is born a creator">
+<meta name="twitter:description" content="Screen-free coding robotics kit for ages 3-9. Montessori-approved, LEGO-compatible, story-driven.">
+<meta name="twitter:image" content="https://learn-with-mochi.vercel.app/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ivory: #FFF8F0;
+  --parchment: #FFFCF8;
+  --warm: #F5F3ED;
+  --sage: #EDF7F4;
+  --dark-green: #1a3d32;
+  --ink: #1a1a2e;
+  --text: #1a1a2e;
+  --mid: #5a5a6e;
+  --light: #7a7a8e;
+  --green: #2DA17D;
+  --green-dk: #1f8566;
+  --green-lt: #D0ECE5;
+  --green-pale: #EDF7F4;
+  --gold: #E7A200;
+  --gold-lt: #FEE29E;
+  --gold-pale: #FFF8E7;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --eo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);color:var(--text);background:var(--ivory);line-height:1.7;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 clamp(1.5rem,5vw,5rem);height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,248,240,0.9);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);border-bottom:1px solid transparent;transition:border-color .5s,box-shadow .5s}
+nav.scrolled{border-bottom-color:rgba(26,26,46,0.06);box-shadow:0 1px 40px rgba(26,26,46,0.04)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.nav-logo img{width:38px;height:38px;border-radius:10px}
+.nav-logo span{font-family:var(--serif);font-size:1.2rem;font-weight:600;letter-spacing:-0.01em}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.85rem;font-weight:400;color:var(--light);text-decoration:none;transition:color .3s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{font-size:.8rem!important;font-weight:500!important;color:var(--green)!important;padding:8px 22px;border:1.5px solid var(--green);border-radius:100px;transition:all .3s!important}
+.nav-cta:hover{background:var(--green)!important;color:#fff!important}
+.mob-tog{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.mob-tog span{display:block;width:20px;height:1.5px;background:var(--ink);margin:5px 0;transition:.3s}
+
+/* ── SHARED ── */
+.label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1.25rem}
+.label.c{text-align:center}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:.9rem;font-weight:500;padding:14px 34px;border-radius:100px;text-decoration:none;border:none;cursor:pointer;transition:all .35s;letter-spacing:.01em}
+.btn-f{background:var(--green);color:#fff}
+.btn-f:hover{background:var(--green-dk);transform:translateY(-2px);box-shadow:0 10px 30px rgba(45,161,125,.25)}
+.btn-o{background:transparent;color:var(--green);border:1.5px solid rgba(45,161,125,.4)}
+.btn-o:hover{border-color:var(--green);background:var(--green-pale);transform:translateY(-1px)}
+.r{opacity:0;transform:translateY(50px);transition:opacity .9s var(--eo),transform .9s var(--eo)}
+.r.v{opacity:1;transform:translateY(0)}
+.r.d1{transition-delay:.1s}.r.d2{transition-delay:.2s}.r.d3{transition-delay:.3s}.r.d4{transition-delay:.4s}.r.d5{transition-delay:.5s}
+
+/* =========================================
+   1. HERO - Anthropic-style
+   ========================================= */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:100px clamp(1.5rem,5vw,5rem) 40px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  background:var(--ivory);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(208,236,229,.35) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(254,226,158,.12) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 50%, rgba(45,161,125,.04) 0%, transparent 70%);
+  pointer-events:none;
+}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(3rem,7vw,7rem);
+  font-weight:400;
+  line-height:1.05;
+  letter-spacing:-0.035em;
+  color:var(--ink);
+  margin-bottom:2rem;
+  position:relative;z-index:1;
+  max-width:1000px;
+}
+.hero h1 .word{
+  display:inline-block;opacity:0;transform:translateY(36px);
+  animation:wordIn .8s var(--eo) forwards;
+}
+@keyframes wordIn{to{opacity:1;transform:translateY(0)}}
+.hero-sub{
+  font-size:clamp(1rem,1.5vw,1.2rem);
+  font-weight:300;
+  color:var(--mid);
+  max-width:540px;
+  margin:0 auto;
+  line-height:1.8;
+  position:relative;z-index:1;
+  opacity:0;animation:fadeUp .9s 1.8s var(--eo) forwards;
+}
+.hero-island{
+  position:relative;z-index:1;
+  margin-top:3rem;
+  opacity:0;animation:fadeUp 1s 2.2s var(--eo) forwards;
+}
+.hero-island img{
+  width:clamp(350px,45vw,550px);
+  filter:drop-shadow(0 30px 60px rgba(45,161,125,.12));
+  animation:float 6s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+
+/* Testimonial cycling */
+.hero-testimonial{
+  position:relative;z-index:1;
+  margin-top:3.5rem;
+  min-height:100px;
+  max-width:600px;
+  opacity:0;animation:fadeUp .8s 2.8s var(--eo) forwards;
+}
+.hero-test-region{text-align:center}
+.hero-test-loc{
+  font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--green);margin-bottom:.6rem;
+}
+.hero-test-quote{
+  font-family:var(--serif);font-size:clamp(1rem,1.3vw,1.15rem);
+  font-style:italic;font-weight:400;color:var(--mid);
+  line-height:1.6;min-height:3.2em;
+}
+.hero-test-quote .cursor{
+  display:inline-block;width:2px;height:1em;background:var(--green);
+  vertical-align:text-bottom;margin-left:2px;
+  animation:blink 1s steps(1) infinite;
+}
+@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
+.hero-dots{
+  display:flex;justify-content:center;gap:8px;
+  margin-top:1.25rem;
+}
+.hero-dots span{
+  width:8px;height:8px;border-radius:50%;
+  background:rgba(26,26,46,.12);cursor:pointer;
+  transition:background .3s, transform .3s;
+}
+.hero-dots span.active{background:var(--green);transform:scale(1.3)}
+.hero-dots span:hover{background:var(--green);opacity:.7}
+
+/* =========================================
+   2. FEATURE CARD - Anthropic 81K teaser
+   ========================================= */
+.feature-card-section{
+  padding:clamp(4rem,8vw,7rem) clamp(1.5rem,5vw,5rem);
+  background:var(--warm);
+}
+.feature-card{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-radius:24px;overflow:hidden;
+  background:#fff;
+  border:1px solid rgba(26,26,46,.06);
+  transition:transform .5s var(--eo),box-shadow .5s var(--eo);
+}
+.feature-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 60px rgba(0,0,0,.07);
+}
+.fc-text{
+  padding:clamp(2.5rem,5vw,4rem);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.fc-text .label{margin-bottom:1rem}
+.fc-text h2{
+  font-family:var(--serif);
+  font-size:clamp(2rem,3.5vw,2.8rem);
+  font-weight:400;line-height:1.15;
+  letter-spacing:-0.025em;color:var(--ink);
+  margin-bottom:1.25rem;
+}
+.fc-text .fc-desc{
+  font-size:clamp(.9rem,1.1vw,1rem);
+  font-weight:300;color:var(--mid);line-height:1.8;
+  margin-bottom:2rem;
+}
+.fc-text .fc-link{
+  font-size:.9rem;font-weight:500;color:var(--green);
+  text-decoration:none;transition:color .3s;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.fc-text .fc-link:hover{color:var(--green-dk)}
+.fc-img{overflow:hidden}
+.fc-img img{width:100%;height:100%;object-fit:cover;min-height:360px;transition:transform .6s var(--eo)}
+.feature-card:hover .fc-img img{transform:scale(1.03)}
+
+/* =========================================
+   3. THREE CONTENT CARDS
+   ========================================= */
+.content-cards-section{
+  padding:clamp(4rem,8vw,7rem) clamp(1.5rem,5vw,5rem);
+  background:var(--ivory);
+}
+.cc-grid{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
+}
+.cc-card{
+  background:#fff;border:1px solid rgba(26,26,46,.06);
+  border-radius:20px;padding:2.5rem 2rem;
+  transition:transform .5s var(--eo),box-shadow .5s var(--eo);
+  display:flex;flex-direction:column;
+}
+.cc-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 16px 48px rgba(0,0,0,.07);
+}
+.cc-card-icon{
+  width:56px;height:56px;margin-bottom:1.75rem;opacity:.8;
+}
+.cc-card h3{
+  font-family:var(--serif);
+  font-size:clamp(1.3rem,2vw,1.6rem);
+  font-weight:500;color:var(--ink);line-height:1.2;
+  margin-bottom:.75rem;
+}
+.cc-card p{
+  font-size:.9rem;font-weight:300;color:var(--mid);line-height:1.75;
+  margin-bottom:1.5rem;flex:1;
+}
+.cc-card a{
+  font-size:.85rem;font-weight:500;color:var(--green);
+  text-decoration:none;transition:color .3s;
+  display:inline-flex;align-items:center;gap:4px;
+}
+.cc-card a:hover{color:var(--green-dk)}
+
+/* =========================================
+   4. THE WORLDVIEW - Stripe Press color shift
+   ========================================= */
+.worldview{
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:clamp(6rem,12vw,10rem) clamp(1.5rem,5vw,5rem);
+  background:var(--sage);
+  text-align:center;position:relative;overflow:hidden;
+}
+.worldview h2{
+  font-family:var(--serif);
+  font-size:clamp(2.2rem,4.5vw,3.5rem);
+  font-weight:400;line-height:1.2;
+  letter-spacing:-0.025em;color:var(--ink);
+  max-width:800px;margin:0 auto 2.5rem;
+}
+.worldview .wv-body{
+  font-size:clamp(1rem,1.3vw,1.1rem);
+  font-weight:300;color:var(--mid);line-height:1.85;
+  max-width:600px;margin:0 auto 3.5rem;
+}
+.worldview .wv-illo{
+  max-width:400px;margin:0 auto;
+  animation:float 6s ease-in-out infinite;
+}
+.worldview .wv-illo img{
+  width:100%;
+  filter:drop-shadow(0 20px 50px rgba(45,161,125,.15));
+}
+
+/* =========================================
+   5. BY THE NUMBERS - Dark green
+   ========================================= */
+.numbers{
+  background:var(--dark-green);color:#fff;
+  padding:clamp(6rem,12vw,10rem) clamp(1.5rem,5vw,5rem);
+  position:relative;overflow:hidden;
+}
+.numbers::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 15% 50%, rgba(45,161,125,.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 30%, rgba(231,162,0,.1) 0%, transparent 50%);
+  pointer-events:none;
+}
+.num-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:2rem;max-width:1000px;margin:0 auto 3rem;
+  position:relative;z-index:1;text-align:center;
+}
+.num-val{
+  font-family:var(--serif);
+  font-size:clamp(3rem,6vw,5rem);
+  font-weight:300;line-height:1;
+  margin-bottom:.6rem;
+  font-variant-numeric:tabular-nums;
+}
+.num-val .hl{color:var(--green-lt)}
+.num-lbl{font-size:.82rem;font-weight:300;color:rgba(255,255,255,.45);line-height:1.55}
+.numbers-awards{
+  text-align:center;position:relative;z-index:1;
+  font-size:.85rem;font-weight:300;
+  color:rgba(255,255,255,.35);line-height:1.6;
+  max-width:700px;margin:0 auto;
+}
+
+/* =========================================
+   6. MEET THE KIT - Stripe Press book-page
+   ========================================= */
+.kit{
+  background:var(--ivory);position:relative;overflow:hidden;
+  padding:clamp(6rem,12vw,10rem) clamp(1.5rem,5vw,5rem);
+}
+.kit::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 70% 20%,rgba(208,236,229,.25) 0%,transparent 50%);
+  pointer-events:none;
+}
+.kit-layout{
+  display:grid;grid-template-columns:1.15fr 1fr;
+  gap:5rem;max-width:1100px;margin:0 auto;
+  align-items:center;position:relative;z-index:1;
+}
+.kit-images{position:relative}
+.kit-main{border-radius:24px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.08)}
+.kit-main img{width:100%}
+.kit-badge{
+  position:absolute;top:-12px;right:-12px;
+  background:var(--green);color:#fff;
+  font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  padding:8px 18px;border-radius:100px;
+  box-shadow:0 4px 16px rgba(45,161,125,.3);
+}
+.kit-thumbs{display:flex;gap:10px;margin-top:12px}
+.kit-thumbs img{
+  width:80px;height:80px;object-fit:cover;border-radius:12px;
+  border:2px solid transparent;cursor:pointer;transition:border-color .3s;
+}
+.kit-thumbs img:hover{border-color:var(--green)}
+.kit-content .label{margin-bottom:1rem}
+.kit-content h2{
+  font-family:var(--serif);
+  font-size:clamp(2.2rem,4.5vw,3.2rem);
+  font-weight:400;line-height:1.15;letter-spacing:-0.025em;
+  color:var(--ink);margin-bottom:.5rem;
+}
+.kit-sub{
+  font-family:var(--serif);font-size:1.15rem;
+  font-style:italic;font-weight:300;
+  color:var(--mid);margin-bottom:2.5rem;
+}
+.kit-features{list-style:none;margin-bottom:2.5rem}
+.kit-features li{
+  font-size:.95rem;font-weight:300;color:var(--text);
+  padding:.65rem 0;border-bottom:1px solid rgba(26,26,46,.05);
+  display:flex;align-items:center;gap:14px;
+}
+.kit-features li::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--green);flex-shrink:0;
+}
+.kit-price .amount{
+  font-family:var(--serif);font-size:3.5rem;font-weight:400;
+  color:var(--ink);line-height:1;
+}
+.kit-price .note{
+  font-size:.85rem;font-weight:300;color:var(--light);
+  margin-top:.5rem;margin-bottom:2rem;
+}
+
+/* Adventures reveal (collapsible) */
+.adv-reveal{max-width:1100px;margin:3rem auto 0;position:relative;z-index:1;text-align:center}
+.adv-reveal-toggle{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  padding:14px 36px;background:transparent;
+  border:1.5px solid rgba(45,161,125,.35);border-radius:100px;
+  cursor:pointer;font-family:var(--sans);font-size:.9rem;font-weight:500;
+  color:var(--green);transition:all .35s;letter-spacing:.01em;
+}
+.adv-reveal-toggle:hover{border-color:var(--green);background:var(--green-pale);transform:translateY(-1px)}
+.adv-reveal-toggle .arrow{display:inline-block;transition:transform .4s var(--eo);font-size:1.1rem}
+.adv-reveal.open .adv-reveal-toggle .arrow{transform:rotate(180deg)}
+.adv-reveal-content{max-height:0;overflow:hidden;transition:max-height .6s var(--eo)}
+.adv-reveal.open .adv-reveal-content{max-height:2000px}
+.adv-reveal-inner{padding-top:2rem}
+.adv-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.25rem;max-width:1000px;margin:0 auto 2rem;
+}
+.adv-card{
+  border-radius:16px;overflow:hidden;background:#fff;
+  border:1px solid rgba(26,26,46,.05);
+  transition:transform .45s var(--eo),box-shadow .45s var(--eo);cursor:pointer;
+}
+.adv-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.08)}
+.adv-card-img{width:100%;aspect-ratio:1;object-fit:cover;background:var(--green-pale)}
+.adv-card-body{padding:1.25rem 1.5rem 1.5rem}
+.adv-card-body h3{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:.25rem}
+.adv-card-body .adv-desc{font-size:.85rem;font-weight:300;color:var(--mid);margin-bottom:.75rem}
+.adv-card-body .adv-price{font-size:.8rem;font-weight:500;color:var(--light)}
+
+/* Bundles */
+.bundles-s{max-width:1100px;margin:3.5rem auto 0;position:relative;z-index:1}
+.bundles-s h3{font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--ink);text-align:center;margin-bottom:2rem}
+.bundle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.bun{
+  background:var(--warm);border:1px solid rgba(26,26,46,.05);
+  border-radius:20px;padding:2rem;position:relative;
+  transition:transform .4s var(--eo),box-shadow .4s var(--eo);
+}
+.bun:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.06)}
+.bun.pop{border:2px solid var(--green);background:var(--green-pale)}
+.bun-tag{
+  position:absolute;top:-10px;left:50%;transform:translateX(-50%);
+  font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--green);color:#fff;padding:5px 14px;border-radius:100px;white-space:nowrap;
+}
+.bun h4{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--ink);margin-bottom:.4rem}
+.bun .bun-d{font-size:.82rem;font-weight:300;color:var(--mid);margin-bottom:1.25rem;line-height:1.6}
+.bun .bun-p{font-family:var(--serif);font-size:2rem;font-weight:500;color:var(--ink)}
+.bun .was{font-family:var(--sans);font-size:.8rem;font-weight:300;color:var(--light);text-decoration:line-through;margin-left:8px}
+
+/* =========================================
+   7. TESTIMONIALS - Stripe Press massive quote
+   ========================================= */
+.testimonials{
+  background:var(--parchment);
+  padding:clamp(6rem,12vw,10rem) clamp(1.5rem,5vw,5rem);
+}
+.testimonials .label{text-align:center;margin-bottom:3rem}
+.test-stack{
+  max-width:800px;margin:0 auto 4rem;
+  display:flex;flex-direction:column;gap:3.5rem;
+}
+.test-item{position:relative;padding-left:4.5rem}
+.test-item .test-mark{
+  position:absolute;top:-0.3rem;left:0;
+  font-family:var(--serif);font-size:80px;font-weight:700;
+  line-height:1;color:var(--gold);opacity:.5;
+  user-select:none;
+}
+.test-item .test-text{
+  font-family:var(--serif);
+  font-size:clamp(1.2rem,1.6vw,1.6rem);
+  font-style:italic;font-weight:400;
+  color:var(--ink);line-height:1.55;
+  margin-bottom:.75rem;
+}
+.test-item .test-attr{
+  font-family:var(--sans);
+  font-size:.8rem;font-weight:400;color:var(--mid);
+}
+.test-photos{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:4px;max-width:700px;margin:0 auto;
+}
+.test-photos img{
+  width:100%;aspect-ratio:1;object-fit:cover;
+  border-radius:8px;transition:transform .4s var(--eo);
+}
+.test-photos img:hover{transform:scale(1.03)}
+
+/* =========================================
+   8. SUBSCRIBE + FOOTER
+   ========================================= */
+.sub{
+  background:var(--dark-green);color:#fff;text-align:center;
+  position:relative;overflow:hidden;
+  padding:clamp(6rem,12vw,10rem) clamp(1.5rem,5vw,5rem);
+}
+.sub::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 50% 100%,rgba(45,161,125,.3) 0%,transparent 55%),
+    radial-gradient(ellipse at 20% 0%,rgba(231,162,0,.08) 0%,transparent 40%);
+  pointer-events:none;
+}
+.sub h2{
+  font-family:var(--serif);
+  font-size:clamp(2.2rem,4.5vw,3.5rem);
+  font-weight:400;line-height:1.15;letter-spacing:-0.025em;
+  color:#fff;max-width:780px;margin:0 auto 1.5rem;text-align:center;
+}
+.sub .bt{
+  font-size:clamp(1rem,1.3vw,1.1rem);font-weight:300;
+  color:rgba(255,255,255,.55);line-height:1.85;
+  max-width:600px;text-align:center;margin:0 auto 2rem;
+}
+.sub-illo{
+  max-width:clamp(240px,30vw,340px);margin:0 auto 2.5rem;
+  position:relative;z-index:1;
+}
+.sub-illo img{
+  width:100%;
+  filter:drop-shadow(0 20px 50px rgba(0,0,0,.15));
+  animation:float 5s ease-in-out infinite;
+}
+.sub-price{
+  font-family:var(--serif);font-size:1.6rem;font-weight:400;
+  color:var(--green-lt);margin-bottom:2.5rem;
+  position:relative;z-index:1;
+}
+.sub .btn{position:relative;z-index:1}
+
+/* FAQ */
+.faq{
+  background:var(--ivory);position:relative;
+  padding:clamp(6rem,12vw,10rem) clamp(1.5rem,5vw,5rem) 1rem;
+}
+.faq-layout{
+  display:grid;grid-template-columns:1fr 1.6fr;
+  gap:4rem;max-width:1100px;margin:0 auto;align-items:start;
+}
+.faq-intro .label{margin-bottom:1rem}
+.faq-intro h2{
+  font-family:var(--serif);
+  font-size:clamp(2rem,3.5vw,2.8rem);
+  font-weight:400;line-height:1.15;letter-spacing:-0.025em;
+  color:var(--ink);margin-bottom:1rem;
+}
+.faq-intro p{font-size:.95rem;font-weight:300;color:var(--mid);line-height:1.7}
+.faq-intro-illo{margin-top:2rem;max-width:300px;opacity:.85}
+.faq-intro-illo img{width:100%;filter:drop-shadow(0 8px 20px rgba(45,161,125,.1))}
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid rgba(26,26,46,.08)}
+.faq-item:first-child{border-top:1px solid rgba(26,26,46,.08)}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1.5rem;padding:1.5rem 0;cursor:pointer;
+  background:none;border:none;width:100%;text-align:left;
+  font-family:var(--serif);font-size:1.2rem;font-weight:500;
+  color:var(--ink);line-height:1.35;transition:color .3s;
+}
+.faq-q:hover{color:var(--green)}
+.faq-q .faq-icon{
+  width:28px;height:28px;border-radius:50%;
+  border:1.5px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:transform .4s var(--eo),border-color .3s;
+}
+.faq-q .faq-icon::before{
+  content:'+';font-family:var(--sans);font-size:1rem;font-weight:300;
+  color:var(--gold);line-height:1;transition:transform .4s var(--eo);
+}
+.faq-item.open .faq-q .faq-icon{border-color:var(--green)}
+.faq-item.open .faq-q .faq-icon::before{content:'+';transform:rotate(45deg);color:var(--green)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--eo),padding .5s var(--eo)}
+.faq-item.open .faq-a{max-height:500px}
+.faq-a-inner{padding:0 0 1.5rem;font-size:.95rem;font-weight:300;color:var(--mid);line-height:1.85}
+
+/* Garden grow */
+.garden-grow{
+  position:relative;height:420px;overflow:hidden;
+  background:linear-gradient(to bottom,var(--ivory) 0%,var(--warm) 100%);
+  pointer-events:none;margin-top:-4rem;
+}
+.garden-grow img{
+  position:absolute;bottom:-20px;left:50%;
+  transform:translateX(-50%);
+  width:max(140%,1600px);height:auto;
+  transform-origin:bottom center;
+  will-change:transform,opacity;
+}
+
+/* Footer */
+footer{
+  background:var(--warm);border-top:none;
+  padding:clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,5rem);
+}
+.footer-grid{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;
+}
+.footer-brand p{font-size:.85rem;font-weight:300;color:var(--light);line-height:1.7;max-width:280px;margin-top:1rem}
+.footer-col h4{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:1rem}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:.55rem}
+.footer-col ul li a{font-size:.85rem;font-weight:300;color:var(--light);text-decoration:none;transition:color .3s}
+.footer-col ul li a:hover{color:var(--green)}
+.footer-bottom{
+  max-width:1100px;margin:3rem auto 0;padding-top:2rem;
+  border-top:1px solid rgba(26,26,46,.06);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.footer-bottom p{font-size:.78rem;color:var(--light);font-weight:300}
+
+/* =========================================
+   VERSION TOGGLE BAR
+   ========================================= */
+.version-toggle{
+  position:fixed;bottom:0;left:0;right:0;z-index:9998;
+  height:48px;
+  background:rgba(26,26,46,0.95);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  display:flex;align-items:center;justify-content:center;gap:12px;
+}
+.version-toggle span{font-size:.8rem;font-weight:400;color:rgba(255,255,255,.5)}
+.version-toggle button{
+  font-family:var(--sans);font-size:.75rem;font-weight:500;
+  padding:6px 16px;border-radius:100px;border:1px solid rgba(255,255,255,.15);
+  background:transparent;color:rgba(255,255,255,.5);
+  cursor:pointer;transition:all .3s;
+}
+.version-toggle button:hover{border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)}
+.version-toggle button.active{
+  background:var(--green);border-color:var(--green);color:#fff;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media(max-width:900px){
+  .nav-links{display:none}.mob-tog{display:block}
+  .nav-links.open{
+    display:flex;flex-direction:column;position:absolute;top:72px;
+    left:0;right:0;background:var(--ivory);padding:2rem;gap:1.5rem;
+    border-bottom:1px solid rgba(26,26,46,.06);
+    box-shadow:0 12px 32px rgba(0,0,0,.06);
+  }
+  .feature-card{grid-template-columns:1fr}
+  .fc-img{order:-1}
+  .fc-img img{min-height:260px}
+  .cc-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
+  .num-grid{grid-template-columns:repeat(2,1fr);gap:2rem}
+  .kit-layout{grid-template-columns:1fr;gap:3rem}
+  .kit-images{order:-1}
+  .test-photos{grid-template-columns:repeat(2,1fr)}
+  .bundle-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}
+  .adv-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .faq-layout{grid-template-columns:1fr;gap:2rem}
+  .faq-intro{text-align:center}
+  .faq-intro-illo{margin-left:auto;margin-right:auto}
+  .garden-grow{height:280px}
+  .test-item{padding-left:3rem}
+  .test-item .test-mark{font-size:56px}
+}
+@media(max-width:600px){
+  .hero h1{font-size:clamp(2.4rem,10vw,3.2rem)}
+  .hero-island img{width:280px}
+  .num-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:1rem;text-align:center}
+  .test-item{padding-left:2.5rem}
+  .test-item .test-mark{font-size:44px}
+  .test-photos{grid-template-columns:repeat(3,1fr)}
+}
+
+/* Grain */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px 256px}
+
+/* Bottom padding so footer isn't hidden behind toggle */
+body{padding-bottom:48px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <img src="Sample Images/SunbearLOGO.png" alt="Mochi">
+    <span>Learn with Mochi</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="about.html">Our Story</a></li>
+    <li><a href="trust.html">Trust &amp; Safety</a></li>
+    <li><a href="partners.html">Partner With Us</a></li>
+    <li><a href="#kit" class="nav-cta">Explore Mochi</a></li>
+  </ul>
+  <button class="mob-tog" id="mobTog" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ======= 1. HERO ======= -->
+<section class="hero">
+  <h1 id="heroH"></h1>
+  <p class="hero-sub">Learn with Mochi builds the Montessori method for AI literacy. Ages 3 to 9. No screens required.</p>
+  <div class="hero-island">
+    <img src="Sample Images/hilltop_crop.png" alt="A floating island of adventure and discovery">
+  </div>
+  <div class="hero-testimonial" id="heroTest">
+    <div class="hero-test-region">
+      <div class="hero-test-loc" id="testLoc"></div>
+      <div class="hero-test-quote" id="testQuote"><span class="cursor"></span></div>
+    </div>
+    <div class="hero-dots" id="testDots"></div>
+  </div>
+</section>
+
+<!-- ======= 2. FEATURE CARD ======= -->
+<section class="feature-card-section">
+  <div class="feature-card r">
+    <div class="fc-text">
+      <div class="label">THE FOUNDING STORY</div>
+      <h2>Two immigrants, one question, and a bear named Mochi.</h2>
+      <p class="fc-desc">How a Ukrainian engineer and a Chinese-Canadian educator built a screen-free coding system from Home Depot plywood.</p>
+      <a href="about.html" class="fc-link">Read the story &rarr;</a>
+    </div>
+    <div class="fc-img">
+      <img src="https://substack-post-media.s3.amazonaws.com/public/images/0e75c53e-37b0-4ee5-b674-3f958ea57f86_936x529.webp" alt="Kickstarter launch video film day" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ======= 3. THREE CONTENT CARDS ======= -->
+<section class="content-cards-section">
+  <div class="cc-grid">
+    <div class="cc-card r d1">
+      <img src="Sample Images/seedling.svg" alt="" class="cc-card-icon">
+      <h3>Mochi is Montessori, applied to code</h3>
+      <p>100 years of developmental science meets computational thinking.</p>
+      <a href="trust.html">Learn about the method &rarr;</a>
+    </div>
+    <div class="cc-card r d2">
+      <img src="Sample Images/compass.svg" alt="" class="cc-card-icon">
+      <h3>A new adventure, every month</h3>
+      <p>16 story-driven coding packs from planets to neuroscience.</p>
+      <a href="#kit">See the adventures &rarr;</a>
+    </div>
+    <div class="cc-card r d3">
+      <img src="Sample Images/map.svg" alt="" class="cc-card-icon">
+      <h3>62 countries and counting</h3>
+      <p>How families on six continents are choosing screen-free.</p>
+      <a href="partners.html">Partner with us &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======= 4. THE WORLDVIEW ======= -->
+<section class="worldview">
+  <h2 class="r">The most powerful technologies in history are being handed to children as sealed black boxes.</h2>
+  <p class="wv-body r d1">Today's devices mask their inner workings. Children become consumers of technology, not creators. We exist to change that.</p>
+  <div class="wv-illo r d2">
+    <img src="Sample Images/windows.png" alt="An open window to a world of possibility">
+  </div>
+</section>
+
+<!-- ======= 5. BY THE NUMBERS ======= -->
+<section class="numbers">
+  <div class="num-grid">
+    <div class="r"><div class="num-val"><span class="ctr" data-t="20000">0</span><span class="hl">+</span></div><div class="num-lbl">children learning</div></div>
+    <div class="r d1"><div class="num-val"><span class="ctr" data-t="62">0</span></div><div class="num-lbl">countries reached</div></div>
+    <div class="r d2"><div class="num-val"><span class="ctr" data-t="16">0</span></div><div class="num-lbl">adventure themes</div></div>
+    <div class="r d3"><div class="num-val">0</div><div class="num-lbl">screens required</div></div>
+  </div>
+  <p class="numbers-awards r d4">Montessori-approved. Mom's Choice Gold. Smithsonian Best STEM Toys.</p>
+</section>
+
+<!-- ======= 6. MEET THE KIT ======= -->
+<section class="kit" id="kit">
+  <div class="kit-layout">
+    <div class="kit-images r">
+      <div class="kit-main">
+        <span class="kit-badge">Screen-Free</span>
+        <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/MOCHI1283.jpg?v=1712772085" alt="Mochi Robotics Kit" id="kitImg">
+      </div>
+      <div class="kit-thumbs">
+        <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/MOCHI1283.jpg?v=1712772085" alt="Kit overview" onclick="document.getElementById('kitImg').src=this.src">
+        <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/MOCHI1242.jpg?v=1712772085" alt="Kit detail" onclick="document.getElementById('kitImg').src=this.src">
+        <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/MOCHI1266.jpg?v=1712772085" alt="Kit in use" onclick="document.getElementById('kitImg').src=this.src">
+        <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/MOCHI1239.jpg?v=1741165362" alt="Kit closeup" onclick="document.getElementById('kitImg').src=this.src">
+      </div>
+    </div>
+    <div class="kit-content">
+      <div class="label r">The Explorer's Kit</div>
+      <h2 class="r">Everything Mochi needs for their first adventure.</h2>
+      <p class="kit-sub r">Ready to play. No setup. No downloads.</p>
+      <ul class="kit-features r">
+        <li>Mochi Bear plush companion</li>
+        <li>LEGO-compatible Rover</li>
+        <li>Screenless programming board</li>
+        <li>12 natural wood coding blocks in wooden case</li>
+        <li>Storybook (30+ pages, full color)</li>
+        <li>Adventure map (machine-washable, 1m &times; 1m)</li>
+        <li>Original songs &amp; audio storytelling on SD card</li>
+      </ul>
+      <div class="kit-price r">
+        <div class="amount">$149</div>
+        <div class="note">Free shipping across the United States</div>
+      </div>
+      <div class="r"><a href="#" class="btn btn-f">Begin the adventure</a></div>
+    </div>
+  </div>
+
+  <!-- Adventures collapsible -->
+  <div class="adv-reveal r" id="advReveal">
+    <button class="adv-reveal-toggle" onclick="document.getElementById('advReveal').classList.toggle('open')">
+      Choose your custom adventure packs <span class="arrow">&#8595;</span>
+    </button>
+    <div class="adv-reveal-content">
+      <div class="adv-reveal-inner">
+        <div class="adv-grid">
+          <div class="adv-card"><img class="adv-card-img" src="https://robotics.learnwithmochi.com/cdn/shop/t/47/assets/Planets-box.jpg" alt="Learn Planets" loading="lazy"><div class="adv-card-body"><h3>Learn Planets</h3><p class="adv-desc">Travel the solar system</p><span class="adv-price">$40</span></div></div>
+          <div class="adv-card"><img class="adv-card-img" src="https://robotics.learnwithmochi.com/cdn/shop/t/47/assets/colors-box.jpg" alt="Learn Colors" loading="lazy"><div class="adv-card-body"><h3>Learn Colors</h3><p class="adv-desc">Dive into the coral reef</p><span class="adv-price">$50</span></div></div>
+          <div class="adv-card"><img class="adv-card-img" src="https://robotics.learnwithmochi.com/cdn/shop/t/47/assets/Biologyset-box.jpg" alt="Learn Biology" loading="lazy"><div class="adv-card-body"><h3>Learn Biology</h3><p class="adv-desc">Explore the living world</p><span class="adv-price">$50</span></div></div>
+          <div class="adv-card"><img class="adv-card-img" src="https://robotics.learnwithmochi.com/cdn/shop/t/47/assets/Dinosaurs-box.jpg" alt="Learn Dinosaurs" loading="lazy"><div class="adv-card-body"><h3>Learn Dinosaurs</h3><p class="adv-desc">Journey to the Mesozoic</p><span class="adv-price">$40</span></div></div>
+          <div class="adv-card"><img class="adv-card-img" src="https://robotics.learnwithmochi.com/cdn/shop/t/47/assets/Earthset-box.jpg" alt="Learn Earth" loading="lazy"><div class="adv-card-body"><h3>Learn Earth</h3><p class="adv-desc">Discover our planet</p><span class="adv-price">$50</span></div></div>
+          <div class="adv-card"><img class="adv-card-img" src="https://robotics.learnwithmochi.com/cdn/shop/t/47/assets/Neuroscience-box.jpg" alt="Learn Neuroscience" loading="lazy"><div class="adv-card-body"><h3>Learn Neuroscience</h3><p class="adv-desc">Map the sleeping brain</p><span class="adv-price">$40</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bundles-s">
+    <h3 class="r">Or start with a bundle</h3>
+    <div class="bundle-grid">
+      <div class="bun r d1"><h4>Fundamentals</h4><p class="bun-d">Kit + 5 adventures: Planets, Colors, Numbers, Letters, Shapes</p><div class="bun-p">$250 <span class="was">$350</span></div></div>
+      <div class="bun pop r d2"><span class="bun-tag">Most Popular</span><h4>Complete Bundle</h4><p class="bun-d">Kit + all 16 adventures: the entire Mochi library</p><div class="bun-p">$500 <span class="was">$840</span></div></div>
+      <div class="bun r d3"><h4>Intermediate</h4><p class="bun-d">Kit + 6 adventures: Animals, Words, Fruits &amp; Veg, Earth, Time, Planets</p><div class="bun-p">$275 <span class="was">$400</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= 7. TESTIMONIALS ======= -->
+<section class="testimonials">
+  <div class="label c r">LOVED BY FAMILIES</div>
+  <div class="test-stack">
+    <div class="test-item r">
+      <span class="test-mark">&ldquo;</span>
+      <p class="test-text">My son can make a plan to get from one planet to another and code for Mochi to move that way. It's incredible watching him think through the logic.</p>
+      <p class="test-attr">Sarah M., Parent, California</p>
+    </div>
+    <div class="test-item r d1">
+      <span class="test-mark">&ldquo;</span>
+      <p class="test-text">Easy to set up, easy to use, and our preschoolers were ecstatic. The story-driven approach means they don't even realize they're learning to code.</p>
+      <p class="test-attr">Rachel T., Preschool Director, New York</p>
+    </div>
+    <div class="test-item r d2">
+      <span class="test-mark">&ldquo;</span>
+      <p class="test-text">The toy actually delivers on its promise to introduce young kids to programming. It's rare to find something that's both genuinely educational and genuinely fun.</p>
+      <p class="test-attr">James L., Parent, Singapore</p>
+    </div>
+  </div>
+  <div class="test-photos r d3">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img2.png" alt="Family using Mochi" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img4.png" alt="Child with Mochi" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img6.png" alt="Mochi in a classroom" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img8.png" alt="Kids learning" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img10.png?v=1605293549" alt="Mochi playtime" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img11.png?v=1607078922" alt="Happy family" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img12.png?v=1607078922" alt="Mochi rover" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img13.png?v=1607078922" alt="Kids coding" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/review-img14.png?v=1607078922" alt="Mochi adventures" loading="lazy">
+  </div>
+</section>
+
+<!-- ======= 8. SUBSCRIBE ======= -->
+<section class="sub">
+  <div class="r">
+    <div class="label c" style="color:rgba(255,255,255,.35)">Monthly Adventures</div>
+    <h2>A new adventure, every month.</h2>
+  </div>
+  <div class="r d1">
+    <p class="bt">Each month, a new story arrives at your door. A new world to explore. A new coding concept to master. Mochi never stops being curious. Neither will your child.</p>
+  </div>
+  <div class="sub-illo r d2">
+    <img src="Sample Images/gotmail.png" alt="A new adventure in your mailbox">
+  </div>
+  <div class="r d3"><p class="sub-price">From $29.75 / month</p></div>
+  <div class="r d4"><a href="#" class="btn btn-f">Subscribe to adventure</a></div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-layout">
+    <div class="faq-intro r">
+      <div class="label">Common Questions</div>
+      <h2>Your questions, answered</h2>
+      <p>From parents, grandparents, and educators exploring Learn with Mochi.</p>
+      <div class="faq-intro-illo">
+        <img src="Sample Images/labs_crop.png" alt="Discovery and curiosity">
+      </div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item r" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" itemprop="name">What is Learn with Mochi, and what ages is it designed for?<span class="faq-icon"></span></button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div class="faq-a-inner" itemprop="text">Learn with Mochi is a screen-free coding robotics kit designed for children ages 3 to 9. It combines a cuddly Mochi Bear plush, a LEGO-compatible rover, natural wood coding blocks, and story-driven adventure packs to teach computational thinking through hands-on play. Children learn real programming concepts like sequences, loops, functions, and debugging without a screen, app, or download. It's Montessori-approved and ready to play straight out of the box.</div></div>
+      </div>
+      <div class="faq-item r d1" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" itemprop="name">How does Mochi teach coding without a screen?<span class="faq-icon"></span></button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div class="faq-a-inner" itemprop="text">Mochi uses physical wooden coding blocks that children place on a screenless programming board. Each block represents a command: move forward, turn left, loop, or call a function. The board reads the sequence and sends instructions to the rover, which executes the code in real time. Audio feedback from original songs and storytelling narration guides the experience. It's tangible, multi-sensory, and grounded in the Montessori principle that children learn best through touch and self-directed discovery.</div></div>
+      </div>
+      <div class="faq-item r d2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" itemprop="name">What makes Mochi different from other coding toys like Botley or Cubetto?<span class="faq-icon"></span></button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div class="faq-a-inner" itemprop="text">Learn with Mochi is the only screen-free coding kit that combines a loveable character, story-driven learning, LEGO compatibility, and Montessori-approved natural wood materials in a single system. Unlike Botley (which is button-programmed) or Cubetto (which has no narrative layer), Mochi wraps coding concepts in rich adventures. 16 themed story packs cover everything from planets and biology to neuroscience and dinosaurs. Each adventure builds on prior knowledge, creating a growing curriculum rather than a standalone toy. The rover is also LEGO-compatible, meaning children can customize and extend their builds infinitely.</div></div>
+      </div>
+      <div class="faq-item r d3" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" itemprop="name">Is Mochi appropriate for classrooms and educators?<span class="faq-icon"></span></button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div class="faq-a-inner" itemprop="text">Absolutely. Learn with Mochi is used in classrooms and homeschool settings across 62 countries. The kit includes STEM certifications and supports educator professional development. Because it's screen-free and self-contained, there's no setup, IT support, or device management required. Children can begin coding within minutes. The 16 adventure themes map to real curriculum areas including math, science, literacy, and computational thinking, making it easy for teachers to integrate into existing lesson plans.</div></div>
+      </div>
+      <div class="faq-item r d4" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" itemprop="name">What comes in the Explorer's Kit, and how much does it cost?<span class="faq-icon"></span></button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div class="faq-a-inner" itemprop="text">The Mochi Explorer's Kit is $149 with free shipping in the United States. It includes the Mochi Bear plush, a LEGO-compatible rover, the screenless programming board, 12 natural wood coding blocks in a wooden storage case, a 30+ page full-color storybook, a machine-washable 1-meter adventure map, craft pieces, LEGO connectors, and an SD card with original songs and audiobook narration. Bundles with additional adventure packs start at $250, and the Complete Bundle with all 16 themes is $500. A monthly subscription delivering a new adventure each month starts at $29.75.</div></div>
+      </div>
+      <div class="faq-item r d5" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" itemprop="name">Who founded Learn with Mochi, and why?<span class="faq-icon"></span></button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div class="faq-a-inner" itemprop="text">Learn with Mochi was co-founded in 2018 by Mark Pavlyukovskyy and Daria Zhao. Mark, a Ukrainian immigrant and Forbes 30 Under 30 honoree, previously built the Piper Computer Kit (100,000+ units shipped to 70 countries). Daria, a Chinese-Canadian immigrant and former Wall Street analyst, left finance to teach STEM classes in San Francisco. They saw a generation of children growing up with polished devices that masked how technology actually works, and set out to build a hands-on, screen-free way for the youngest learners to become creators of technology, not just consumers. Learn with Mochi is a public-benefit corporation dedicated to the long-term educational wellbeing of children worldwide.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARDEN GROW -->
+<div class="garden-grow" id="gardenGrow">
+  <img src="Sample Images/garden.svg" alt="" id="gardenImg">
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo"><img src="Sample Images/SunbearLOGO.png" alt="Mochi"><span>Learn with Mochi</span></a>
+      <p>A public-benefit corporation building the Montessori method for coding and robotics. Empowering children to create with technology since 2019.</p>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul><li><a href="about.html">Our Story</a></li><li><a href="trust.html">Trust &amp; Safety</a></li><li><a href="partners.html">Partner With Us</a></li><li><a href="#kit">Explorer's Kit</a></li></ul></div>
+    <div class="footer-col"><h4>Shop</h4><ul><li><a href="#">Robotics Kit</a></li><li><a href="#">Adventure Packs</a></li><li><a href="#">Coding Blocks</a></li><li><a href="#">Subscription</a></li></ul></div>
+    <div class="footer-col"><h4>Connect</h4><ul><li><a href="mailto:hello@LearnWithMochi.com">hello@LearnWithMochi.com</a></li><li><a href="https://instagram.com/learnwithmochi">Instagram</a></li><li><a href="https://facebook.com/LearnWithMochi">Facebook</a></li><li><a href="https://youtube.com/learnwithmochi">YouTube</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2019-2026 Learn with Mochi. All rights reserved.</p></div>
+</footer>
+
+<!-- VERSION TOGGLE -->
+<div class="version-toggle">
+  <span>Viewing:</span>
+  <button onclick="window.location='index.html'">Before</button>
+  <button class="active">After</button>
+</div>
+
+<script>
+/* ── Hero word-by-word ── */
+!function(){
+  var h=document.getElementById('heroH');
+  var words='Screen-free coding for the generation that will shape everything.'.split(' ');
+  words.forEach(function(w,i){
+    var s=document.createElement('span');
+    s.className='word';
+    s.style.animationDelay=(0.25+i*0.12)+'s';
+    s.textContent=w;
+    h.appendChild(s);
+    if(i<words.length-1) h.appendChild(document.createTextNode('\u00A0'));
+  });
+}();
+
+/* ── Testimonial typewriter cycling ── */
+!function(){
+  var testimonials=[
+    {loc:'CALIFORNIA',text:'My son can make a plan to get from one planet to another and code for Mochi to move that way.'},
+    {loc:'NEW YORK',text:'Easy to set up, easy to use, and our preschoolers were ecstatic.'},
+    {loc:'SINGAPORE',text:'The toy actually delivers on its promise to introduce young kids to programming.'},
+    {loc:'TEXAS',text:'Great for teaching logical thinking and cause and effect.'},
+    {loc:'LONDON',text:'Lots of fun and learning. Gives you an opportunity to spend quality time with your child.'}
+  ];
+  var locEl=document.getElementById('testLoc');
+  var quoteEl=document.getElementById('testQuote');
+  var dotsEl=document.getElementById('testDots');
+  var current=0;
+  var typeTimer=null;
+  var advanceTimer=null;
+
+  // build dots
+  testimonials.forEach(function(_,i){
+    var d=document.createElement('span');
+    if(i===0) d.className='active';
+    d.addEventListener('click',function(){goTo(i)});
+    dotsEl.appendChild(d);
+  });
+
+  function typewrite(text,cb){
+    var i=0;
+    quoteEl.innerHTML='<span class="cursor"></span>';
+    function tick(){
+      if(i<text.length){
+        quoteEl.innerHTML=text.substring(0,i+1)+'<span class="cursor"></span>';
+        i++;
+        typeTimer=setTimeout(tick,28);
+      } else {
+        if(cb) cb();
+      }
+    }
+    tick();
+  }
+
+  function goTo(idx){
+    if(typeTimer) clearTimeout(typeTimer);
+    if(advanceTimer) clearTimeout(advanceTimer);
+    current=idx;
+    // update dots
+    var dots=dotsEl.querySelectorAll('span');
+    dots.forEach(function(d,i){d.className=i===idx?'active':''});
+    // show
+    locEl.textContent=testimonials[idx].loc;
+    typewrite('"'+testimonials[idx].text+'"',function(){
+      advanceTimer=setTimeout(function(){goTo((current+1)%testimonials.length)},6000);
+    });
+  }
+
+  // initial start after animation delay
+  setTimeout(function(){goTo(0)},3200);
+}();
+
+/* ── Scroll reveals ── */
+!function(){
+  var o=new IntersectionObserver(function(entries){
+    entries.forEach(function(x){if(x.isIntersecting) x.target.classList.add('v')});
+  },{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.r').forEach(function(el){o.observe(el)});
+}();
+
+/* ── Nav scroll ── */
+!function(){
+  var n=document.getElementById('nav');
+  var t=false;
+  window.addEventListener('scroll',function(){
+    if(!t){
+      requestAnimationFrame(function(){
+        n.classList.toggle('scrolled',scrollY>30);
+        t=false;
+      });
+      t=true;
+    }
+  });
+}();
+
+/* ── Mobile nav ── */
+!function(){
+  var b=document.getElementById('mobTog');
+  var l=document.getElementById('navLinks');
+  b.addEventListener('click',function(){l.classList.toggle('open')});
+  l.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){l.classList.remove('open')});
+  });
+}();
+
+/* ── Animated counters ── */
+!function(){
+  var o=new IntersectionObserver(function(entries){
+    entries.forEach(function(x){
+      if(x.isIntersecting&&!x.target.dataset.done){
+        x.target.dataset.done='1';
+        var t=+x.target.dataset.t;
+        var dur=1800;
+        var start=performance.now();
+        !function step(now){
+          var p=Math.min((now-start)/dur,1);
+          var ease=1-Math.pow(1-p,3);
+          x.target.textContent=Math.floor(ease*t).toLocaleString();
+          if(p<1) requestAnimationFrame(step);
+        }(start);
+      }
+    });
+  },{threshold:.5});
+  document.querySelectorAll('.ctr').forEach(function(c){o.observe(c)});
+}();
+
+/* ── FAQ accordion ── */
+!function(){
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    item.querySelector('.faq-q').addEventListener('click',function(){
+      var wasOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open')});
+      if(!wasOpen) item.classList.add('open');
+    });
+  });
+}();
+
+/* ── Garden grow on scroll ── */
+!function(){
+  var garden=document.getElementById('gardenGrow');
+  var img=document.getElementById('gardenImg');
+  if(!garden||!img) return;
+  function update(){
+    var rect=garden.getBoundingClientRect();
+    var vh=window.innerHeight;
+    if(rect.top<vh&&rect.bottom>0){
+      var progress=Math.min(Math.max((vh-rect.top)/(vh+rect.height),0),1);
+      var scale=0.85+progress*0.15;
+      var opacity=0.5+progress*0.5;
+      var translateY=(1-progress)*40;
+      img.style.transform='translateX(-50%) scale('+scale+') translateY('+translateY+'px)';
+      img.style.opacity=opacity;
+    }
+    requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}();
+</script>
+</body>
+</html>

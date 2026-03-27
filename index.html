@@ -737,6 +737,14 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
   <div class="footer-bottom"><p>&copy; 2019–2026 Learn with Mochi. All rights reserved.</p></div>
 </footer>
 
+<!-- VERSION TOGGLE -->
+<div class="version-toggle" style="position:fixed;bottom:0;left:0;right:0;z-index:9998;height:48px;background:rgba(26,26,46,0.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;gap:12px">
+  <span style="font-size:.8rem;font-weight:400;color:rgba(255,255,255,.5)">Viewing:</span>
+  <button onclick="void(0)" style="font-family:var(--sans);font-size:.75rem;font-weight:500;padding:6px 16px;border-radius:100px;border:1px solid var(--green);background:var(--green);color:#fff;cursor:pointer">Before</button>
+  <button onclick="window.location='index-after.html'" style="font-family:var(--sans);font-size:.75rem;font-weight:500;padding:6px 16px;border-radius:100px;border:1px solid rgba(255,255,255,.15);background:transparent;color:rgba(255,255,255,.5);cursor:pointer;transition:all .3s">After</button>
+</div>
+<style>body{padding-bottom:48px}</style>
+
 <script>
 /* Hero word-by-word */
 !function(){const h=document.getElementById('heroH');'Every child is born a creator.'.split(' ').forEach((w,i)=>{const s=document.createElement('span');s.className='word';s.style.animationDelay=`${.25+i*.14}s`;s.textContent=w;h.appendChild(s);if(i<5)h.appendChild(document.createTextNode('\u00A0'))})}();
