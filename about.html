@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Story — Learn with Mochi</title>
+<title>Our Story - Learn with Mochi</title>
 <meta name="description" content="We believe the children who will shape the future should understand how it works. The founding story, philosophy, and mission behind Learn with Mochi.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta property="og:title" content="Our Story — Learn with Mochi">
+<meta property="og:title" content="Our Story - Learn with Mochi">
 <meta property="og:description" content="We believe the children who will shape the future should understand how it works.">
 <meta property="og:image" content="https://learn-with-mochi.vercel.app/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,94 +47,125 @@ nav.scrolled{border-bottom-color:rgba(26,26,46,0.06);box-shadow:0 1px 40px rgba(
 /* Shared */
 .r{opacity:0;transform:translateY(50px);transition:opacity .9s var(--eo),transform .9s var(--eo)}
 .r.v{opacity:1;transform:translateY(0)}
-.r.d1{transition-delay:.1s}.r.d2{transition-delay:.2s}.r.d3{transition-delay:.3s}
+.r.d1{transition-delay:.1s}.r.d2{transition-delay:.2s}.r.d3{transition-delay:.3s}.r.d4{transition-delay:.35s}
 
-/* ═══════════════════════════════
+/* ===============================
    HERO
-   ═══════════════════════════════ */
-.about-hero{min-height:85vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px clamp(1.5rem,5vw,5rem) 80px;position:relative}
+   =============================== */
+.about-hero{min-height:72vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px clamp(1.5rem,5vw,5rem) 50px;position:relative}
 .about-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(208,236,229,.25) 0%,transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(254,226,158,.12) 0%,transparent 45%);pointer-events:none}
-.about-hero h1{font-family:var(--serif);font-size:clamp(2.8rem,6vw,4.5rem);font-weight:400;line-height:1.12;letter-spacing:-0.025em;color:var(--ink);max-width:800px;margin-bottom:2rem;position:relative;z-index:1}
+.about-hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5.5vw,4rem);font-weight:400;line-height:1.12;letter-spacing:-0.025em;color:var(--ink);max-width:720px;margin-bottom:1.5rem;position:relative;z-index:1}
 .about-hero h1 .word{display:inline-block;opacity:0;transform:translateY(30px);animation:wordIn .8s var(--eo) forwards}
 @keyframes wordIn{to{opacity:1;transform:translateY(0)}}
-.about-hero-sub{font-size:clamp(1rem,1.6vw,1.2rem);font-weight:300;color:var(--mid);max-width:520px;line-height:1.85;position:relative;z-index:1;opacity:0;animation:fadeUp .9s 1.6s var(--eo) forwards}
+.about-hero-sub{font-size:clamp(.92rem,1.4vw,1.08rem);font-weight:300;color:var(--mid);max-width:480px;line-height:1.8;position:relative;z-index:1;opacity:0;animation:fadeUp .9s 1.6s var(--eo) forwards}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.about-hero-illo{margin-top:3rem;position:relative;z-index:1;opacity:0;animation:fadeUp 1s 2s var(--eo) forwards}
-.about-hero-illo img{width:clamp(200px,25vw,320px);animation:float 6s ease-in-out infinite}
+.about-hero-illo{margin-top:2rem;position:relative;z-index:1;opacity:0;animation:fadeUp 1s 2s var(--eo) forwards}
+.about-hero-illo img{width:clamp(180px,22vw,280px);animation:float 6s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 
-/* ═══════════════════════════════
-   PROSE SECTIONS
-   ═══════════════════════════════ */
-.prose{padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,5rem);max-width:760px;margin:0 auto}
-.prose .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1.25rem}
-.prose h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;letter-spacing:-0.02em;color:var(--ink);margin-bottom:2rem}
-.prose p{font-size:clamp(1rem,1.3vw,1.1rem);font-weight:300;color:var(--mid);line-height:1.9;margin-bottom:1.5rem}
-.prose p:last-child{margin-bottom:0}
-.prose p em{font-style:italic;color:var(--text);font-weight:400}
-.prose blockquote{border-left:3px solid var(--gold);padding-left:1.5rem;margin:2.5rem 0;font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.5rem);font-style:italic;font-weight:400;color:var(--mid);line-height:1.55}
-.prose-divider{width:48px;height:3px;background:var(--green-lt);border-radius:2px;margin:0 auto}
-.prose-img{margin:3rem 0;border-radius:16px;overflow:hidden}
-.prose-img img{width:100%}
-.prose-img.sm{max-width:400px;margin-left:auto;margin-right:auto}
-.prose-img figcaption{font-size:.8rem;font-weight:300;color:var(--light);margin-top:.75rem;text-align:center;font-style:italic}
+/* ===============================
+   SPLIT SECTION (world + image)
+   =============================== */
+.split{padding:clamp(3rem,7vw,5rem) clamp(1.5rem,5vw,5rem);max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+.split-text .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1rem}
+.split-text h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;line-height:1.15;letter-spacing:-0.02em;color:var(--ink);margin-bottom:1.5rem}
+.split-text p{font-size:clamp(.95rem,1.2vw,1.05rem);font-weight:300;color:var(--mid);line-height:1.85;margin-bottom:1.25rem}
+.split-text p:last-child{margin-bottom:0}
+.split-visual{position:relative;display:flex;align-items:center;justify-content:center}
+.split-visual img{border-radius:20px;width:100%;max-width:440px;box-shadow:0 20px 60px rgba(26,26,46,.06)}
+.split-quote{grid-column:1/-1;border-left:3px solid var(--gold);padding-left:1.5rem;margin-top:1rem;font-family:var(--serif);font-size:clamp(1.15rem,2vw,1.4rem);font-style:italic;font-weight:400;color:var(--mid);line-height:1.55;position:relative;overflow:hidden}
+.split-quote::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--green);transform:scaleY(0);transform-origin:top;transition:transform .8s var(--eo)}
+.split-quote.lit::after{transform:scaleY(1)}
+.split-quote.lit{border-left-color:var(--green);color:var(--text)}
 
-/* ═══════════════════════════════
-   FULLBLEED IMAGE BREAK
-   ═══════════════════════════════ */
-.full-break{padding:0 clamp(1.5rem,5vw,5rem);margin:0 auto;max-width:1100px}
-.full-break-inner{display:grid;grid-template-columns:1fr 1fr;gap:1rem;border-radius:20px;overflow:hidden}
-.full-break-inner img{width:100%;height:300px;object-fit:cover}
+/* ===============================
+   STORY CARDS (horizontal)
+   =============================== */
+.story-cards{padding:clamp(3rem,7vw,5rem) clamp(1.5rem,5vw,5rem);background:var(--warm)}
+.story-cards .section-head{text-align:center;margin-bottom:3rem}
+.story-cards .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1rem}
+.story-cards .section-head h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;line-height:1.15;color:var(--ink);max-width:550px;margin:0 auto}
+.card-track{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;max-width:1100px;margin:0 auto}
+.story-card{background:#fff;border:1px solid rgba(26,26,46,.05);border-radius:18px;overflow:hidden;transition:transform .5s var(--eo),box-shadow .5s var(--eo);position:relative}
+.story-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(26,26,46,.07)}
+.story-card::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(45,161,125,.05) 0%,transparent 60%);opacity:0;transition:opacity .5s;pointer-events:none}
+.story-card:hover::after{opacity:1}
+.story-card-img{height:200px;overflow:hidden;background:var(--green-pale)}
+.story-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 5s ease-out}
+.story-card:hover .story-card-img img{transform:scale(1.04)}
+.story-card-body{padding:1.5rem 1.25rem}
+.story-card-body .card-tag{display:inline-block;font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green);background:var(--green-pale);padding:3px 10px;border-radius:100px;margin-bottom:.75rem}
+.story-card-body p{font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.7}
 
-/* ═══════════════════════════════
-   PRINCIPLES
-   ═══════════════════════════════ */
-.principles{padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,5rem);background:var(--warm)}
-.principles .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1.25rem;text-align:center}
-.principles>h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;color:var(--ink);text-align:center;max-width:600px;margin:0 auto 4rem}
-.principle{max-width:700px;margin:0 auto 4rem;position:relative;padding-left:2.5rem}
-.principle:last-child{margin-bottom:0}
-.principle::before{content:'';position:absolute;left:0;top:.6rem;width:8px;height:8px;border-radius:50%;background:var(--green)}
-.principle h3{font-family:var(--serif);font-size:1.6rem;font-weight:500;color:var(--ink);margin-bottom:.75rem;line-height:1.25}
-.principle p{font-size:1rem;font-weight:300;color:var(--mid);line-height:1.85}
+/* ===============================
+   PRINCIPLES (accordion)
+   =============================== */
+.principles{padding:clamp(3rem,7vw,5rem) clamp(1.5rem,5vw,5rem);background:var(--ivory)}
+.principles .section-head{text-align:center;margin-bottom:3rem}
+.principles .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1rem}
+.principles .section-head h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;color:var(--ink);max-width:540px;margin:0 auto}
+.accordion{max-width:700px;margin:0 auto}
+.acc-item{border-bottom:1px solid rgba(26,26,46,.06)}
+.acc-item:first-child{border-top:1px solid rgba(26,26,46,.06)}
+.acc-trigger{width:100%;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 0;text-align:left;gap:1rem}
+.acc-trigger h3{font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.5rem);font-weight:500;color:var(--ink);line-height:1.25;transition:color .3s}
+.acc-trigger:hover h3{color:var(--green)}
+.acc-trigger .acc-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--green-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .4s var(--eo);position:relative}
+.acc-trigger .acc-icon::before,.acc-trigger .acc-icon::after{content:'';position:absolute;background:var(--green);border-radius:1px;transition:transform .4s var(--eo)}
+.acc-trigger .acc-icon::before{width:12px;height:1.5px}
+.acc-trigger .acc-icon::after{width:1.5px;height:12px}
+.acc-item.open .acc-trigger .acc-icon{background:var(--green-pale);border-color:var(--green)}
+.acc-item.open .acc-trigger .acc-icon::after{transform:rotate(90deg);opacity:0}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .5s var(--eo)}
+.acc-body-inner{padding:0 0 1.5rem;font-size:.95rem;font-weight:300;color:var(--mid);line-height:1.85}
+.acc-preview{font-size:.88rem;font-weight:300;color:var(--light);margin-top:.15rem;transition:opacity .3s}
+.acc-item.open .acc-preview{opacity:0;height:0;margin:0;overflow:hidden}
 
-/* ═══════════════════════════════
-   TEAM
-   ═══════════════════════════════ */
-.team{padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,5rem);background:var(--ivory)}
-.team .label{text-align:center;font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1.25rem}
-.team>h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;color:var(--ink);text-align:center;margin-bottom:4rem}
-.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;max-width:900px;margin:0 auto}
-.team-card{background:var(--warm);border:1px solid rgba(26,26,46,.04);border-radius:20px;padding:2.5rem;transition:transform .5s var(--eo)}
+/* ===============================
+   TEAM (compact 2x2)
+   =============================== */
+.team{padding:clamp(3rem,7vw,5rem) clamp(1.5rem,5vw,5rem);background:var(--warm)}
+.team .section-head{text-align:center;margin-bottom:2.5rem}
+.team .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1rem}
+.team .section-head h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;color:var(--ink)}
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;max-width:800px;margin:0 auto}
+.team-card{background:#fff;border:1px solid rgba(26,26,46,.04);border-radius:16px;padding:1.75rem;transition:transform .5s var(--eo);position:relative;overflow:hidden}
 .team-card:hover{transform:translateY(-3px)}
-.team-card .team-role{font-size:.65rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:.75rem}
-.team-card h3{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--ink);margin-bottom:.75rem}
-.team-card p{font-size:.9rem;font-weight:300;color:var(--mid);line-height:1.75}
+.team-card::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(45,161,125,.06) 0%,transparent 60%);opacity:0;transition:opacity .5s;pointer-events:none}
+.team-card:hover::after{opacity:1}
+.team-card .team-role{font-size:.6rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:.5rem}
+.team-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--ink);margin-bottom:.5rem}
+.team-card p{font-size:.85rem;font-weight:300;color:var(--mid);line-height:1.7}
 
-/* ═══════════════════════════════
+/* ===============================
    VISION
-   ═══════════════════════════════ */
-.vision{padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,5rem);background:#1a3d32;color:#fff;text-align:center;position:relative;overflow:hidden}
+   =============================== */
+.vision{padding:clamp(3.5rem,7vw,5rem) clamp(1.5rem,5vw,5rem);background:#1a3d32;color:#fff;text-align:center;position:relative;overflow:hidden}
 .vision::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(45,161,125,.25) 0%,transparent 55%);pointer-events:none}
-.vision .label{color:rgba(255,255,255,.35);font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.25rem}
-.vision h2{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.25rem);font-weight:400;color:#fff;max-width:700px;margin:0 auto 2rem;line-height:1.2;position:relative;z-index:1}
-.vision p{font-size:clamp(1rem,1.3vw,1.1rem);font-weight:300;color:rgba(255,255,255,.55);line-height:1.85;max-width:600px;margin:0 auto 1.5rem;position:relative;z-index:1}
-.vision-illo{margin:3rem auto 0;max-width:240px;position:relative;z-index:1;opacity:.8}
+.vision .label{color:rgba(255,255,255,.35);font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem}
+.vision h2{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:400;color:#fff;max-width:650px;margin:0 auto 1.5rem;line-height:1.2;position:relative;z-index:1}
+.vision p{font-size:clamp(.95rem,1.2vw,1.05rem);font-weight:300;color:rgba(255,255,255,.55);line-height:1.85;max-width:550px;margin:0 auto 1rem;position:relative;z-index:1}
+.vision-illo{margin:2rem auto 0;max-width:200px;position:relative;z-index:1;opacity:.8}
 .vision-illo img{width:100%;animation:float 6s ease-in-out infinite}
+/* Vision text glow */
+.vision h2{text-shadow:0 0 80px rgba(45,161,125,0);transition:text-shadow 1.5s}
+.vision h2.v{text-shadow:0 0 80px rgba(45,161,125,.15)}
 
-/* ═══════════════════════════════
+/* ===============================
    JOIN
-   ═══════════════════════════════ */
-.join{padding:clamp(4rem,7vw,5rem) clamp(1.5rem,5vw,5rem) 2rem;text-align:center;background:var(--ivory)}
-.join h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;color:var(--ink);margin-bottom:1rem}
-.join p{font-size:1rem;font-weight:300;color:var(--mid);line-height:1.8;max-width:540px;margin:0 auto 3rem}
-.join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:900px;margin:0 auto}
-.join-card{background:var(--warm);border:1px solid rgba(26,26,46,.04);border-radius:16px;padding:2rem;text-align:left;transition:transform .4s var(--eo)}
+   =============================== */
+.join{padding:clamp(3rem,6vw,4rem) clamp(1.5rem,5vw,5rem) 2rem;text-align:center;background:var(--ivory)}
+.join h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;color:var(--ink);margin-bottom:.75rem}
+.join>p{font-size:.95rem;font-weight:300;color:var(--mid);line-height:1.8;max-width:480px;margin:0 auto 2.5rem}
+.join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:860px;margin:0 auto}
+.join-card{background:var(--warm);border:1px solid rgba(26,26,46,.04);border-radius:16px;padding:1.5rem;text-align:left;transition:transform .4s var(--eo)}
 .join-card:hover{transform:translateY(-3px)}
-.join-card h3{font-family:var(--serif);font-size:1.25rem;font-weight:500;color:var(--ink);margin-bottom:.5rem}
-.join-card p{font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.7;margin:0}
-.join-card a{display:inline-block;margin-top:1rem;font-size:.85rem;font-weight:500;color:var(--green);text-decoration:none;transition:color .3s}
+.join-card h3{font-family:var(--serif);font-size:1.15rem;font-weight:500;color:var(--ink);margin-bottom:.4rem}
+.join-card p{font-size:.84rem;font-weight:300;color:var(--mid);line-height:1.7;margin:0}
+.join-card a{display:inline-block;margin-top:.75rem;font-size:.82rem;font-weight:500;color:var(--green);text-decoration:none;transition:color .3s;position:relative;overflow:hidden}
 .join-card a:hover{color:var(--green-dk)}
+.join-card a::after{content:'';display:inline-block;width:0;height:1px;background:var(--green);vertical-align:middle;margin-left:4px;transition:width .4s var(--eo)}
+.join-card:hover a::after{width:20px}
 
 /* GARDEN + FOOTER */
 .garden-grow{position:relative;height:420px;overflow:hidden;background:linear-gradient(to bottom,var(--ivory) 0%,var(--warm) 100%);pointer-events:none;margin-top:-6rem}
@@ -150,61 +181,31 @@ footer{background:var(--warm);border-top:none;padding:clamp(3rem,6vw,5rem) clamp
 .footer-bottom{max-width:1100px;margin:3rem auto 0;padding-top:2rem;border-top:1px solid rgba(26,26,46,.06);display:flex;justify-content:space-between;align-items:center}
 .footer-bottom p{font-size:.78rem;color:var(--light);font-weight:300}
 
-/* RESPONSIVE */
+/* ===============================
+   IMAGE PARALLAX + EFFECTS
+   =============================== */
+.split-visual img{transition:transform .6s var(--eo);will-change:transform}
+.split-visual:hover img{transform:scale(1.02)}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
 @media(max-width:900px){
   .nav-links{display:none}.mob-tog{display:block}
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--ivory);padding:2rem;gap:1.5rem;border-bottom:1px solid rgba(26,26,46,.06)}
-  .full-break-inner{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr;gap:2rem}
+  .split-visual{order:-1}
+  .split-visual img{max-width:320px;margin:0 auto}
+  .card-track{grid-template-columns:repeat(2,1fr)}
   .team-grid,.join-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:600px){
-  .about-hero h1{font-size:2.4rem}
+  .about-hero h1{font-size:2.2rem}
+  .card-track{grid-template-columns:1fr;max-width:360px;margin-left:auto;margin-right:auto}
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:1rem;text-align:center}
 }
-
-/* ═══════════════════════════════
-   INTERACTION EFFECTS
-   ═══════════════════════════════ */
-/* Paragraph-by-paragraph staggered reveal */
-.prose p.r{transform:translateY(30px)}
-/* Blockquote highlight sweep */
-.prose blockquote{position:relative;overflow:hidden}
-.prose blockquote::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--green);transform:scaleY(0);transform-origin:top;transition:transform .8s var(--eo)}
-.prose blockquote.lit::after{transform:scaleY(1)}
-.prose blockquote.lit{border-left-color:var(--green);color:var(--text)}
-/* Image parallax-lite on scroll */
-.prose-img{overflow:hidden}
-.prose-img img{transition:transform .6s var(--eo);will-change:transform}
-.prose-img:hover img{transform:scale(1.02)}
-/* Principle animated dot */
-.principle::before{transition:transform .5s var(--eo),background .5s}
-.principle:hover::before{transform:scale(1.5);background:var(--gold)}
-/* Principle text slide-in from left */
-.principle.r{transform:translateX(-30px) translateY(0);opacity:0}
-.principle.r.v{transform:translateX(0) translateY(0);opacity:1}
-/* Team card glow on hover */
-.team-card{position:relative;overflow:hidden}
-.team-card::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(45,161,125,.06) 0%,transparent 60%);opacity:0;transition:opacity .5s;pointer-events:none}
-.team-card:hover::after{opacity:1}
-/* Join card arrow slide */
-.join-card a{position:relative;overflow:hidden}
-.join-card a::after{content:'';display:inline-block;width:0;height:1px;background:var(--green);vertical-align:middle;margin-left:4px;transition:width .4s var(--eo)}
-.join-card:hover a::after{width:20px}
-/* Full-break image Ken Burns */
-.full-break-inner img{transition:transform 8s ease-out}
-.full-break.v img:first-child{transform:scale(1.05)}
-.full-break.v img:last-child{transform:scale(1.05)}
-/* Vision text glow */
-.vision h2{text-shadow:0 0 80px rgba(45,161,125,0);transition:text-shadow 1.5s}
-.vision h2.v{text-shadow:0 0 80px rgba(45,161,125,.15)}
-/* Prose divider grow */
-.prose-divider{transform:scaleX(0);transition:transform .8s var(--eo)}
-.prose-divider.v{transform:scaleX(1)}
-/* Stagger children inside principles */
-.principle h3{transition:color .3s}
-.principle:hover h3{color:var(--green)}
 
 /* Grain */
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px 256px}
@@ -226,162 +227,201 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
   <button class="mob-tog" id="mobTog" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- ═══ HERO ═══ -->
+<!-- HERO -->
 <section class="about-hero">
   <h1 id="heroH"></h1>
-  <p class="about-hero-sub">Learn with Mochi is a public-benefit corporation founded in 2018. We build the Montessori method for AI literacy and computational thinking — one bear, one family, one child at a time.</p>
+  <p class="about-hero-sub">A public-benefit corporation building the Montessori method for AI literacy and computational thinking, one family at a time.</p>
   <div class="about-hero-illo">
     <img src="Sample Images/hilltop_crop.png" alt="">
   </div>
 </section>
 
-<!-- ═══ THE WORLD WE SEE ═══ -->
-<div class="prose r">
-  <div class="label">The world we see</div>
-  <h2>A generation is growing up inside sealed&nbsp;machines.</h2>
-  <p>In 2007, the iPhone was introduced. By 2012, the iPad had become the default babysitter. By 2018 — when we founded this company — the average American child was spending over four hours a day on screens before the age of&nbsp;two.</p>
-  <p>These devices are miracles of engineering. They are also perfectly sealed black boxes. Unlike the clunky Commodore 64 that invited tinkering, or the Soviet-era radios that a curious child in Ukraine could take apart with a screwdriver, today's technology <em>masks its own inner workings</em>. It "just works." And that is precisely the&nbsp;problem.</p>
-  <p>When technology feels like magic, children learn to consume it. When it feels like a language — something with grammar, logic, and creative possibility — children learn to create with it. The difference between those two outcomes will define the next&nbsp;century.</p>
-  <blockquote>Technology is too important to be limited to the 0.01% creating it in Silicon&nbsp;Valley.</blockquote>
-  <p>We believe computational thinking is a foundational literacy — as essential as reading, writing, and arithmetic. And we believe it should begin not at age 12, in a computer lab, but at age 3, on a living room floor, with wooden blocks and a curious&nbsp;bear.</p>
-</div>
-
-<div class="prose-divider r"></div>
-
-<!-- ═══ ORIGIN ═══ -->
-<div class="prose r">
-  <div class="label">Where we come from</div>
-  <h2>Two immigrants, one&nbsp;question.</h2>
-
-  <figure class="prose-img r">
-    <img src="https://substack-post-media.s3.amazonaws.com/public/images/28377b20-a1d6-4905-8cdb-c0fbf08203f0_960x720.jpeg" alt="Young Mark building with LEGOs in Ukraine">
-    <figcaption>Mark building with LEGOs in his grandmother's apartment, Ukraine, early 1990s</figcaption>
-  </figure>
-
-  <p>Mark Pavlyukovskyy grew up in post-Soviet Ukraine, in his grandmother's apartment, taking apart rusty electronics. His babusya taught him that <em>nothing was ever broken — things were just waiting for someone with imagination to turn them into what could be.</em> He went on to study molecular biology at Princeton, then biomedical engineering at Oxford as an NIH Scholar. A medical diagnosis during his first year compressed his sense of time and made him ask: what can I build that will outlast&nbsp;me?</p>
-  <p>His answer was Play Piper — a computer kit that shipped over 100,000 units to children in 70+ countries, earned endorsements from Steve Wozniak, and landed him on Forbes 30 Under 30 in Education. But Piper was for older children. The question that haunted Mark was: what about the youngest&nbsp;ones?</p>
-
-  <figure class="prose-img sm r">
-    <img src="Sample Images/little-daria.png" alt="Little Daria with a bear" style="border-radius:16px">
-    <figcaption>Little Daria, always finding bears</figcaption>
-  </figure>
-
-  <p>Daria Zhao arrived in Canada from China as a child, barely able to speak English. A family of refugees from the former Yugoslavia took her in while her parents enrolled in language classes and worked odd jobs. They taught her that <em>generosity can exist even when we have so little. Especially when we have so&nbsp;little.</em></p>
-  <p>Daria built a career on Wall Street, then walked away from it. She moved to San Francisco and began teaching STEM classes three times a week at the Potrero Hill Neighborhood House — trading her time for free office space. She discovered something that every parent knows but few curricula acknowledge: children of every age learn best when they can <em>touch</em>&nbsp;things.</p>
-  <p>In 2018, Mark and Daria connected. They saw the same gap: a generation growing up with polished devices that masked how technology actually works. And they asked the same question: <em>What if we gave children the tools to build the future, not just consume&nbsp;it?</em></p>
-</div>
-
-<div class="prose-divider r"></div>
-
-<!-- ═══ THE HARD CHOICE ═══ -->
-<div class="prose r">
-  <div class="label">The hard choice</div>
-  <h2>Every VC said&nbsp;no.</h2>
-  <p>"Make it an app," they said on Sand Hill Road. "Software scales. Hardware doesn't. The returns aren't&nbsp;there."</p>
-  <p>But Mark and Daria were adamant. A pure software product meant delivering their screen-free solution through the very enemy they were fighting: <em>screen time</em>. The whole point was that children should hold something real. Feel the weight of a wooden block. Hear the click of a rover coming to life. Watch their code execute in physical space, not behind&nbsp;glass.</p>
-  <blockquote>It had to be hands-on. Or nothing at&nbsp;all.</blockquote>
-
-  <figure class="prose-img r">
-    <img src="https://substack-post-media.s3.amazonaws.com/public/images/a328c053-d064-42c3-84e0-55d98831a9eb_2703x3604.jpeg" alt="First coding blocks laser-cut from Home Depot plywood">
-    <figcaption>First coding blocks — laser-cut on plywood from Home Depot</figcaption>
-  </figure>
-
-  <p>So they built it themselves. The first coding blocks were laser-cut on plywood from Home Depot. The first audio files were recorded on Daria's phone. The first user tests happened in family friends' living rooms. They spent months living in Shenzhen, learning manufacturing from the ground&nbsp;up.</p>
-  <p>On October 16, 2019, they launched on Kickstarter. They were funded in under 12 hours. 720 backers pledged $218,000 — over four times their goal. And on Christmas morning 2019, every single kit arrived on&nbsp;time.</p>
-</div>
-
-<!-- ═══ PHOTO BREAK ═══ -->
-<div class="full-break r">
-  <div class="full-break-inner">
-    <img src="https://substack-post-media.s3.amazonaws.com/public/images/760cb6fa-6621-47a2-a48e-1f168a64876e_1125x813.jpeg" alt="In-home user testing">
-    <img src="https://substack-post-media.s3.amazonaws.com/public/images/0e75c53e-37b0-4ee5-b674-3f958ea57f86_936x529.webp" alt="Kickstarter film day">
+<!-- SPLIT: The World We See + Illustration -->
+<section class="split">
+  <div class="split-text r">
+    <div class="label">The world we see</div>
+    <h2>A generation is growing up inside sealed&nbsp;machines.</h2>
+    <p>Today's devices are miracles of engineering, and perfectly sealed black boxes. Unlike the clunky Commodore 64 that invited tinkering, modern technology <em>masks its own inner workings</em>. When technology feels like magic, children learn to consume it. When it feels like a language, they learn to create with it.</p>
+    <p>We believe computational thinking is a foundational literacy, as essential as reading, writing, and arithmetic. It should begin not at age 12 in a computer lab, but at age 3 on a living room floor, with wooden blocks and a curious bear.</p>
   </div>
-</div>
-
-<!-- ═══ PRINCIPLES ═══ -->
-<section class="principles">
-  <div class="label r">What we stand for</div>
-  <h2 class="r">Four convictions that shape everything we&nbsp;build.</h2>
-
-  <div class="principle r">
-    <h3>Hands touch what screens&nbsp;can't.</h3>
-    <p>Maria Montessori proved over a century ago that children construct knowledge through their senses — through touch, sequence, repetition, and self-correction. Neuroscience has since confirmed it: motor engagement during learning strengthens memory formation and conceptual understanding. Our coding blocks are made from natural wood. Our adventure maps are fabric you unfold on the floor. Our rover moves through real space. None of this is nostalgic. It is&nbsp;neurological.</p>
+  <div class="split-visual r d2">
+    <img src="Sample Images/clouds.png" alt="Whimsical cloud illustration">
   </div>
+  <blockquote class="split-quote r d3">Technology is too important to be limited to the 0.01% creating it in Silicon&nbsp;Valley.</blockquote>
+</section>
 
-  <div class="principle r">
-    <h3>Stories outlast&nbsp;features.</h3>
-    <p>Children don't remember specifications. They remember characters, journeys, and the feeling of discovery. Every Mochi adventure is built around narrative: a curious bear, a new world to explore, a problem to solve. The coding concepts — sequences, loops, functions, decomposition — are embedded in the story, not bolted on. A child doesn't "learn to code." They help Mochi travel the solar system, and the code is how they get&nbsp;there.</p>
+<!-- FOUNDING STORY: Horizontal Cards -->
+<section class="story-cards">
+  <div class="section-head">
+    <div class="label r">Where we come from</div>
+    <h2 class="r">Two immigrants. One question. A&nbsp;bear.</h2>
   </div>
+  <div class="card-track">
 
-  <div class="principle r">
-    <h3>Inclusion is the&nbsp;point.</h3>
-    <p>Both of our founders are immigrants. Mark arrived from Ukraine. Daria from China. They know what it means to be outside a system that wasn't designed for you. Learn with Mochi is a public-benefit corporation because the mission isn't to capture a market — it's to expand who gets to participate in the technological future. We have shipped to 62 countries across six continents. The product arrives as a blank slate so every child can create experiences in their own&nbsp;image.</p>
-  </div>
+    <div class="story-card r">
+      <div class="story-card-img">
+        <img src="https://substack-post-media.s3.amazonaws.com/public/images/28377b20-a1d6-4905-8cdb-c0fbf08203f0_960x720.jpeg" alt="Young Mark building with LEGOs">
+      </div>
+      <div class="story-card-body">
+        <span class="card-tag">Mark</span>
+        <p>Post-Soviet Ukraine. A grandmother who taught him nothing was ever broken, just waiting for imagination. Princeton, Oxford, Forbes 30 Under 30, and 100K computer kits shipped. Then a bigger question: what about the youngest children?</p>
+      </div>
+    </div>
 
-  <div class="principle r">
-    <h3>A child is a&nbsp;scientist.</h3>
-    <p>Not metaphorically. Literally. Children form hypotheses, test them, observe outcomes, and revise their understanding — naturally, instinctively, joyfully. The role of an educational tool is not to instruct but to create the conditions for this process to flourish. Our system is designed for open-ended play: there is no single "right answer," no score, no fail state. There is only what the child imagines, codes, and discovers for&nbsp;themselves.</p>
+    <div class="story-card r d1">
+      <div class="story-card-img">
+        <img src="Sample Images/little-daria.png" alt="Little Daria" style="object-position:center top">
+      </div>
+      <div class="story-card-body">
+        <span class="card-tag">Daria</span>
+        <p>From China to Canada, barely speaking English. A refugee family took her in and taught her generosity can exist even when you have so little. Wall Street analyst turned STEM teacher. She traded her salary for free office space and a bigger mission.</p>
+      </div>
+    </div>
+
+    <div class="story-card r d2">
+      <div class="story-card-img">
+        <img src="https://substack-post-media.s3.amazonaws.com/public/images/a328c053-d064-42c3-84e0-55d98831a9eb_2703x3604.jpeg" alt="First coding blocks">
+      </div>
+      <div class="story-card-body">
+        <span class="card-tag">The Build</span>
+        <p>Every VC said no. "Make it an app." But a screen-free product delivered through screen time made no sense. So they laser-cut blocks from Home Depot plywood, recorded audio on Daria's phone, and tested in friends' living rooms.</p>
+      </div>
+    </div>
+
+    <div class="story-card r d3">
+      <div class="story-card-img">
+        <img src="https://substack-post-media.s3.amazonaws.com/public/images/0e75c53e-37b0-4ee5-b674-3f958ea57f86_936x529.webp" alt="Kickstarter launch">
+      </div>
+      <div class="story-card-body">
+        <span class="card-tag">Launch</span>
+        <p>Christmas 2019. Funded in under 12 hours. 720 backers. $218K raised, over 4x their goal. Every single kit arrived on time.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ═══ TEAM ═══ -->
+<!-- PRINCIPLES: Expandable Accordion -->
+<section class="principles">
+  <div class="section-head">
+    <div class="label r">What we stand for</div>
+    <h2 class="r">Four convictions that shape everything we&nbsp;build.</h2>
+  </div>
+  <div class="accordion">
+
+    <div class="acc-item r">
+      <button class="acc-trigger" aria-expanded="false">
+        <div>
+          <h3>Hands touch what screens&nbsp;can't.</h3>
+          <p class="acc-preview">Motor engagement strengthens memory and conceptual understanding.</p>
+        </div>
+        <span class="acc-icon"></span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">Maria Montessori proved over a century ago that children construct knowledge through their senses. Neuroscience has confirmed it: motor engagement during learning strengthens memory formation. Our coding blocks are natural wood. Our adventure maps are fabric you unfold on the floor. Our rover moves through real space. None of this is nostalgic. It is neurological.</div>
+      </div>
+    </div>
+
+    <div class="acc-item r d1">
+      <button class="acc-trigger" aria-expanded="false">
+        <div>
+          <h3>Stories outlast&nbsp;features.</h3>
+          <p class="acc-preview">Children remember characters and journeys, not specifications.</p>
+        </div>
+        <span class="acc-icon"></span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">Every Mochi adventure is built around narrative: a curious bear, a new world to explore, a problem to solve. The coding concepts (sequences, loops, functions, decomposition) are embedded in the story, not bolted on. A child doesn't "learn to code." They help Mochi travel the solar system, and the code is how they get there.</div>
+      </div>
+    </div>
+
+    <div class="acc-item r d2">
+      <button class="acc-trigger" aria-expanded="false">
+        <div>
+          <h3>Inclusion is the&nbsp;point.</h3>
+          <p class="acc-preview">Both founders are immigrants who know what it means to be outside the system.</p>
+        </div>
+        <span class="acc-icon"></span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">Mark arrived from Ukraine. Daria from China. They know what it means to be outside a system that wasn't designed for you. Learn with Mochi is a public-benefit corporation because the mission isn't to capture a market. It's to expand who gets to participate in the technological future. We've shipped to 62 countries across six continents. The product arrives as a blank slate so every child can create in their own image.</div>
+      </div>
+    </div>
+
+    <div class="acc-item r d3">
+      <button class="acc-trigger" aria-expanded="false">
+        <div>
+          <h3>A child is a&nbsp;scientist.</h3>
+          <p class="acc-preview">Children form hypotheses, test, observe, and revise, naturally and joyfully.</p>
+        </div>
+        <span class="acc-icon"></span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">Not metaphorically. Literally. Children form hypotheses, test them, observe outcomes, and revise their understanding, naturally, instinctively, joyfully. Our system is designed for open-ended play: no single "right answer," no score, no fail state. Only what the child imagines, codes, and discovers for themselves.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEAM: Compact 2x2 grid -->
 <section class="team">
-  <div class="label r">The people</div>
-  <h2 class="r">Built by educators, scientists, and&nbsp;parents.</h2>
+  <div class="section-head">
+    <div class="label r">The people</div>
+    <h2 class="r">Educators, scientists, and&nbsp;parents.</h2>
+  </div>
   <div class="team-grid">
     <div class="team-card r">
-      <div class="team-role">Founder & Chief Bear</div>
+      <div class="team-role">Founder &amp; Chief Bear</div>
       <h3>Mark Pavlyukovskyy</h3>
-      <p>Princeton (Molecular Biology), Oxford (Biomedical Engineering). Previously founded Play Piper (100K+ units, Forbes 30 Under 30). Believes nothing is ever broken — things are just waiting for imagination.</p>
+      <p>Princeton, Oxford, Forbes 30 Under 30. Previously founded Play Piper (100K+ units shipped to 70 countries).</p>
     </div>
     <div class="team-card r d1">
-      <div class="team-role">Co-Founder & Chief Creative Octopus</div>
+      <div class="team-role">Co-Founder &amp; Chief Creative Octopus</div>
       <h3>Daria Zhao</h3>
-      <p>Former Wall Street analyst turned educator. Left finance to teach STEM in exchange for office space. Designed the first coding blocks on her iPad. Believes generosity can exist especially when we have so little.</p>
+      <p>Former Wall Street analyst turned educator. Designed the first coding blocks and traded finance for free office space.</p>
     </div>
     <div class="team-card r d2">
       <div class="team-role">Chief Scientist</div>
       <h3>Dr. Mihran Vardanyan</h3>
-      <p>Oxford-trained astrophysicist with a secondary degree in pedagogy. Directs R&D on robotics, algorithms, and computer vision. Brings the rigor of physics to the gentleness of early childhood education.</p>
+      <p>Oxford-trained astrophysicist. Directs R&amp;D on robotics, algorithms, and computer vision for early learners.</p>
     </div>
     <div class="team-card r d3">
       <div class="team-role">Mom in Chief</div>
       <h3>Vaneni Vardanyan</h3>
-      <p>STEM educator with decades of experience implementing curricula across Denmark, England, Armenia, and the United States. Mother of three daughters. Brings psychology expertise to every learning sequence we design.</p>
+      <p>STEM educator with decades of experience across four countries. Mother of three. Brings psychology expertise to every learning sequence.</p>
     </div>
   </div>
 </section>
 
-<!-- ═══ VISION ═══ -->
+<!-- VISION -->
 <section class="vision">
   <div class="label r">Where we're going</div>
   <h2 class="r">A world where every child understands the technology that shapes their&nbsp;life.</h2>
-  <p class="r d1">Today, a few thousand engineers in a handful of cities decide how billions of people communicate, learn, work, and play. That concentration of creative power is unprecedented in human history — and it is&nbsp;unsustainable.</p>
-  <p class="r d2">We are building toward a future where computational thinking is as universal as literacy. Where a child in rural Arkansas and a child in Nairobi both grow up knowing that technology is not magic — it is a language they can speak, a tool they can wield, a world they can&nbsp;shape.</p>
-  <p class="r d3">Mochi is where that future begins: on a living room floor, with wooden blocks, a storybook, and a very curious&nbsp;bear.</p>
-  <div class="vision-illo r">
+  <p class="r d1">We are building toward a future where computational thinking is as universal as literacy, where children everywhere grow up knowing technology is not magic but a language they can speak and a world they can shape.</p>
+  <div class="vision-illo r d2">
     <img src="Sample Images/windows.png" alt="">
   </div>
 </section>
 
-<!-- ═══ JOIN ═══ -->
+<!-- JOIN -->
 <section class="join">
   <h2 class="r">Join the&nbsp;mission.</h2>
-  <p class="r d1">We don't just sell a product. We're building a movement. Here's how you can be&nbsp;part&nbsp;of&nbsp;it.</p>
+  <p class="r d1">We're building a movement. Here's how to be part of it.</p>
   <div class="join-grid">
     <div class="join-card r d1">
       <h3>Educators</h3>
-      <p>Bring Mochi to your classroom. We offer educator training, professional development, and STEM-certified curriculum integration.</p>
+      <p>Bring Mochi to your classroom with training, PD, and STEM-certified curriculum.</p>
       <a href="mailto:hello@LearnWithMochi.com">Get in touch &rarr;</a>
     </div>
     <div class="join-card r d2">
-      <h3>Partners &amp; Distributors</h3>
-      <p>Help us reach more families. We work with distributors, retailers, and educational networks across 62 countries.</p>
+      <h3>Partners</h3>
+      <p>Help us reach more families. We work with distributors and retailers across 62 countries.</p>
       <a href="mailto:hello@LearnWithMochi.com">Partner with us &rarr;</a>
     </div>
     <div class="join-card r d3">
-      <h3>Press &amp; Media</h3>
-      <p>Tell our story. We're happy to provide press kits, founder interviews, product samples, and high-resolution imagery.</p>
+      <h3>Press</h3>
+      <p>Press kits, founder interviews, product samples, and high-res imagery available.</p>
       <a href="mailto:hello@LearnWithMochi.com">Press inquiries &rarr;</a>
     </div>
   </div>
@@ -403,30 +443,58 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
     <div class="footer-col"><h4>Shop</h4><ul><li><a href="index.html#kit">Robotics Kit</a></li><li><a href="index.html#kit">Adventure Packs</a></li><li><a href="index.html#kit">Bundles</a></li></ul></div>
     <div class="footer-col"><h4>Connect</h4><ul><li><a href="mailto:hello@LearnWithMochi.com">hello@LearnWithMochi.com</a></li><li><a href="https://instagram.com/learnwithmochi">Instagram</a></li><li><a href="https://facebook.com/LearnWithMochi">Facebook</a></li><li><a href="https://youtube.com/learnwithmochi">YouTube</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><p>&copy; 2019–2026 Learn with Mochi. All rights reserved.</p></div>
+  <div class="footer-bottom"><p>&copy; 2019-2026 Learn with Mochi. All rights reserved.</p></div>
 </footer>
 
 <script>
 /* Hero word-by-word */
 !function(){const h=document.getElementById('heroH');'We believe the children who will shape the future should understand how it works.'.split(' ').forEach((w,i)=>{const s=document.createElement('span');s.className='word';s.style.animationDelay=`${.2+i*.1}s`;s.textContent=w;h.appendChild(s);if(i<14)h.appendChild(document.createTextNode('\u00A0'))})}();
+
 /* Scroll reveals */
-!function(){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});document.querySelectorAll('.r').forEach(el=>o.observe(el));
-/* Auto-add reveal to prose paragraphs */
-document.querySelectorAll('.prose p, .prose blockquote, .prose figure').forEach((el,i)=>{if(!el.classList.contains('r')){el.classList.add('r');el.style.transitionDelay=`${Math.min(i*.05,.3)}s`;o.observe(el)}});
-/* Blockquote highlight */
-const bq=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){setTimeout(()=>x.target.classList.add('lit'),300)}})},{threshold:.5});
-document.querySelectorAll('.prose blockquote').forEach(el=>bq.observe(el));
-/* Prose dividers */
-document.querySelectorAll('.prose-divider').forEach(el=>{if(!el.classList.contains('r')){el.classList.add('r');o.observe(el)}});
-/* Full break */
-document.querySelectorAll('.full-break').forEach(el=>{if(!el.classList.contains('r')){el.classList.add('r');o.observe(el)}});
-/* Vision h2 */
-document.querySelectorAll('.vision h2').forEach(el=>{if(!el.classList.contains('r')){el.classList.add('r');o.observe(el)}})
+!function(){
+  const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.r').forEach(el=>o.observe(el));
+
+  /* Blockquote highlight */
+  const bq=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){setTimeout(()=>x.target.classList.add('lit'),300)}})},{threshold:.5});
+  document.querySelectorAll('.split-quote').forEach(el=>bq.observe(el));
+
+  /* Vision h2 */
+  document.querySelectorAll('.vision h2').forEach(el=>{if(!el.classList.contains('r')){el.classList.add('r');o.observe(el)}});
 }();
+
+/* Accordion */
+!function(){
+  document.querySelectorAll('.acc-trigger').forEach(btn=>{
+    btn.addEventListener('click',function(){
+      const item=this.closest('.acc-item');
+      const body=item.querySelector('.acc-body');
+      const inner=body.querySelector('.acc-body-inner');
+      const isOpen=item.classList.contains('open');
+
+      /* close all */
+      document.querySelectorAll('.acc-item.open').forEach(openItem=>{
+        openItem.classList.remove('open');
+        openItem.querySelector('.acc-trigger').setAttribute('aria-expanded','false');
+        openItem.querySelector('.acc-body').style.maxHeight='0';
+      });
+
+      /* toggle current */
+      if(!isOpen){
+        item.classList.add('open');
+        this.setAttribute('aria-expanded','true');
+        body.style.maxHeight=inner.scrollHeight+'px';
+      }
+    });
+  });
+}();
+
 /* Nav scroll */
 !function(){const n=document.getElementById('nav');let t=false;window.addEventListener('scroll',()=>{if(!t){requestAnimationFrame(()=>{n.classList.toggle('scrolled',scrollY>30);t=false});t=true}})}();
+
 /* Mobile nav */
 !function(){const b=document.getElementById('mobTog'),l=document.getElementById('navLinks');b.addEventListener('click',()=>l.classList.toggle('open'));l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')))}();
+
 /* Garden grow */
 !function(){const g=document.getElementById('gardenGrow'),i=document.getElementById('gardenImg');if(!g||!i)return;function u(){const r=g.getBoundingClientRect(),vh=window.innerHeight;if(r.top<vh&&r.bottom>0){const p=Math.min(Math.max((vh-r.top)/(vh+r.height),0),1);i.style.transform=`translateX(-50%) scale(${.85+p*.15}) translateY(${(1-p)*40}px)`;i.style.opacity=.5+p*.5}requestAnimationFrame(u)}requestAnimationFrame(u)}();
 </script>

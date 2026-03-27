@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trust & Safety — Learn with Mochi</title>
-<meta name="description" content="Our approach to screen-free learning, child safety, and responsible technology — grounded in research, guided by care.">
+<title>Trust & Safety | Learn with Mochi</title>
+<meta name="description" content="Our approach to screen-free learning, child safety, and responsible technology, grounded in research and guided by care.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta property="og:title" content="Trust & Safety — Learn with Mochi">
-<meta property="og:description" content="Our approach to screen-free learning, child safety, and responsible technology — grounded in research, guided by care.">
+<meta property="og:title" content="Trust & Safety | Learn with Mochi">
+<meta property="og:description" content="Our approach to screen-free learning, child safety, and responsible technology, grounded in research and guided by care.">
 <meta property="og:image" content="https://learn-with-mochi.vercel.app/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,66 +52,95 @@ nav.scrolled{border-bottom-color:rgba(26,26,46,0.06);box-shadow:0 1px 40px rgba(
 /* ═══════════════════════════════
    HERO
    ═══════════════════════════════ */
-.about-hero{min-height:85vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px clamp(1.5rem,5vw,5rem) 80px;position:relative}
-.about-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(208,236,229,.25) 0%,transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(254,226,158,.12) 0%,transparent 45%);pointer-events:none}
-.about-hero h1{font-family:var(--serif);font-size:clamp(2.8rem,6vw,4.5rem);font-weight:400;line-height:1.12;letter-spacing:-0.025em;color:var(--ink);max-width:800px;margin-bottom:2rem;position:relative;z-index:1}
-.about-hero h1 .word{display:inline-block;opacity:0;transform:translateY(30px);animation:wordIn .8s var(--eo) forwards}
+.trust-hero{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px clamp(1.5rem,5vw,5rem) 60px;position:relative}
+.trust-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(208,236,229,.25) 0%,transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(254,226,158,.12) 0%,transparent 45%);pointer-events:none}
+.trust-hero h1{font-family:var(--serif);font-size:clamp(2.8rem,6vw,4.5rem);font-weight:400;line-height:1.12;letter-spacing:-0.025em;color:var(--ink);max-width:800px;margin-bottom:1.5rem;position:relative;z-index:1}
+.trust-hero h1 .word{display:inline-block;opacity:0;transform:translateY(30px);animation:wordIn .8s var(--eo) forwards}
 @keyframes wordIn{to{opacity:1;transform:translateY(0)}}
-.about-hero-sub{font-size:clamp(1rem,1.6vw,1.2rem);font-weight:300;color:var(--mid);max-width:580px;line-height:1.85;position:relative;z-index:1;opacity:0;animation:fadeUp .9s 1.6s var(--eo) forwards}
+.trust-hero-sub{font-size:clamp(1rem,1.6vw,1.15rem);font-weight:300;color:var(--mid);max-width:520px;line-height:1.85;position:relative;z-index:1;opacity:0;animation:fadeUp .9s 1.6s var(--eo) forwards}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.about-hero-illo{margin-top:3rem;position:relative;z-index:1;opacity:0;animation:fadeUp 1s 2s var(--eo) forwards}
-.about-hero-illo img{width:clamp(200px,25vw,320px);animation:float 6s ease-in-out infinite}
+.trust-hero-illo{margin-top:2.5rem;position:relative;z-index:1;opacity:0;animation:fadeUp 1s 2s var(--eo) forwards}
+.trust-hero-illo img{width:clamp(180px,22vw,280px);animation:float 6s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 
 /* ═══════════════════════════════
-   PROSE SECTIONS
+   COMMITMENT (side-by-side)
    ═══════════════════════════════ */
-.prose{padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,5rem);max-width:760px;margin:0 auto}
-.prose .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1.25rem}
-.prose h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;letter-spacing:-0.02em;color:var(--ink);margin-bottom:2rem}
-.prose p{font-size:clamp(1rem,1.3vw,1.1rem);font-weight:300;color:var(--mid);line-height:1.9;margin-bottom:1.5rem}
-.prose p:last-child{margin-bottom:0}
-.prose p em{font-style:italic;color:var(--text);font-weight:400}
-.prose blockquote{border-left:3px solid var(--gold);padding-left:1.5rem;margin:2.5rem 0;font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.5rem);font-style:italic;font-weight:400;color:var(--mid);line-height:1.55}
-.prose-divider{width:48px;height:3px;background:var(--green-lt);border-radius:2px;margin:0 auto}
-.prose-img{margin:3rem 0;border-radius:16px;overflow:hidden}
-.prose-img img{width:100%}
-.prose-img.sm{max-width:400px;margin-left:auto;margin-right:auto}
-.prose-img figcaption{font-size:.8rem;font-weight:300;color:var(--light);margin-top:.75rem;text-align:center;font-style:italic}
+.commitment{padding:clamp(4rem,8vw,7rem) clamp(1.5rem,5vw,5rem);max-width:1060px;margin:0 auto}
+.commitment-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.commitment-text .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1.25rem}
+.commitment-text h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;line-height:1.18;letter-spacing:-0.02em;color:var(--ink);margin-bottom:1.5rem}
+.commitment-text p{font-size:clamp(.95rem,1.2vw,1.05rem);font-weight:300;color:var(--mid);line-height:1.85}
+.commitment-img{border-radius:20px;overflow:hidden}
+.commitment-img img{width:100%;border-radius:20px;animation:float 8s ease-in-out infinite}
 
 /* ═══════════════════════════════
-   PRINCIPLES
+   PILLARS (Accordion)
    ═══════════════════════════════ */
-.principles{padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,5rem);background:var(--warm)}
-.principles .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1.25rem;text-align:center}
-.principles>h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;color:var(--ink);text-align:center;max-width:600px;margin:0 auto 4rem}
-.principle{max-width:700px;margin:0 auto 4rem;position:relative;padding-left:2.5rem}
-.principle:last-child{margin-bottom:0}
-.principle::before{content:'';position:absolute;left:0;top:.6rem;width:8px;height:8px;border-radius:50%;background:var(--green)}
-.principle h3{font-family:var(--serif);font-size:1.6rem;font-weight:500;color:var(--ink);margin-bottom:.75rem;line-height:1.25}
-.principle p{font-size:1rem;font-weight:300;color:var(--mid);line-height:1.85}
+.pillars{padding:clamp(4rem,8vw,6rem) clamp(1.5rem,5vw,5rem);background:var(--warm)}
+.pillars-header{text-align:center;max-width:600px;margin:0 auto 3rem}
+.pillars-header .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1rem}
+.pillars-header h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;color:var(--ink)}
+.accordion{max-width:740px;margin:0 auto}
+.acc-item{border-bottom:1px solid rgba(26,26,46,.06)}
+.acc-item:first-child{border-top:1px solid rgba(26,26,46,.06)}
+.acc-btn{width:100%;display:flex;align-items:center;gap:1rem;padding:1.25rem 0;background:none;border:none;cursor:pointer;text-align:left;transition:opacity .3s}
+.acc-btn:hover{opacity:.75}
+.acc-icon{width:36px;height:36px;flex-shrink:0;border-radius:10px;background:var(--green-pale);display:flex;align-items:center;justify-content:center;transition:background .3s}
+.acc-icon img{width:20px;height:20px}
+.acc-btn h3{font-family:var(--serif);font-size:clamp(1.15rem,2vw,1.4rem);font-weight:500;color:var(--ink);flex:1;line-height:1.3}
+.acc-arrow{width:20px;height:20px;flex-shrink:0;transition:transform .4s var(--eo);color:var(--light)}
+.acc-item.open .acc-arrow{transform:rotate(180deg)}
+.acc-item.open .acc-icon{background:var(--green-lt)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .5s var(--eo),padding .5s var(--eo)}
+.acc-body-inner{padding:0 0 1.5rem 3.25rem;font-size:clamp(.92rem,1.1vw,1rem);font-weight:300;color:var(--mid);line-height:1.85}
+
+/* ═══════════════════════════════
+   DATA & PRIVACY (stat cards)
+   ═══════════════════════════════ */
+.privacy{padding:clamp(4rem,8vw,6rem) clamp(1.5rem,5vw,5rem)}
+.privacy-header{text-align:center;max-width:600px;margin:0 auto 3rem}
+.privacy-header .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1rem}
+.privacy-header h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;color:var(--ink)}
+.stat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:840px;margin:0 auto 2.5rem}
+.stat-card{background:var(--warm);border:1px solid rgba(26,26,46,.05);border-radius:20px;padding:2.5rem 1.5rem;text-align:center;transition:transform .4s var(--eo),box-shadow .4s var(--eo)}
+.stat-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(26,26,46,.06)}
+.stat-card .big-num{font-family:var(--serif);font-size:clamp(3.5rem,6vw,5rem);font-weight:300;color:var(--green);line-height:1}
+.stat-card .stat-label{font-size:.95rem;font-weight:400;color:var(--ink);margin-top:.5rem;line-height:1.4}
+.stat-card .stat-sub{font-size:.82rem;font-weight:300;color:var(--light);margin-top:.35rem;line-height:1.5}
+.privacy-note{text-align:center;font-size:clamp(.95rem,1.2vw,1.05rem);font-weight:300;color:var(--mid);line-height:1.85;max-width:620px;margin:0 auto}
 
 /* ═══════════════════════════════
    CERTIFICATIONS
    ═══════════════════════════════ */
-.certs{padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,5rem);max-width:760px;margin:0 auto}
-.certs .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1.25rem}
-.certs h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;letter-spacing:-0.02em;color:var(--ink);margin-bottom:2rem}
-.certs p{font-size:clamp(1rem,1.3vw,1.1rem);font-weight:300;color:var(--mid);line-height:1.9;margin-bottom:2rem}
-.cert-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.cert-list li{display:flex;align-items:flex-start;gap:.75rem;font-size:.95rem;font-weight:300;color:var(--mid);line-height:1.7}
-.cert-list li::before{content:'';flex-shrink:0;width:8px;height:8px;border-radius:50%;background:var(--green);margin-top:.45rem}
+.certs{padding:clamp(4rem,8vw,6rem) clamp(1.5rem,5vw,5rem);background:var(--warm)}
+.certs-header{text-align:center;max-width:600px;margin:0 auto 2.5rem}
+.certs-header .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1rem}
+.certs-header h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;line-height:1.18;color:var(--ink)}
+.award-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2.5rem;max-width:900px;margin:0 auto 2.5rem}
+.award-row img{height:100px;width:auto;opacity:.7;filter:grayscale(.2);transition:opacity .3s,filter .3s}
+.award-row img:hover{opacity:1;filter:grayscale(0)}
+.press-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.6rem;max-width:900px;margin:0 auto}
+.press-logo{display:flex;align-items:center;justify-content:center;padding:6px 12px;border:1px solid rgba(26,26,46,.05);border-radius:8px;background:var(--ivory)}
+.press-logo img{height:18px;width:auto;filter:grayscale(1);opacity:.4;transition:filter .3s,opacity .3s}
+.press-logo:hover img{filter:grayscale(0);opacity:.8}
+
+/* ═══════════════════════════════
+   TROPICAL BORDER
+   ═══════════════════════════════ */
+.tropical-border{width:100%;overflow:hidden;line-height:0}
+.tropical-border img{width:100%;object-fit:cover;max-height:120px}
 
 /* ═══════════════════════════════
    VISION
    ═══════════════════════════════ */
-.vision{padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,5rem);background:#1a3d32;color:#fff;text-align:center;position:relative;overflow:hidden}
+.vision{padding:clamp(4rem,8vw,6rem) clamp(1.5rem,5vw,5rem);background:#1a3d32;color:#fff;text-align:center;position:relative;overflow:hidden}
 .vision::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(45,161,125,.25) 0%,transparent 55%);pointer-events:none}
 .vision .label{color:rgba(255,255,255,.35);font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.25rem}
-.vision h2{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.25rem);font-weight:400;color:#fff;max-width:700px;margin:0 auto 2rem;line-height:1.2;position:relative;z-index:1}
-.vision p{font-size:clamp(1rem,1.3vw,1.1rem);font-weight:300;color:rgba(255,255,255,.55);line-height:1.85;max-width:600px;margin:0 auto 1.5rem;position:relative;z-index:1}
-.vision-illo{margin:3rem auto 0;max-width:240px;position:relative;z-index:1;opacity:.8}
-.vision-illo img{width:100%;animation:float 6s ease-in-out infinite}
+.vision h2{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.25rem);font-weight:400;color:#fff;max-width:700px;margin:0 auto 1.5rem;line-height:1.2;position:relative;z-index:1}
+.vision p{font-size:clamp(.95rem,1.2vw,1.05rem);font-weight:300;color:rgba(255,255,255,.55);line-height:1.85;max-width:580px;margin:0 auto;position:relative;z-index:1}
+.vision-img{margin:2.5rem auto 0;max-width:180px;position:relative;z-index:1;opacity:.75}
+.vision-img img{width:100%;animation:float 6s ease-in-out infinite}
 
 /* ═══════════════════════════════
    JOIN
@@ -124,8 +153,10 @@ nav.scrolled{border-bottom-color:rgba(26,26,46,0.06);box-shadow:0 1px 40px rgba(
 .join-card:hover{transform:translateY(-3px)}
 .join-card h3{font-family:var(--serif);font-size:1.25rem;font-weight:500;color:var(--ink);margin-bottom:.5rem}
 .join-card p{font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.7;margin:0}
-.join-card a{display:inline-block;margin-top:1rem;font-size:.85rem;font-weight:500;color:var(--green);text-decoration:none;transition:color .3s}
+.join-card a{display:inline-block;margin-top:1rem;font-size:.85rem;font-weight:500;color:var(--green);text-decoration:none;transition:color .3s;position:relative;overflow:hidden}
 .join-card a:hover{color:var(--green-dk)}
+.join-card a::after{content:'';display:inline-block;width:0;height:1px;background:var(--green);vertical-align:middle;margin-left:4px;transition:width .4s var(--eo)}
+.join-card:hover a::after{width:20px}
 
 /* GARDEN + FOOTER */
 .garden-grow{position:relative;height:420px;overflow:hidden;background:linear-gradient(to bottom,var(--ivory) 0%,var(--warm) 100%);pointer-events:none;margin-top:-6rem}
@@ -141,55 +172,37 @@ footer{background:var(--warm);border-top:none;padding:clamp(3rem,6vw,5rem) clamp
 .footer-bottom{max-width:1100px;margin:3rem auto 0;padding-top:2rem;border-top:1px solid rgba(26,26,46,.06);display:flex;justify-content:space-between;align-items:center}
 .footer-bottom p{font-size:.78rem;color:var(--light);font-weight:300}
 
-/* RESPONSIVE */
+/* ═══════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════ */
 @media(max-width:900px){
   .nav-links{display:none}.mob-tog{display:block}
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--ivory);padding:2rem;gap:1.5rem;border-bottom:1px solid rgba(26,26,46,.06)}
+  .commitment-grid{grid-template-columns:1fr;text-align:center}
+  .commitment-img{max-width:400px;margin:0 auto}
+  .stat-cards{grid-template-columns:1fr;max-width:360px;margin-left:auto;margin-right:auto}
   .join-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
-  .cert-list{grid-template-columns:1fr}
+  .award-row img{height:72px}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:600px){
-  .about-hero h1{font-size:2.4rem}
+  .trust-hero h1{font-size:2.4rem}
+  .stat-cards{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:1rem;text-align:center}
+  .acc-body-inner{padding-left:0}
 }
 
 /* ═══════════════════════════════
    INTERACTION EFFECTS
    ═══════════════════════════════ */
-/* Paragraph-by-paragraph staggered reveal */
-.prose p.r{transform:translateY(30px)}
-/* Blockquote highlight sweep */
-.prose blockquote{position:relative;overflow:hidden}
-.prose blockquote::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--green);transform:scaleY(0);transform-origin:top;transition:transform .8s var(--eo)}
-.prose blockquote.lit::after{transform:scaleY(1)}
-.prose blockquote.lit{border-left-color:var(--green);color:var(--text)}
-/* Image parallax-lite on scroll */
-.prose-img{overflow:hidden}
-.prose-img img{transition:transform .6s var(--eo);will-change:transform}
-.prose-img:hover img{transform:scale(1.02)}
-/* Principle animated dot */
-.principle::before{transition:transform .5s var(--eo),background .5s}
-.principle:hover::before{transform:scale(1.5);background:var(--gold)}
-/* Principle text slide-in from left */
-.principle.r{transform:translateX(-30px) translateY(0);opacity:0}
-.principle.r.v{transform:translateX(0) translateY(0);opacity:1}
-/* Join card arrow slide */
-.join-card a{position:relative;overflow:hidden}
-.join-card a::after{content:'';display:inline-block;width:0;height:1px;background:var(--green);vertical-align:middle;margin-left:4px;transition:width .4s var(--eo)}
-.join-card:hover a::after{width:20px}
 /* Vision text glow */
 .vision h2{text-shadow:0 0 80px rgba(45,161,125,0);transition:text-shadow 1.5s}
 .vision h2.v{text-shadow:0 0 80px rgba(45,161,125,.15)}
-/* Prose divider grow */
-.prose-divider{transform:scaleX(0);transition:transform .8s var(--eo)}
-.prose-divider.v{transform:scaleX(1)}
-/* Stagger children inside principles */
-.principle h3{transition:color .3s}
-.principle:hover h3{color:var(--green)}
-/* Cert list item reveal */
-.cert-list li.r{transform:translateY(20px)}
+/* Stat card count-up handled via JS */
+/* Image parallax-lite */
+.commitment-img img{transition:transform .6s var(--eo);will-change:transform}
+.commitment-img:hover img{transform:scale(1.02)}
 
 /* Grain */
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px 256px}
@@ -212,90 +225,161 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 </nav>
 
 <!-- ═══ HERO ═══ -->
-<section class="about-hero">
+<section class="trust-hero">
   <h1 id="heroH"></h1>
-  <p class="about-hero-sub">Our approach to screen-free learning, child safety, and responsible technology — grounded in research, guided by&nbsp;care.</p>
-  <div class="about-hero-illo">
-    <img src="Sample Images/windows.png" alt="">
+  <p class="trust-hero-sub">Screen-free learning tools designed from the ground up for child safety, developmental science, and&nbsp;play.</p>
+  <div class="trust-hero-illo">
+    <img src="Sample Images/hilltop_crop.png" alt="">
   </div>
 </section>
 
-<!-- ═══ OUR COMMITMENT ═══ -->
-<div class="prose r">
-  <div class="label">Why this matters</div>
-  <h2>Children deserve technology designed with their development in&nbsp;mind.</h2>
-  <p>Most technology built for children is not designed for children. It is designed for engagement metrics, advertising revenue, and retention curves. The incentive structures of consumer technology reward products that capture attention — not products that nurture development. The American Academy of Pediatrics recommends avoiding screen-based media for children under 18 months and limiting use to one hour of high-quality programming for children ages 2 to 5. The reality is that the average preschooler in America now exceeds those guidelines by a factor of&nbsp;three.</p>
-  <p>This is not a failure of parenting. It is a failure of design. When the most well-funded, most sophisticated product teams in the world optimize for time-on-screen, even the most attentive families find themselves outmatched. The problem is structural, and the solution must be&nbsp;structural&nbsp;too.</p>
-  <p>Learn with Mochi exists because we believe technology can be <em>genuinely beneficial for the humans who matter most — children</em>. We are a public-benefit corporation. That is not a marketing label. It is a legal structure that encodes our commitment to child wellbeing into our corporate charter, with the same weight as our obligation to shareholders. When the interests of growth and the interests of children conflict, our legal structure requires us to choose&nbsp;children.</p>
-</div>
-
-<div class="prose-divider r"></div>
+<!-- ═══ COMMITMENT ═══ -->
+<section class="commitment r">
+  <div class="commitment-grid">
+    <div class="commitment-text">
+      <div class="label">Why this matters</div>
+      <h2>Children deserve technology designed with their development in&nbsp;mind.</h2>
+      <p>Most technology built for children optimizes for engagement metrics, not developmental outcomes. As a public-benefit corporation, Mochi is legally structured to prioritize child wellbeing over growth. When the interests of business and the interests of children conflict, our charter requires us to choose&nbsp;children.</p>
+    </div>
+    <div class="commitment-img">
+      <img src="Sample Images/labs_crop.png" alt="Research and development">
+    </div>
+  </div>
+</section>
 
 <!-- ═══ FIVE PILLARS ═══ -->
-<section class="principles">
-  <div class="label r">Our principles</div>
-  <h2 class="r">Five pillars that guide everything we&nbsp;build.</h2>
-
-  <div class="principle r">
-    <h3>Screen-free by conviction, not by&nbsp;trend.</h3>
-    <p>We are not anti-technology. We are pro-appropriate-technology. The research on screen time before age six is unambiguous: studies consistently link early excessive screen exposure to delayed speech development, reduced attention span, and limited social engagement. But the answer is not <em>no</em> technology — it is the <em>right</em> technology. Physical. Tactile. Multi-sensory. The kind that engages the whole body, not just the eyes and fingertips. Our wooden coding blocks, fabric adventure maps, and physical programming board are designed to meet children where developmental science says they learn best: through their&nbsp;hands.</p>
+<section class="pillars">
+  <div class="pillars-header r">
+    <div class="label">Our principles</div>
+    <h2>Five pillars that guide everything we&nbsp;build.</h2>
   </div>
 
-  <div class="principle r">
-    <h3>Montessori-grounded, science-validated.</h3>
-    <p>Maria Montessori's insights about self-directed learning, tactile exploration, and sequential thinking have been validated by over a century of developmental psychology and modern neuroscience. Motor engagement during learning strengthens memory formation. Haptic feedback improves spatial reasoning. Self-paced exploration builds executive function. Our wooden blocks, fabric maps, and physical programming board are not nostalgic design choices — they are neurological tools, each one informed by research on how young minds construct knowledge through sensory&nbsp;experience.</p>
-  </div>
+  <div class="accordion" id="accordion">
+    <div class="acc-item open" data-acc>
+      <button class="acc-btn" aria-expanded="true">
+        <div class="acc-icon"><img src="Sample Images/compass.svg" alt=""></div>
+        <h3>Screen-free by conviction</h3>
+        <svg class="acc-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">Research consistently links early excessive screen exposure to delayed speech, reduced attention, and limited social engagement. Mochi is physical, tactile, and multi-sensory. Our wooden blocks and fabric maps meet children where developmental science says they learn best: through their&nbsp;hands.</div>
+      </div>
+    </div>
 
-  <div class="principle r">
-    <h3>Story-based, not screen-based.</h3>
-    <p>Children construct meaning through narrative. This is not pedagogical theory — it is how the developing brain organizes information, assigns emotional significance, and builds long-term memory. Every Mochi adventure is designed around a story arc: a character, a journey, a problem to solve. Coding concepts — sequences, loops, functions, decomposition — are embedded in the narrative, not bolted on. A child does not "do a coding exercise." They help Mochi explore the solar system, navigate an ancient forest, or build a robot city. The code is how they get&nbsp;there.</p>
-  </div>
+    <div class="acc-item" data-acc>
+      <button class="acc-btn" aria-expanded="false">
+        <div class="acc-icon"><img src="Sample Images/seedling.svg" alt=""></div>
+        <h3>Montessori-grounded</h3>
+        <svg class="acc-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">Montessori's insights about self-directed learning and tactile exploration have been validated by modern neuroscience. Motor engagement during learning strengthens memory. Haptic feedback improves spatial reasoning. Every Mochi component is a neurological tool informed by over a century of&nbsp;research.</div>
+      </div>
+    </div>
 
-  <div class="principle r">
-    <h3>Open-ended play, no fail&nbsp;states.</h3>
-    <p>There is no score in Mochi. No timer. No "wrong answer." The system is designed for divergent thinking and creative exploration. A child who codes the rover in an unexpected direction has not failed — they have discovered something. This design philosophy aligns with decades of research on growth mindset and intrinsic motivation: when children are freed from the anxiety of evaluation, they experiment more boldly, persist longer, and develop deeper conceptual understanding. Play is not the opposite of learning. It is the mechanism&nbsp;of&nbsp;it.</p>
-  </div>
+    <div class="acc-item" data-acc>
+      <button class="acc-btn" aria-expanded="false">
+        <div class="acc-icon"><img src="Sample Images/brightidea.svg" alt=""></div>
+        <h3>Story-based play</h3>
+        <svg class="acc-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">Children construct meaning through narrative. Every Mochi adventure has a story arc: a character, a journey, a problem to solve. Coding concepts like sequences, loops, and functions are embedded in the story. A child does not "do a coding exercise." They help Mochi explore the solar system, and the code is how they get&nbsp;there.</div>
+      </div>
+    </div>
 
-  <div class="principle r">
-    <h3>Inclusive by design, accessible by&nbsp;mission.</h3>
-    <p>Mochi arrives as a blank slate. No gendered marketing. No cultural assumptions baked into the product. No language barriers in the physical play. Our kits ship to 62 countries across six continents because computational thinking is a universal literacy, not a privilege reserved for children in well-funded school districts. As a public-benefit corporation, expanding access is encoded in our legal charter — not just our marketing copy. Every design decision we make is tested against a simple question: does this work for <em>every</em>&nbsp;child?</p>
+    <div class="acc-item" data-acc>
+      <button class="acc-btn" aria-expanded="false">
+        <div class="acc-icon"><img src="Sample Images/route.svg" alt=""></div>
+        <h3>Open-ended, no fail states</h3>
+        <svg class="acc-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">There is no score in Mochi. No timer. No wrong answer. When children are freed from the anxiety of evaluation, they experiment more boldly, persist longer, and develop deeper understanding. Play is not the opposite of learning. It is the mechanism of&nbsp;it.</div>
+      </div>
+    </div>
+
+    <div class="acc-item" data-acc>
+      <button class="acc-btn" aria-expanded="false">
+        <div class="acc-icon"><img src="Sample Images/flowers.svg" alt=""></div>
+        <h3>Inclusive by design</h3>
+        <svg class="acc-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">Mochi arrives as a blank slate. No gendered marketing, no cultural assumptions, no language barriers. Our kits ship to 62 countries across six continents because computational thinking is a universal literacy, not a privilege. Every design decision is tested against one question: does this work for every&nbsp;child?</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="prose-divider r"></div>
-
 <!-- ═══ DATA & PRIVACY ═══ -->
-<div class="prose r">
-  <div class="label">Your family's privacy</div>
-  <h2>No accounts. No tracking. No data&nbsp;collection.</h2>
-  <p>Mochi requires zero internet connection, zero app downloads, and zero account creation. There is no telemetry. No analytics. No behavioral data collected from children. The programming board reads wooden blocks via physical contact — no Bluetooth, no WiFi, no cloud processing. Your child's play stays in your living&nbsp;room.</p>
-  <p>We believe the best data policy is collecting no data at all. In an era when children's digital footprints are monetized before they can spell their own names, we made a deliberate architectural decision: <em>Mochi has no digital footprint because Mochi has no digital&nbsp;connection.</em></p>
-  <p>This approach exceeds the requirements of the Children's Online Privacy Protection Act (COPPA) — not by implementing better consent flows or more secure databases, but by eliminating the need for them entirely. There is nothing to breach because there is nothing to collect. Privacy is not a feature we added. It is a consequence of how we built the product from the ground&nbsp;up.</p>
-</div>
+<section class="privacy">
+  <div class="privacy-header r">
+    <div class="label">Your family's privacy</div>
+    <h2>No accounts. No tracking. No data&nbsp;collection.</h2>
+  </div>
 
-<div class="prose-divider r"></div>
+  <div class="stat-cards">
+    <div class="stat-card r">
+      <div class="big-num">0</div>
+      <div class="stat-label">Internet connections required</div>
+      <div class="stat-sub">Works completely offline</div>
+    </div>
+    <div class="stat-card r d1">
+      <div class="big-num">0</div>
+      <div class="stat-label">Accounts or passwords needed</div>
+      <div class="stat-sub">Open the box and play</div>
+    </div>
+    <div class="stat-card r d2">
+      <div class="big-num">0</div>
+      <div class="stat-label">Data points collected from children</div>
+      <div class="stat-sub">Nothing to breach, ever</div>
+    </div>
+  </div>
 
-<!-- ═══ RESEARCH & STANDARDS ═══ -->
-<div class="certs r">
-  <div class="label">Certifications &amp; research</div>
-  <h2>Validated by educators, certified by&nbsp;institutions.</h2>
-  <p>We do not ask families to take our word for it. Independent institutions have evaluated Mochi against rigorous standards for educational quality, developmental appropriateness, and safety. These certifications are not awards we applied for — they are third-party validations from organizations whose sole purpose is to protect the families we&nbsp;serve.</p>
-  <ul class="cert-list">
-    <li class="r">Montessori-Approved Educational Product</li>
-    <li class="r d1">Mom's Choice Awards — Gold Recipient</li>
-    <li class="r d2">National Parenting Product Awards (NAPPA)</li>
-    <li class="r d3">STEM.org Authenticated</li>
-    <li class="r">Purdue University INSPIRE Research Lab — Validated</li>
-    <li class="r d1">Smithsonian Magazine — Best STEM Toys</li>
-  </ul>
+  <p class="privacy-note r d3">Mochi works offline, requires no apps, and collects zero data. Your child's play stays in your living&nbsp;room.</p>
+</section>
+
+<!-- ═══ CERTIFICATIONS ═══ -->
+<section class="certs">
+  <div class="certs-header r">
+    <div class="label">Certifications &amp; recognition</div>
+    <h2>Validated by educators, certified by&nbsp;institutions.</h2>
+  </div>
+
+  <div class="award-row r">
+    <img src="https://robotics.learnwithmochi.com/cdn/shop/t/47/assets/moms-choice2x.png" alt="Mom's Choice Award Gold">
+    <img src="https://robotics.learnwithmochi.com/cdn/shop/t/47/assets/2020-product-awards2x.png" alt="NAPPA Award Winner 2020">
+    <img src="https://robotics.learnwithmochi.com/cdn/shop/t/47/assets/parents-picks2x.png" alt="Parents' Picks Award">
+    <img src="https://robotics.learnwithmochi.com/cdn/shop/t/47/assets/stem-autism-2x.png" alt="STEM.org Authenticated">
+  </div>
+
+  <div class="press-logos r d1">
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/Forbes_logo.png?v=1592602935" alt="Forbes"></div>
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/USA_today.png?v=1613682201" alt="USA Today"></div>
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/yahoo-finance-logo.png?v=1586519445" alt="Yahoo Finance"></div>
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/mashable-logon.png?v=1586523012" alt="Mashable"></div>
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/reviewed-logo_38813323-1269-4d1a-9327-2c62572c3cab.png?v=1586519700" alt="Reviewed"></div>
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/gadget-flow-logo.png?v=1586519417" alt="GadgetFlow"></div>
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/interesting-engineering-logo.png?v=1586519468" alt="Interesting Engineering"></div>
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/product-hunt-logo.png?v=1586519654" alt="Product Hunt"></div>
+    <div class="press-logo"><img src="https://cdn.shopify.com/s/files/1/0257/4614/5368/files/HM-b_w.png?v=1588608881" alt="Homeschool Mastery Academy"></div>
+  </div>
+</section>
+
+<!-- ═══ TROPICAL BORDER ═══ -->
+<div class="tropical-border">
+  <img src="Sample Images/blooms_crop.png" alt="">
 </div>
 
 <!-- ═══ VISION ═══ -->
 <section class="vision">
   <div class="label r">Our long-term vision</div>
   <h2 class="r">Technology should serve childhood, not consume&nbsp;it.</h2>
-  <p class="r d1">We imagine a future where every educational technology is designed with the same care we bring to Mochi. Where "safe for children" means more than content filters and parental controls — it means tools that develop agency, creativity, and genuine understanding. Where the measure of a product is not how long a child uses it, but how much they grow from&nbsp;it.</p>
-  <p class="r d2">The world does not need more software that teaches children to swipe. It needs tools that teach them to think, to build, to question, and to create. That is the standard we hold ourselves to — and the standard we believe every company building for children should be held to as well. Not because it is good marketing. Because it is the right thing to&nbsp;do.</p>
+  <p class="r d1">We imagine a future where every tool built for children develops agency, creativity, and genuine understanding. Where the measure of a product is not how long a child uses it, but how much they grow from&nbsp;it.</p>
+  <div class="vision-img r d2">
+    <img src="Sample Images/seedling.svg" alt="">
+  </div>
 </section>
 
 <!-- ═══ JOIN ═══ -->
@@ -342,23 +426,23 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 
 <script>
 /* Hero word-by-word */
-!function(){const h=document.getElementById('heroH');'Built for the humans who matter most.'.split(' ').forEach((w,i)=>{const s=document.createElement('span');s.className='word';s.style.animationDelay=`${.2+i*.1}s`;s.textContent=w;h.appendChild(s);if(i<7)h.appendChild(document.createTextNode('\u00A0'))})}();
+!function(){const h=document.getElementById('heroH');'Built for growing brains and curious hands.'.split(' ').forEach((w,i)=>{const s=document.createElement('span');s.className='word';s.style.animationDelay=`${.2+i*.1}s`;s.textContent=w;h.appendChild(s);if(i<6)h.appendChild(document.createTextNode('\u00A0'))})}();
+
+/* Accordion */
+!function(){const items=document.querySelectorAll('[data-acc]');function toggle(item){const isOpen=item.classList.contains('open');const body=item.querySelector('.acc-body');const btn=item.querySelector('.acc-btn');if(isOpen){item.classList.remove('open');body.style.maxHeight='0';btn.setAttribute('aria-expanded','false');return}items.forEach(it=>{it.classList.remove('open');it.querySelector('.acc-body').style.maxHeight='0';it.querySelector('.acc-btn').setAttribute('aria-expanded','false')});item.classList.add('open');body.style.maxHeight=body.scrollHeight+'px';btn.setAttribute('aria-expanded','true')}items.forEach(item=>{item.querySelector('.acc-btn').addEventListener('click',()=>toggle(item));const body=item.querySelector('.acc-body');if(item.classList.contains('open')){body.style.maxHeight=body.scrollHeight+'px'}else{body.style.maxHeight='0'}})}();
+
 /* Scroll reveals */
 !function(){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});document.querySelectorAll('.r').forEach(el=>o.observe(el));
-/* Auto-add reveal to prose paragraphs */
-document.querySelectorAll('.prose p, .prose blockquote, .prose figure').forEach((el,i)=>{if(!el.classList.contains('r')){el.classList.add('r');el.style.transitionDelay=`${Math.min(i*.05,.3)}s`;o.observe(el)}});
-/* Blockquote highlight */
-const bq=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){setTimeout(()=>x.target.classList.add('lit'),300)}})},{threshold:.5});
-document.querySelectorAll('.prose blockquote').forEach(el=>bq.observe(el));
-/* Prose dividers */
-document.querySelectorAll('.prose-divider').forEach(el=>{if(!el.classList.contains('r')){el.classList.add('r');o.observe(el)}});
 /* Vision h2 */
 document.querySelectorAll('.vision h2').forEach(el=>{if(!el.classList.contains('r')){el.classList.add('r');o.observe(el)}})
 }();
+
 /* Nav scroll */
 !function(){const n=document.getElementById('nav');let t=false;window.addEventListener('scroll',()=>{if(!t){requestAnimationFrame(()=>{n.classList.toggle('scrolled',scrollY>30);t=false});t=true}})}();
+
 /* Mobile nav */
 !function(){const b=document.getElementById('mobTog'),l=document.getElementById('navLinks');b.addEventListener('click',()=>l.classList.toggle('open'));l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')))}();
+
 /* Garden grow */
 !function(){const g=document.getElementById('gardenGrow'),i=document.getElementById('gardenImg');if(!g||!i)return;function u(){const r=g.getBoundingClientRect(),vh=window.innerHeight;if(r.top<vh&&r.bottom>0){const p=Math.min(Math.max((vh-r.top)/(vh+r.height),0),1);i.style.transform=`translateX(-50%) scale(${.85+p*.15}) translateY(${(1-p)*40}px)`;i.style.opacity=.5+p*.5}requestAnimationFrame(u)}requestAnimationFrame(u)}();
 </script>
