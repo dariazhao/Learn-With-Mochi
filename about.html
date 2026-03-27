@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story — Learn with Mochi</title>
+<meta name="description" content="We believe the children who will shape the future should understand how it works. The founding story, philosophy, and mission behind Learn with Mochi.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="Our Story — Learn with Mochi">
+<meta property="og:description" content="We believe the children who will shape the future should understand how it works.">
+<meta property="og:image" content="https://learn-with-mochi.vercel.app/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FFFAF5;--parchment:#FFFCF8;--warm:#FEFDFB;
+  --ink:#111118;--text:#2d2d3a;--mid:#4a4a5e;--light:#7a7a8e;
+  --green:#2DA17D;--green-dk:#1f8566;--green-lt:#D0ECE5;--green-pale:#EDF7F4;
+  --gold:#E7A200;--gold-lt:#FEE29E;--gold-pale:#FFF8E7;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --eo:cubic-bezier(0.16,1,0.3,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);color:var(--text);background:var(--ivory);line-height:1.7;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 clamp(1.5rem,5vw,5rem);height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,250,245,0.9);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);border-bottom:1px solid transparent;transition:border-color .5s,box-shadow .5s}
+nav.scrolled{border-bottom-color:rgba(26,26,46,0.06);box-shadow:0 1px 40px rgba(26,26,46,0.04)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.nav-logo img{width:38px;height:38px;border-radius:10px}
+.nav-logo span{font-family:var(--serif);font-size:1.2rem;font-weight:600;letter-spacing:-0.01em}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.85rem;font-weight:400;color:var(--light);text-decoration:none;transition:color .3s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.active{color:var(--ink);font-weight:500}
+.mob-tog{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.mob-tog span{display:block;width:20px;height:1.5px;background:var(--ink);margin:5px 0}
+
+/* Shared */
+.r{opacity:0;transform:translateY(50px);transition:opacity .9s var(--eo),transform .9s var(--eo)}
+.r.v{opacity:1;transform:translateY(0)}
+.r.d1{transition-delay:.1s}.r.d2{transition-delay:.2s}.r.d3{transition-delay:.3s}
+
+/* ═══════════════════════════════
+   HERO
+   ═══════════════════════════════ */
+.about-hero{min-height:85vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px clamp(1.5rem,5vw,5rem) 80px;position:relative}
+.about-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(208,236,229,.25) 0%,transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(254,226,158,.12) 0%,transparent 45%);pointer-events:none}
+.about-hero h1{font-family:var(--serif);font-size:clamp(2.8rem,6vw,4.5rem);font-weight:400;line-height:1.12;letter-spacing:-0.025em;color:var(--ink);max-width:800px;margin-bottom:2rem;position:relative;z-index:1}
+.about-hero h1 .word{display:inline-block;opacity:0;transform:translateY(30px);animation:wordIn .8s var(--eo) forwards}
+@keyframes wordIn{to{opacity:1;transform:translateY(0)}}
+.about-hero-sub{font-size:clamp(1rem,1.6vw,1.2rem);font-weight:300;color:var(--mid);max-width:520px;line-height:1.85;position:relative;z-index:1;opacity:0;animation:fadeUp .9s 1.6s var(--eo) forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.about-hero-illo{margin-top:3rem;position:relative;z-index:1;opacity:0;animation:fadeUp 1s 2s var(--eo) forwards}
+.about-hero-illo img{width:clamp(200px,25vw,320px);animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+/* ═══════════════════════════════
+   PROSE SECTIONS
+   ═══════════════════════════════ */
+.prose{padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,5rem);max-width:760px;margin:0 auto}
+.prose .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1.25rem}
+.prose h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;letter-spacing:-0.02em;color:var(--ink);margin-bottom:2rem}
+.prose p{font-size:clamp(1rem,1.3vw,1.1rem);font-weight:300;color:var(--mid);line-height:1.9;margin-bottom:1.5rem}
+.prose p:last-child{margin-bottom:0}
+.prose p em{font-style:italic;color:var(--text);font-weight:400}
+.prose blockquote{border-left:3px solid var(--gold);padding-left:1.5rem;margin:2.5rem 0;font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.5rem);font-style:italic;font-weight:400;color:var(--mid);line-height:1.55}
+.prose-divider{width:48px;height:3px;background:var(--green-lt);border-radius:2px;margin:0 auto}
+.prose-img{margin:3rem 0;border-radius:16px;overflow:hidden}
+.prose-img img{width:100%}
+.prose-img.sm{max-width:400px;margin-left:auto;margin-right:auto}
+.prose-img figcaption{font-size:.8rem;font-weight:300;color:var(--light);margin-top:.75rem;text-align:center;font-style:italic}
+
+/* ═══════════════════════════════
+   FULLBLEED IMAGE BREAK
+   ═══════════════════════════════ */
+.full-break{padding:0 clamp(1.5rem,5vw,5rem);margin:0 auto;max-width:1100px}
+.full-break-inner{display:grid;grid-template-columns:1fr 1fr;gap:1rem;border-radius:20px;overflow:hidden}
+.full-break-inner img{width:100%;height:300px;object-fit:cover}
+
+/* ═══════════════════════════════
+   PRINCIPLES
+   ═══════════════════════════════ */
+.principles{padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,5rem);background:var(--warm)}
+.principles .label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1.25rem;text-align:center}
+.principles>h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;color:var(--ink);text-align:center;max-width:600px;margin:0 auto 4rem}
+.principle{max-width:700px;margin:0 auto 4rem;position:relative;padding-left:2.5rem}
+.principle:last-child{margin-bottom:0}
+.principle::before{content:'';position:absolute;left:0;top:.6rem;width:8px;height:8px;border-radius:50%;background:var(--green)}
+.principle h3{font-family:var(--serif);font-size:1.6rem;font-weight:500;color:var(--ink);margin-bottom:.75rem;line-height:1.25}
+.principle p{font-size:1rem;font-weight:300;color:var(--mid);line-height:1.85}
+
+/* ═══════════════════════════════
+   TEAM
+   ═══════════════════════════════ */
+.team{padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,5rem);background:var(--ivory)}
+.team .label{text-align:center;font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1.25rem}
+.team>h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;color:var(--ink);text-align:center;margin-bottom:4rem}
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;max-width:900px;margin:0 auto}
+.team-card{background:var(--warm);border:1px solid rgba(26,26,46,.04);border-radius:20px;padding:2.5rem;transition:transform .5s var(--eo)}
+.team-card:hover{transform:translateY(-3px)}
+.team-card .team-role{font-size:.65rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:.75rem}
+.team-card h3{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--ink);margin-bottom:.75rem}
+.team-card p{font-size:.9rem;font-weight:300;color:var(--mid);line-height:1.75}
+
+/* ═══════════════════════════════
+   VISION
+   ═══════════════════════════════ */
+.vision{padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,5rem);background:#1a3d32;color:#fff;text-align:center;position:relative;overflow:hidden}
+.vision::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(45,161,125,.25) 0%,transparent 55%);pointer-events:none}
+.vision .label{color:rgba(255,255,255,.35);font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.25rem}
+.vision h2{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.25rem);font-weight:400;color:#fff;max-width:700px;margin:0 auto 2rem;line-height:1.2;position:relative;z-index:1}
+.vision p{font-size:clamp(1rem,1.3vw,1.1rem);font-weight:300;color:rgba(255,255,255,.55);line-height:1.85;max-width:600px;margin:0 auto 1.5rem;position:relative;z-index:1}
+.vision-illo{margin:3rem auto 0;max-width:240px;position:relative;z-index:1;opacity:.8}
+.vision-illo img{width:100%;animation:float 6s ease-in-out infinite}
+
+/* ═══════════════════════════════
+   JOIN
+   ═══════════════════════════════ */
+.join{padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,5rem);text-align:center;background:var(--ivory)}
+.join h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;color:var(--ink);margin-bottom:1rem}
+.join p{font-size:1rem;font-weight:300;color:var(--mid);line-height:1.8;max-width:540px;margin:0 auto 3rem}
+.join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:900px;margin:0 auto}
+.join-card{background:var(--warm);border:1px solid rgba(26,26,46,.04);border-radius:16px;padding:2rem;text-align:left;transition:transform .4s var(--eo)}
+.join-card:hover{transform:translateY(-3px)}
+.join-card h3{font-family:var(--serif);font-size:1.25rem;font-weight:500;color:var(--ink);margin-bottom:.5rem}
+.join-card p{font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.7;margin:0}
+.join-card a{display:inline-block;margin-top:1rem;font-size:.85rem;font-weight:500;color:var(--green);text-decoration:none;transition:color .3s}
+.join-card a:hover{color:var(--green-dk)}
+
+/* GARDEN + FOOTER */
+.garden-grow{position:relative;height:420px;overflow:hidden;background:linear-gradient(to bottom,var(--ivory) 0%,var(--warm) 100%);pointer-events:none;margin-top:-4rem}
+.garden-grow img{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);width:max(140%,1600px);height:auto;transform-origin:bottom center;will-change:transform,opacity}
+footer{background:var(--warm);border-top:none;padding:clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,5rem)}
+.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem}
+.footer-brand p{font-size:.85rem;font-weight:300;color:var(--light);line-height:1.7;max-width:280px;margin-top:1rem}
+.footer-col h4{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:1rem}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:.55rem}
+.footer-col ul li a{font-size:.85rem;font-weight:300;color:var(--light);text-decoration:none;transition:color .3s}
+.footer-col ul li a:hover{color:var(--green)}
+.footer-bottom{max-width:1100px;margin:3rem auto 0;padding-top:2rem;border-top:1px solid rgba(26,26,46,.06);display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:.78rem;color:var(--light);font-weight:300}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .nav-links{display:none}.mob-tog{display:block}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--ivory);padding:2rem;gap:1.5rem;border-bottom:1px solid rgba(26,26,46,.06)}
+  .full-break-inner{grid-template-columns:1fr}
+  .team-grid,.join-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .about-hero h1{font-size:2.4rem}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:1rem;text-align:center}
+}
+
+/* Grain */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px 256px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="Sample Images/SunbearLOGO.png" alt="Mochi">
+    <span>Learn with Mochi</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="about.html" class="active">Our Story</a></li>
+    <li><a href="index.html#belief">Philosophy</a></li>
+    <li><a href="index.html#kit">Explorer's Kit</a></li>
+    <li><a href="mailto:hello@LearnWithMochi.com">Contact</a></li>
+  </ul>
+  <button class="mob-tog" id="mobTog" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="about-hero">
+  <h1 id="heroH"></h1>
+  <p class="about-hero-sub">Learn with Mochi is a public-benefit corporation founded in 2018. We build the Montessori method for AI literacy and computational thinking — one bear, one family, one child at a time.</p>
+  <div class="about-hero-illo">
+    <img src="Sample Images/hilltop_crop.png" alt="">
+  </div>
+</section>
+
+<!-- ═══ THE WORLD WE SEE ═══ -->
+<div class="prose r">
+  <div class="label">The world we see</div>
+  <h2>A generation is growing up inside sealed&nbsp;machines.</h2>
+  <p>In 2007, the iPhone was introduced. By 2012, the iPad had become the default babysitter. By 2018 — when we founded this company — the average American child was spending over four hours a day on screens before the age of&nbsp;two.</p>
+  <p>These devices are miracles of engineering. They are also perfectly sealed black boxes. Unlike the clunky Commodore 64 that invited tinkering, or the Soviet-era radios that a curious child in Ukraine could take apart with a screwdriver, today's technology <em>masks its own inner workings</em>. It "just works." And that is precisely the&nbsp;problem.</p>
+  <p>When technology feels like magic, children learn to consume it. When it feels like a language — something with grammar, logic, and creative possibility — children learn to create with it. The difference between those two outcomes will define the next&nbsp;century.</p>
+  <blockquote>Technology is too important to be limited to the 0.01% creating it in Silicon&nbsp;Valley.</blockquote>
+  <p>We believe computational thinking is a foundational literacy — as essential as reading, writing, and arithmetic. And we believe it should begin not at age 12, in a computer lab, but at age 3, on a living room floor, with wooden blocks and a curious&nbsp;bear.</p>
+</div>
+
+<div class="prose-divider r"></div>
+
+<!-- ═══ ORIGIN ═══ -->
+<div class="prose r">
+  <div class="label">Where we come from</div>
+  <h2>Two immigrants, one&nbsp;question.</h2>
+
+  <figure class="prose-img r">
+    <img src="https://substack-post-media.s3.amazonaws.com/public/images/28377b20-a1d6-4905-8cdb-c0fbf08203f0_960x720.jpeg" alt="Young Mark building with LEGOs in Ukraine">
+    <figcaption>Mark building with LEGOs in his grandmother's apartment, Ukraine, early 1990s</figcaption>
+  </figure>
+
+  <p>Mark Pavlyukovskyy grew up in post-Soviet Ukraine, in his grandmother's apartment, taking apart rusty electronics. His babusya taught him that <em>nothing was ever broken — things were just waiting for someone with imagination to turn them into what could be.</em> He went on to study molecular biology at Princeton, then biomedical engineering at Oxford as an NIH Scholar. A medical diagnosis during his first year compressed his sense of time and made him ask: what can I build that will outlast&nbsp;me?</p>
+  <p>His answer was Play Piper — a computer kit that shipped over 100,000 units to children in 70+ countries, earned endorsements from Steve Wozniak, and landed him on Forbes 30 Under 30 in Education. But Piper was for older children. The question that haunted Mark was: what about the youngest&nbsp;ones?</p>
+
+  <figure class="prose-img sm r">
+    <img src="Sample Images/little-daria.png" alt="Little Daria with a bear" style="border-radius:16px">
+    <figcaption>Little Daria, always finding bears</figcaption>
+  </figure>
+
+  <p>Daria Zhao arrived in Canada from China as a child, barely able to speak English. A family of refugees from the former Yugoslavia took her in while her parents enrolled in language classes and worked odd jobs. They taught her that <em>generosity can exist even when we have so little. Especially when we have so&nbsp;little.</em></p>
+  <p>Daria built a career on Wall Street, then walked away from it. She moved to San Francisco and began teaching STEM classes three times a week at the Potrero Hill Neighborhood House — trading her time for free office space. She discovered something that every parent knows but few curricula acknowledge: children of every age learn best when they can <em>touch</em>&nbsp;things.</p>
+  <p>In 2018, Mark and Daria connected. They saw the same gap: a generation growing up with polished devices that masked how technology actually works. And they asked the same question: <em>What if we gave children the tools to build the future, not just consume&nbsp;it?</em></p>
+</div>
+
+<div class="prose-divider r"></div>
+
+<!-- ═══ THE HARD CHOICE ═══ -->
+<div class="prose r">
+  <div class="label">The hard choice</div>
+  <h2>Every VC said&nbsp;no.</h2>
+  <p>"Make it an app," they said on Sand Hill Road. "Software scales. Hardware doesn't. The returns aren't&nbsp;there."</p>
+  <p>But Mark and Daria were adamant. A pure software product meant delivering their screen-free solution through the very enemy they were fighting: <em>screen time</em>. The whole point was that children should hold something real. Feel the weight of a wooden block. Hear the click of a rover coming to life. Watch their code execute in physical space, not behind&nbsp;glass.</p>
+  <blockquote>It had to be hands-on. Or nothing at&nbsp;all.</blockquote>
+
+  <figure class="prose-img r">
+    <img src="https://substack-post-media.s3.amazonaws.com/public/images/a328c053-d064-42c3-84e0-55d98831a9eb_2703x3604.jpeg" alt="First coding blocks laser-cut from Home Depot plywood">
+    <figcaption>First coding blocks — laser-cut on plywood from Home Depot</figcaption>
+  </figure>
+
+  <p>So they built it themselves. The first coding blocks were laser-cut on plywood from Home Depot. The first audio files were recorded on Daria's phone. The first user tests happened in family friends' living rooms. They spent months living in Shenzhen, learning manufacturing from the ground&nbsp;up.</p>
+  <p>On October 16, 2019, they launched on Kickstarter. They were funded in under 12 hours. 720 backers pledged $218,000 — over four times their goal. And on Christmas morning 2019, every single kit arrived on&nbsp;time.</p>
+</div>
+
+<!-- ═══ PHOTO BREAK ═══ -->
+<div class="full-break r">
+  <div class="full-break-inner">
+    <img src="https://substack-post-media.s3.amazonaws.com/public/images/760cb6fa-6621-47a2-a48e-1f168a64876e_1125x813.jpeg" alt="In-home user testing">
+    <img src="https://substack-post-media.s3.amazonaws.com/public/images/0e75c53e-37b0-4ee5-b674-3f958ea57f86_936x529.webp" alt="Kickstarter film day">
+  </div>
+</div>
+
+<!-- ═══ PRINCIPLES ═══ -->
+<section class="principles">
+  <div class="label r">What we stand for</div>
+  <h2 class="r">Four convictions that shape everything we&nbsp;build.</h2>
+
+  <div class="principle r">
+    <h3>Hands touch what screens&nbsp;can't.</h3>
+    <p>Maria Montessori proved over a century ago that children construct knowledge through their senses — through touch, sequence, repetition, and self-correction. Neuroscience has since confirmed it: motor engagement during learning strengthens memory formation and conceptual understanding. Our coding blocks are made from natural wood. Our adventure maps are fabric you unfold on the floor. Our rover moves through real space. None of this is nostalgic. It is&nbsp;neurological.</p>
+  </div>
+
+  <div class="principle r">
+    <h3>Stories outlast&nbsp;features.</h3>
+    <p>Children don't remember specifications. They remember characters, journeys, and the feeling of discovery. Every Mochi adventure is built around narrative: a curious bear, a new world to explore, a problem to solve. The coding concepts — sequences, loops, functions, decomposition — are embedded in the story, not bolted on. A child doesn't "learn to code." They help Mochi travel the solar system, and the code is how they get&nbsp;there.</p>
+  </div>
+
+  <div class="principle r">
+    <h3>Inclusion is the&nbsp;point.</h3>
+    <p>Both of our founders are immigrants. Mark arrived from Ukraine. Daria from China. They know what it means to be outside a system that wasn't designed for you. Learn with Mochi is a public-benefit corporation because the mission isn't to capture a market — it's to expand who gets to participate in the technological future. We have shipped to 62 countries across six continents. The product arrives as a blank slate so every child can create experiences in their own&nbsp;image.</p>
+  </div>
+
+  <div class="principle r">
+    <h3>A child is a&nbsp;scientist.</h3>
+    <p>Not metaphorically. Literally. Children form hypotheses, test them, observe outcomes, and revise their understanding — naturally, instinctively, joyfully. The role of an educational tool is not to instruct but to create the conditions for this process to flourish. Our system is designed for open-ended play: there is no single "right answer," no score, no fail state. There is only what the child imagines, codes, and discovers for&nbsp;themselves.</p>
+  </div>
+</section>
+
+<!-- ═══ TEAM ═══ -->
+<section class="team">
+  <div class="label r">The people</div>
+  <h2 class="r">Built by educators, scientists, and&nbsp;parents.</h2>
+  <div class="team-grid">
+    <div class="team-card r">
+      <div class="team-role">Founder & Chief Bear</div>
+      <h3>Mark Pavlyukovskyy</h3>
+      <p>Princeton (Molecular Biology), Oxford (Biomedical Engineering). Previously founded Play Piper (100K+ units, Forbes 30 Under 30). Believes nothing is ever broken — things are just waiting for imagination.</p>
+    </div>
+    <div class="team-card r d1">
+      <div class="team-role">Co-Founder & Chief Creative Octopus</div>
+      <h3>Daria Zhao</h3>
+      <p>Former Wall Street analyst turned educator. Left finance to teach STEM in exchange for office space. Designed the first coding blocks on her iPad. Believes generosity can exist especially when we have so little.</p>
+    </div>
+    <div class="team-card r d2">
+      <div class="team-role">Chief Scientist</div>
+      <h3>Dr. Mihran Vardanyan</h3>
+      <p>Oxford-trained astrophysicist with a secondary degree in pedagogy. Directs R&D on robotics, algorithms, and computer vision. Brings the rigor of physics to the gentleness of early childhood education.</p>
+    </div>
+    <div class="team-card r d3">
+      <div class="team-role">Mom in Chief</div>
+      <h3>Vaneni Vardanyan</h3>
+      <p>STEM educator with decades of experience implementing curricula across Denmark, England, Armenia, and the United States. Mother of three daughters. Brings psychology expertise to every learning sequence we design.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VISION ═══ -->
+<section class="vision">
+  <div class="label r">Where we're going</div>
+  <h2 class="r">A world where every child understands the technology that shapes their&nbsp;life.</h2>
+  <p class="r d1">Today, a few thousand engineers in a handful of cities decide how billions of people communicate, learn, work, and play. That concentration of creative power is unprecedented in human history — and it is&nbsp;unsustainable.</p>
+  <p class="r d2">We are building toward a future where computational thinking is as universal as literacy. Where a child in rural Arkansas and a child in Nairobi both grow up knowing that technology is not magic — it is a language they can speak, a tool they can wield, a world they can&nbsp;shape.</p>
+  <p class="r d3">Mochi is where that future begins: on a living room floor, with wooden blocks, a storybook, and a very curious&nbsp;bear.</p>
+  <div class="vision-illo r">
+    <img src="Sample Images/windows.png" alt="">
+  </div>
+</section>
+
+<!-- ═══ JOIN ═══ -->
+<section class="join">
+  <h2 class="r">Join the&nbsp;mission.</h2>
+  <p class="r d1">We don't just sell a product. We're building a movement. Here's how you can be&nbsp;part&nbsp;of&nbsp;it.</p>
+  <div class="join-grid">
+    <div class="join-card r d1">
+      <h3>Educators</h3>
+      <p>Bring Mochi to your classroom. We offer educator training, professional development, and STEM-certified curriculum integration.</p>
+      <a href="mailto:hello@LearnWithMochi.com">Get in touch &rarr;</a>
+    </div>
+    <div class="join-card r d2">
+      <h3>Partners &amp; Distributors</h3>
+      <p>Help us reach more families. We work with distributors, retailers, and educational networks across 62 countries.</p>
+      <a href="mailto:hello@LearnWithMochi.com">Partner with us &rarr;</a>
+    </div>
+    <div class="join-card r d3">
+      <h3>Press &amp; Media</h3>
+      <p>Tell our story. We're happy to provide press kits, founder interviews, product samples, and high-resolution imagery.</p>
+      <a href="mailto:hello@LearnWithMochi.com">Press inquiries &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- GARDEN -->
+<div class="garden-grow" id="gardenGrow">
+  <img src="Sample Images/garden.svg" alt="" id="gardenImg">
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><img src="Sample Images/SunbearLOGO.png" alt="Mochi"><span>Learn with Mochi</span></a>
+      <p>A public-benefit corporation building the Montessori method for AI literacy and robotics. Empowering children to create with technology since&nbsp;2019.</p>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul><li><a href="about.html">Our Story</a></li><li><a href="index.html#belief">Philosophy</a></li><li><a href="index.html#kit">Explorer's Kit</a></li></ul></div>
+    <div class="footer-col"><h4>Shop</h4><ul><li><a href="index.html#kit">Robotics Kit</a></li><li><a href="index.html#kit">Adventure Packs</a></li><li><a href="index.html#kit">Bundles</a></li></ul></div>
+    <div class="footer-col"><h4>Connect</h4><ul><li><a href="mailto:hello@LearnWithMochi.com">hello@LearnWithMochi.com</a></li><li><a href="https://instagram.com/learnwithmochi">Instagram</a></li><li><a href="https://facebook.com/LearnWithMochi">Facebook</a></li><li><a href="https://youtube.com/learnwithmochi">YouTube</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2019–2026 Learn with Mochi. All rights reserved.</p></div>
+</footer>
+
+<script>
+/* Hero word-by-word */
+!function(){const h=document.getElementById('heroH');'We believe the children who will shape the future should understand how it works.'.split(' ').forEach((w,i)=>{const s=document.createElement('span');s.className='word';s.style.animationDelay=`${.2+i*.1}s`;s.textContent=w;h.appendChild(s);if(i<14)h.appendChild(document.createTextNode('\u00A0'))})}();
+/* Scroll reveals */
+!function(){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});document.querySelectorAll('.r').forEach(el=>o.observe(el))}();
+/* Nav scroll */
+!function(){const n=document.getElementById('nav');let t=false;window.addEventListener('scroll',()=>{if(!t){requestAnimationFrame(()=>{n.classList.toggle('scrolled',scrollY>30);t=false});t=true}})}();
+/* Mobile nav */
+!function(){const b=document.getElementById('mobTog'),l=document.getElementById('navLinks');b.addEventListener('click',()=>l.classList.toggle('open'));l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')))}();
+/* Garden grow */
+!function(){const g=document.getElementById('gardenGrow'),i=document.getElementById('gardenImg');if(!g||!i)return;function u(){const r=g.getBoundingClientRect(),vh=window.innerHeight;if(r.top<vh&&r.bottom>0){const p=Math.min(Math.max((vh-r.top)/(vh+r.height),0),1);i.style.transform=`translateX(-50%) scale(${.85+p*.15}) translateY(${(1-p)*40}px)`;i.style.opacity=.5+p*.5}requestAnimationFrame(u)}requestAnimationFrame(u)}();
+</script>
+</body>
+</html>
